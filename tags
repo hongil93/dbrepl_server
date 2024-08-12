@@ -1,0 +1,1046 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BUF_SIZE	./include/recv.h	1;"	d
+BYTE	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	31;"	d
+BYTE	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	31;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	74;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	72;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	73;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	74;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	74;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	72;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	73;"	d
+B_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	74;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	73;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	71;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	72;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	73;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	73;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	71;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	72;"	d
+B_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	73;"	d
+CC	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^CC      = gcc$/;"	m
+CFG	./include/main.h	/^}CFG;$/;"	t	typeref:struct:_config
+CFLAGS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^CFLAGS  = -fPIC -g #-g3 -ggdb -gdwarf-2$/;"	m
+CLIENT_LIST	./include/recv.h	/^} CLIENT_LIST;$/;"	t	typeref:struct:_client_list
+DB_INFO	./include/db.h	/^} DB_INFO;$/;"	t	typeref:struct:_db_info
+DB_LIST	./include/db.h	/^} DB_LIST;$/;"	t	typeref:struct:_db_list
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	41;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	40;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	41;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	41;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	41;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	40;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	41;"	d
+DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	41;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	47;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	46;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	47;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	47;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	47;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	46;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	47;"	d
+DEB_ALL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	47;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	39;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	38;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	39;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	39;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	39;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	38;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	39;"	d
+DEB_DEBUG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	39;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	44;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	43;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	44;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	44;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	44;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	43;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	44;"	d
+DEB_DEVEL	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	44;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	37;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	36;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	37;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	37;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	37;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	36;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	37;"	d
+DEB_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	37;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	38;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	37;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	38;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	38;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	38;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	37;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	38;"	d
+DEB_INOUT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	38;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	40;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	39;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	40;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	40;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	40;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	39;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	40;"	d
+DEB_LOG	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	40;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	45;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	44;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	45;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	45;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	45;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	44;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	45;"	d
+DEB_MAINT	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	45;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	59;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	58;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	59;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	59;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	59;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	58;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	59;"	d
+DEB_SET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	59;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	42;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	41;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	42;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	42;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	42;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	41;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	42;"	d
+DEB_TEST	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	42;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	43;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	42;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	43;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	43;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	43;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	42;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	43;"	d
+DEB_TIMER	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	43;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	35;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	34;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	35;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	35;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	35;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	34;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	35;"	d
+DEB_TRACE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	35;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	60;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	59;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	60;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	60;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	60;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	59;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	60;"	d
+DEB_UNSET	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	60;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	36;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	35;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	36;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	36;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	36;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	35;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	36;"	d
+DEB_WARN	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	36;"	d
+DEFS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^DEFS    = -D_REENTRANT -DLOCK_QUEUE -DHAVE_CONFIG_H$/;"	m
+DWORD	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	37;"	d
+DWORD	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	37;"	d
+DW_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	11;"	d
+DW_FALSE	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	11;"	d
+DW_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	7;"	d
+DW_TRUE	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	7;"	d
+DebLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^char *DebLevel[]=$/;"	v
+DebLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^char *DebLevel[]=$/;"	v
+DebLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^char *DebLevel[]=$/;"	v
+DebLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^char *DebLevel[]=$/;"	v
+DebLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^char *DebLevel[]=$/;"	v
+DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+DwAdjustDebug	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void DwAdjustDebug(LOG_HANDLE *pLogHandle, int Mask, int flag)$/;"	f
+DwAdjustDebug	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void DwAdjustDebug(LOG_HANDLE *pLogHandle, int Mask, int flag)$/;"	f
+DwAdjustDebug	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwAdjustDebug(LOG_HANDLE *pLogHandle, int Mask, int flag)$/;"	f
+DwAdjustDebug	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwAdjustDebug(LOG_HANDLE *pLogHandle, int Mask, int flag)$/;"	f
+DwAdjustDebug	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwAdjustDebug(LOG_HANDLE *pLogHandle, int Mask, int flag)$/;"	f
+DwDeInitializeLog	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void DwDeInitializeLog(LOG_HANDLE *pLogHandle)$/;"	f
+DwDeInitializeLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void DwDeInitializeLog(LOG_HANDLE *pLogHandle)$/;"	f
+DwDeInitializeLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwDeInitializeLog(LOG_HANDLE *pLogHandle)$/;"	f
+DwDeInitializeLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwDeInitializeLog(LOG_HANDLE *pLogHandle)$/;"	f
+DwDeInitializeLog	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwDeInitializeLog(LOG_HANDLE *pLogHandle)$/;"	f
+DwDebugLog	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void DwDebugLog(int Mask, const char *Format, ...)$/;"	f
+DwDebugLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void DwDebugLog(int Mask, const char *Format, ...)$/;"	f
+DwDebugLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwDebugLog(int Mask, const char *Format, ...)$/;"	f
+DwDebugLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwDebugLog(int Mask, const char *Format, ...)$/;"	f
+DwDebugLog	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwDebugLog(int Mask, const char *Format, ...)$/;"	f
+DwDumpBytes	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^DwDumpBytes(LOG_HANDLE *pLogHandle,  char *p, int len, int base )$/;"	f
+DwDumpBytes	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^DwDumpBytes(LOG_HANDLE *pLogHandle,  char *p, int len, int base )$/;"	f
+DwDumpBytes	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^DwDumpBytes(LOG_HANDLE *pLogHandle,  char *p, int len, int base )$/;"	f
+DwDumpBytes	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^DwDumpBytes(LOG_HANDLE *pLogHandle,  char *p, int len, int base )$/;"	f
+DwDumpBytes	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^DwDumpBytes(LOG_HANDLE *pLogHandle,  char *p, int len, int base )$/;"	f
+DwGetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^int DwGetLogLevel(LOG_HANDLE *pLogHandle)$/;"	f
+DwGetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^int DwGetLogLevel(LOG_HANDLE *pLogHandle)$/;"	f
+DwGetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^int DwGetLogLevel(LOG_HANDLE *pLogHandle)$/;"	f
+DwGetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^int DwGetLogLevel(LOG_HANDLE *pLogHandle)$/;"	f
+DwGetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^int DwGetLogLevel(LOG_HANDLE *pLogHandle)$/;"	f
+DwLog	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void DwLog(LOG_HANDLE *pLogHandle , int Mask, const char *Format, ...)$/;"	f
+DwLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void DwLog(LOG_HANDLE *pLogHandle , int Mask, const char *Format, ...)$/;"	f
+DwLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwLog(LOG_HANDLE *pLogHandle , int Mask, const char *Format, ...)$/;"	f
+DwLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwLog(LOG_HANDLE *pLogHandle , int Mask, const char *Format, ...)$/;"	f
+DwLog	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwLog(LOG_HANDLE *pLogHandle , int Mask, const char *Format, ...)$/;"	f
+DwLogWrite	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void * DwLogWrite(void *arg) $/;"	f
+DwLogWrite	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void * DwLogWrite(void *arg) $/;"	f
+DwLogWrite	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void * DwLogWrite(void *arg) $/;"	f
+DwLogWrite2	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwLogWrite2(LOG_HANDLE *pLogHandle, LOGINFO *pLog)$/;"	f
+DwLogWrite2	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwLogWrite2(LOG_HANDLE *pLogHandle, LOGINFO *pLog)$/;"	f
+DwSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void DwSetLogLevel( LOG_HANDLE *pLogHandle , int LogLevel ) $/;"	f
+DwSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void DwSetLogLevel( LOG_HANDLE *pLogHandle , int LogLevel ) $/;"	f
+DwSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwSetLogLevel( LOG_HANDLE *pLogHandle , int LogLevel ) $/;"	f
+DwSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwSetLogLevel( LOG_HANDLE *pLogHandle , int LogLevel ) $/;"	f
+DwSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwSetLogLevel( LOG_HANDLE *pLogHandle , int LogLevel ) $/;"	f
+DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
+DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
+DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
+DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
+DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
+EVT_ERROR	./include/recv.h	7;"	d
+EVT_WARNING	./include/recv.h	6;"	d
+E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	23;"	d
+E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	23;"	d
+E_FILEREAD	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	24;"	d
+E_FILEREAD	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	24;"	d
+E_INVALIDINDEX	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	28;"	d
+E_INVALIDINDEX	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	28;"	d
+E_NOKEY	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	26;"	d
+E_NOKEY	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	26;"	d
+E_NOOPENFILE	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	27;"	d
+E_NOOPENFILE	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	27;"	d
+E_NOSECTION	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	25;"	d
+E_NOSECTION	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	25;"	d
+E_OUTOFMEMORY	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	22;"	d
+E_OUTOFMEMORY	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	22;"	d
+E_TOOMANYFILES	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	29;"	d
+E_TOOMANYFILES	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	29;"	d
+FCLOSE	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	53;"	d	file:
+FCLOSE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	54;"	d	file:
+FCLOSE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	54;"	d	file:
+FCLOSE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	53;"	d	file:
+FCLOSE	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	54;"	d	file:
+FILEINFO	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^} FILEINFO;$/;"	t	typeref:struct:__anon1	file:
+FMT_Y2M	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.h	11;"	d
+FMT_Y2M	/home/khchoi/library/libeluonutil-R2.0.0/include/elnutil.h	11;"	d
+FMT_Y2S	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.h	12;"	d
+FMT_Y2S	/home/khchoi/library/libeluonutil-R2.0.0/include/elnutil.h	12;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	63;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	62;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	63;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	63;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	63;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	62;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	63;"	d
+FN_TYPE_DATE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	63;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	64;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	63;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	64;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	64;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	64;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	63;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	64;"	d
+FN_TYPE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	64;"	d
+FOPEN	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	42;"	d	file:
+FOPEN	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	43;"	d	file:
+FOPEN	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	43;"	d	file:
+FOPEN	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	42;"	d	file:
+FOPEN	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	43;"	d	file:
+GetDebugKeyValue	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^GetDebugKeyValue( DebugKeys *KeyTable, int cKeys, char * pszKey) $/;"	f	file:
+GetDebugKeyValue	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^GetDebugKeyValue( DebugKeys *KeyTable, int cKeys, char * pszKey) $/;"	f	file:
+GetDebugKeyValue	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^GetDebugKeyValue( DebugKeys *KeyTable, int cKeys, char * pszKey) $/;"	f	file:
+GetDebugKeyValue	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^GetDebugKeyValue( DebugKeys *KeyTable, int cKeys, char * pszKey) $/;"	f	file:
+GetDebugKeyValue	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^GetDebugKeyValue( DebugKeys *KeyTable, int cKeys, char * pszKey) $/;"	f	file:
+GetMyLogVersion	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^GetMyLogVersion()$/;"	f
+GetMyLogVersion	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^GetMyLogVersion()$/;"	f
+GetMyLogVersion	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^GetMyLogVersion()$/;"	f
+GetMyLogVersion	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^GetMyLogVersion()$/;"	f
+GetMyLogVersion	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^GetMyLogVersion()$/;"	f
+GetTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void GetTraceTime(char* traceTime)$/;"	f
+GetTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void GetTraceTime(char* traceTime)$/;"	f
+GetTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void GetTraceTime(char* traceTime)$/;"	f
+GetTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void GetTraceTime(char* traceTime)$/;"	f
+GetTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void GetTraceTime(char* traceTime)$/;"	f
+HAVE_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/config.h	8;"	d
+HAVE_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	8;"	d
+HAVE_ARPA_INET_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	11;"	d
+HAVE_ARPA_INET_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	11;"	d
+HAVE_DIRENT_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	18;"	d
+HAVE_DIRENT_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	18;"	d
+HAVE_FCNTL_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	21;"	d
+HAVE_FCNTL_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	21;"	d
+HAVE_GETTIMEOFDAY	/home/khchoi/library/libeluonutil-R2.0.0/config.h	24;"	d
+HAVE_GETTIMEOFDAY	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	24;"	d
+HAVE_INTTYPES_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	27;"	d
+HAVE_INTTYPES_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	27;"	d
+HAVE_LOCALTIME_R	/home/khchoi/library/libeluonutil-R2.0.0/config.h	30;"	d
+HAVE_LOCALTIME_R	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	30;"	d
+HAVE_MALLOC	/home/khchoi/library/libeluonutil-R2.0.0/config.h	34;"	d
+HAVE_MALLOC	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	34;"	d
+HAVE_MEMORY_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	37;"	d
+HAVE_MEMORY_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	37;"	d
+HAVE_MEMSET	/home/khchoi/library/libeluonutil-R2.0.0/config.h	40;"	d
+HAVE_MEMSET	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	40;"	d
+HAVE_STDINT_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	50;"	d
+HAVE_STDINT_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	50;"	d
+HAVE_STDLIB_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	53;"	d
+HAVE_STDLIB_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	53;"	d
+HAVE_STRCASECMP	/home/khchoi/library/libeluonutil-R2.0.0/config.h	56;"	d
+HAVE_STRCASECMP	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	56;"	d
+HAVE_STRCHR	/home/khchoi/library/libeluonutil-R2.0.0/config.h	59;"	d
+HAVE_STRCHR	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	59;"	d
+HAVE_STRERROR	/home/khchoi/library/libeluonutil-R2.0.0/config.h	62;"	d
+HAVE_STRERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	62;"	d
+HAVE_STRFTIME	/home/khchoi/library/libeluonutil-R2.0.0/config.h	65;"	d
+HAVE_STRFTIME	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	65;"	d
+HAVE_STRINGS_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	68;"	d
+HAVE_STRINGS_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	68;"	d
+HAVE_STRING_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	71;"	d
+HAVE_STRING_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	71;"	d
+HAVE_STRRCHR	/home/khchoi/library/libeluonutil-R2.0.0/config.h	74;"	d
+HAVE_STRRCHR	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	74;"	d
+HAVE_SYSLOG_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	77;"	d
+HAVE_SYSLOG_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	77;"	d
+HAVE_SYS_SOCKET_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	88;"	d
+HAVE_SYS_SOCKET_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	88;"	d
+HAVE_SYS_STAT_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	91;"	d
+HAVE_SYS_STAT_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	91;"	d
+HAVE_SYS_TIME_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	94;"	d
+HAVE_SYS_TIME_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	94;"	d
+HAVE_SYS_TYPES_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	97;"	d
+HAVE_SYS_TYPES_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	97;"	d
+HAVE_UNISTD_H	/home/khchoi/library/libeluonutil-R2.0.0/config.h	100;"	d
+HAVE_UNISTD_H	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	100;"	d
+Header	./include/recv.h	/^} Header;$/;"	t	typeref:struct:_header
+INIT_LIST_HEAD	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	27;"	d
+INIT_LIST_HEAD	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	27;"	d
+INSTALL_INC	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^INSTALL_INC=\/home\/kwanghyeok\/eluon\/1week\/libeluonutil-R2.0.0\/include$/;"	m
+INSTALL_LIB	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^INSTALL_LIB=\/home\/kwanghyeok\/eluon\/1week\/libeluonutil-R2.0.0\/lib$/;"	m
+I_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	21;"	d
+I_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	21;"	d
+I_SUCCESS	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	19;"	d
+I_SUCCESS	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	19;"	d
+InitJDRSupport	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^int InitJDRSupport(char *szConfFile, char *section)$/;"	f
+InitializeMyLog	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^int InitializeMyLog( const char *pcLogFileName$/;"	f
+InitializeMyLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^int InitializeMyLog( const char *pcLogFileName$/;"	f
+InitializeMyLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^int InitializeMyLog( const char *pcLogFileName$/;"	f
+InitializeMyLog	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^int InitializeMyLog( const char *pcLogFileName$/;"	f
+InitializeMyLog	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^int InitializeMyLog( const char *pcLogFileName$/;"	f
+JCB	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^} JCB;$/;"	t	typeref:struct:_jdr_control_block
+JCB	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^} JCB;$/;"	t	typeref:struct:_jdr_control_block
+JDRLog	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	62;"	d
+JDRLog	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	62;"	d
+JDRLogEvent	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^int JDRLogEvent($/;"	f
+JDRMoveDoneLog	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^void JDRMoveDoneLog(int idx)$/;"	f
+JDRMoveLog	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^void *JDRMoveLog(int *arg)$/;"	f
+JDROpenLog	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^JDROpenLog(int idx)$/;"	f	file:
+JDR_fd	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    FILE   *JDR_fd;$/;"	m	struct:_jdr_control_block
+JDR_fd	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    FILE   *JDR_fd;$/;"	m	struct:_jdr_control_block
+J_FAIL	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	45;"	d
+J_FAIL	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	45;"	d
+J_SUCCESS	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	44;"	d
+J_SUCCESS	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	44;"	d
+LFLAGS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^LFLAGS= -lpthread -lrt #-lposix4$/;"	m
+LIBBASE	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^LIBBASE=libeluonutil.so$/;"	m
+LINELEN	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	4;"	d
+LINELEN	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	4;"	d
+LIST_HEAD	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	24;"	d
+LIST_HEAD	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	24;"	d
+LIST_HEAD_INIT	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	22;"	d
+LIST_HEAD_INIT	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	22;"	d
+LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^} LOGINFO;$/;"	t	typeref:struct:_LOGINFO
+LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^} LOGINFO;$/;"	t	typeref:struct:_LOGINFO
+LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^} LOGINFO;$/;"	t	typeref:struct:_LOGINFO
+LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^} LOGINFO;$/;"	t	typeref:struct:_LOGINFO
+LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^} LOGINFO;$/;"	t	typeref:struct:_LOGINFO
+LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^} LOGINFO;$/;"	t	typeref:struct:_LOGINFO
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LOG_HANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^} LOG_HANDLE ;$/;"	t	typeref:struct:_LOGHANDLE
+LSTAT_FOLLOWS_SLASHED_SYMLINK	/home/khchoi/library/libeluonutil-R2.0.0/config.h	104;"	d
+LSTAT_FOLLOWS_SLASHED_SYMLINK	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	104;"	d
+LoadJDRParameters	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^int LoadJDRParameters(char *szConfFile, char *szSection)$/;"	f
+MAJOR	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^MAJOR=2$/;"	m
+MAXFILES	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	17;"	d
+MAXFILES	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	17;"	d
+MAX_CLIENTS	./include/recv.h	3;"	d
+MAX_DBNAME	./include/db.h	5;"	d
+MAX_EPOLL_EVENT	./include/recv.h	2;"	d
+MAX_FILE_NAME	./include/main.h	20;"	d
+MAX_HOST	./include/db.h	2;"	d
+MAX_JDR_CNT	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	47;"	d
+MAX_JDR_CNT	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	47;"	d
+MAX_JDR_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	39;"	d	file:
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	71;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	69;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	70;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	71;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	71;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	69;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	70;"	d
+MAX_LOGFILE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	71;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	66;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	65;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	66;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	66;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	66;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	65;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	66;"	d
+MAX_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	66;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	68;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	67;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	68;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	68;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	68;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	67;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	68;"	d
+MAX_LOG_LENGTH	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	68;"	d
+MAX_PASSWORD	./include/db.h	4;"	d
+MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	76;"	d
+MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	75;"	d
+MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	76;"	d
+MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	76;"	d
+MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	75;"	d
+MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	76;"	d
+MAX_TIME	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	23;"	d
+MAX_TIME	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	23;"	d
+MAX_USERNAME	./include/db.h	3;"	d
+MINOR	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^MINOR=0.0$/;"	m
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	67;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	66;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	67;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	67;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	67;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	66;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	67;"	d
+MIN_LOGFILE_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	67;"	d
+MakeNibble	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^MakeNibble(char *nib, int niblen, char *buf, int len)$/;"	f
+NUM_DEBUG_KEYS	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	109;"	d	file:
+NUM_DEBUG_KEYS	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	110;"	d	file:
+NUM_DEBUG_KEYS	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	110;"	d	file:
+NUM_DEBUG_KEYS	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	109;"	d	file:
+NUM_DEBUG_KEYS	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	110;"	d	file:
+Name	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^    char *Name;$/;"	m	struct:_DebugKeys	file:
+Name	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^    char *Name;$/;"	m	struct:_DebugKeys	file:
+Name	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^    char *Name;$/;"	m	struct:_DebugKeys	file:
+Name	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^    char *Name;$/;"	m	struct:_DebugKeys	file:
+Name	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^    char *Name;$/;"	m	struct:_DebugKeys	file:
+NibbleDigits	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^NibbleDigits(char *buf, char *nib, int len)$/;"	f
+OBJS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^OBJS= $(SRCS:.c=.o)$/;"	m
+OpenLogFile	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^int OpenLogFile(LOG_HANDLE *pLogHandle)$/;"	f
+OpenLogFile	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^int OpenLogFile(LOG_HANDLE *pLogHandle)$/;"	f
+OpenLogFile	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^int OpenLogFile(LOG_HANDLE *pLogHandle)$/;"	f
+OpenLogFile	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^int OpenLogFile(LOG_HANDLE *pLogHandle)$/;"	f
+OpenLogFile	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^int OpenLogFile(LOG_HANDLE *pLogHandle)$/;"	f
+PACKAGE_BUGREPORT	/home/khchoi/library/libeluonutil-R2.0.0/config.h	107;"	d
+PACKAGE_BUGREPORT	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	107;"	d
+PACKAGE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/config.h	110;"	d
+PACKAGE_NAME	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	110;"	d
+PACKAGE_STRING	/home/khchoi/library/libeluonutil-R2.0.0/config.h	113;"	d
+PACKAGE_STRING	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	113;"	d
+PACKAGE_TARNAME	/home/khchoi/library/libeluonutil-R2.0.0/config.h	116;"	d
+PACKAGE_TARNAME	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	116;"	d
+PACKAGE_VERSION	/home/khchoi/library/libeluonutil-R2.0.0/config.h	119;"	d
+PACKAGE_VERSION	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	119;"	d
+PCB	./include/main.h	/^}PCB;$/;"	t	typeref:struct:_process_control_block
+PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
+Packet	./include/recv.h	/^} Packet;$/;"	t	typeref:struct:_packet
+SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	8;"	d
+SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	8;"	d
+SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	7;"	d
+SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	7;"	d
+SONAME	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SONAME=$(LIBBASE).$(MAJOR)$/;"	m
+SQL_SELECT	./include/recv.h	5;"	d
+SRCS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SRCS= debug.c inifile.c elnutil.c elnshm.c itq.c simple_timer.c jdrlog.c$/;"	m
+STDC_HEADERS	/home/khchoi/library/libeluonutil-R2.0.0/config.h	122;"	d
+STDC_HEADERS	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	122;"	d
+TARGET	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^TARGET= $(LIBBASE).$(MAJOR).$(MINOR)$/;"	m
+TBUF_SIZE	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	121;"	d	file:
+TIME_WITH_SYS_TIME	/home/khchoi/library/libeluonutil-R2.0.0/config.h	125;"	d
+TIME_WITH_SYS_TIME	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	125;"	d
+TRACE	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	44;"	d	file:
+TRACE	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	49;"	d	file:
+TRC_BEGIN	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	40;"	d	file:
+TRC_BEGIN	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	45;"	d	file:
+TRC_BEGINX	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	41;"	d	file:
+TRC_BEGINX	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	46;"	d	file:
+TRC_END	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	42;"	d	file:
+TRC_END	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	47;"	d	file:
+TRC_ENDX	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	43;"	d	file:
+TRC_ENDX	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	48;"	d	file:
+Value	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^    int Value;$/;"	m	struct:_DebugKeys	file:
+Value	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^    int Value;$/;"	m	struct:_DebugKeys	file:
+Value	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^    int Value;$/;"	m	struct:_DebugKeys	file:
+Value	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^    int Value;$/;"	m	struct:_DebugKeys	file:
+Value	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^    int Value;$/;"	m	struct:_DebugKeys	file:
+WORD	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	34;"	d
+WORD	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	34;"	d
+_DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^typedef struct _DebugKeys {$/;"	s	file:
+_DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^typedef struct _DebugKeys {$/;"	s	file:
+_DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^typedef struct _DebugKeys {$/;"	s	file:
+_DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^typedef struct _DebugKeys {$/;"	s	file:
+_DebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^typedef struct _DebugKeys {$/;"	s	file:
+_InitJDRSupportInternal	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^static int _InitJDRSupportInternal(char *szConfFile, char *section)$/;"	f	file:
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGHANDLE	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^typedef struct _LOGHANDLE {$/;"	s
+_LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^typedef struct _LOGINFO {$/;"	s
+_LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^typedef struct _LOGINFO {$/;"	s
+_LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^typedef struct _LOGINFO {$/;"	s
+_LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^typedef struct _LOGINFO {$/;"	s
+_LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^typedef struct _LOGINFO {$/;"	s
+_LOGINFO	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^typedef struct _LOGINFO {$/;"	s
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	23;"	d
+_MYDEBUGLOG_H_	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	23;"	d
+__ELNCOMMON_H__	/home/khchoi/library/libeluonutil-R2.0.0/elncommon.h	2;"	d
+__ELNCOMMON_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/elncommon.h	2;"	d
+__ELNSHM_H__	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	2;"	d
+__ELNSHM_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	2;"	d
+__ELNUTIL_H__	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.h	2;"	d
+__ELNUTIL_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/elnutil.h	2;"	d
+__INIFILE_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	2;"	d
+__INIFILE_H__	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	2;"	d
+__ITQ2_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	2;"	d
+__ITQ_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	26;"	d
+__ITQ_H__	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	26;"	d
+__JDRLOG_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	26;"	d
+__JDRLOG_H__	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	26;"	d
+__SIMPLE_LIST_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	2;"	d
+__SIMPLE_LIST_H__	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	2;"	d
+__SIMPLE_TIMER_H__	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	2;"	d
+__SIMPLE_TIMER_H__	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	2;"	d
+__list_add	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void __list_add(struct list_head * elem,$/;"	f
+__list_add	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void __list_add(struct list_head * elem,$/;"	f
+__list_del	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void __list_del(struct list_head * prev,$/;"	f
+__list_del	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void __list_del(struct list_head * prev,$/;"	f
+_client_list	./include/recv.h	/^typedef struct _client_list{$/;"	s
+_config	./include/main.h	/^typedef struct _config{$/;"	s
+_db_info	./include/db.h	/^typedef struct _db_info{$/;"	s
+_db_list	./include/db.h	/^typedef struct _db_list{$/;"	s
+_header	./include/recv.h	/^typedef struct _header{$/;"	s
+_jdr_control_block	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^typedef struct _jdr_control_block$/;"	s
+_jdr_control_block	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^typedef struct _jdr_control_block$/;"	s
+_list_add	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void _list_add(struct list_head *elem, struct list_head *head)$/;"	f
+_list_add	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void _list_add(struct list_head *elem, struct list_head *head)$/;"	f
+_list_handle	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^typedef struct _list_handle {$/;"	s
+_list_handle	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^typedef struct _list_handle {$/;"	s
+_openFile	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static FILE *_openFile (const char *file, char *mode)$/;"	f	file:
+_packet	./include/recv.h	/^typedef struct _packet{$/;"	s
+_process_control_block	./include/main.h	/^typedef struct _process_control_block{$/;"	s
+_stmr	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^struct _stmr {$/;"	s
+_stmr	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^struct _stmr {$/;"	s
+_stmr_handle	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^struct _stmr_handle {$/;"	s
+_stmr_handle	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^struct _stmr_handle {$/;"	s
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+bInitialized	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				bInitialized ;	\/\/ 1 : initialized , 0 : not initialized$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+blog	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int 			blog ;			\/\/ Log on\/off$/;"	m	struct:_LOGHANDLE
+buf	./include/recv.h	/^    char buf[BUF_SIZE];$/;"	m	struct:_packet
+cFiles	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static int cFiles = 0;$/;"	v	file:
+cb_on_timer	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	stmr_cb_on_timer_t cb_on_timer;$/;"	m	struct:_stmr
+cb_on_timer	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	stmr_cb_on_timer_t cb_on_timer;$/;"	m	struct:_stmr
+cfg	./include/main.h	/^	CFG cfg[1];$/;"	m	struct:_process_control_block
+client_count	./include/recv.h	/^    int client_count;$/;"	m	struct:_client_list
+client_list	./include/recv.h	/^CLIENT_LIST client_list;$/;"	v
+client_sockets	./include/recv.h	/^    int client_sockets[MAX_CLIENTS];$/;"	m	struct:_client_list
+cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	unsigned long cnt;$/;"	m	struct:_list_handle
+cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	unsigned long cnt;$/;"	m	struct:_stmr_handle
+cnt	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^	unsigned long cnt;$/;"	m	struct:_list_handle
+cnt	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	unsigned long cnt;$/;"	m	struct:_stmr_handle
+config_file_name	./include/main.h	/^	char config_file_name[MAX_FILE_NAME];$/;"	m	struct:_config
+conn	./include/db.h	/^	MYSQL* conn;$/;"	m	struct:_db_info
+consumer	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^void *consumer(void *data)$/;"	f
+data	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	char				data[0];$/;"	m	struct:itq_msg
+data	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    char                data[0];$/;"	m	struct:itq2_msg
+data	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	void *data;$/;"	m	struct:_stmr
+data	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	char				data[0];$/;"	m	struct:itq_msg
+data	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	void *data;$/;"	m	struct:_stmr
+db01	./include/db.h	/^	DB_INFO* db01;$/;"	m	struct:_db_list
+db01	./include/main.h	/^	DB_INFO db01;$/;"	m	struct:_process_control_block
+db02	./include/db.h	/^	DB_INFO* db02;$/;"	m	struct:_db_list
+db02	./include/main.h	/^	DB_INFO db02;$/;"	m	struct:_process_control_block
+dbname	./include/db.h	/^	char dbname[MAX_DBNAME];$/;"	m	struct:_db_info
+debug_level	./include/main.h	/^	int debug_level;$/;"	m	struct:_config
+ec_adjust_debug	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void ec_adjust_debug( int Mask, int flag)$/;"	f
+ec_adjust_debug	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void ec_adjust_debug( int Mask, int flag)$/;"	f
+ec_adjust_debug	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void ec_adjust_debug( int Mask, int flag)$/;"	f
+ec_adjust_debug	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void ec_adjust_debug( int Mask, int flag)$/;"	f
+ec_adjust_debug	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void ec_adjust_debug( int Mask, int flag)$/;"	f
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	115;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	102;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	114;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	115;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	115;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	102;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	114;"	d
+ec_debug_log	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	115;"	d
+ec_deinit_log	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void ec_deinit_log() $/;"	f
+ec_deinit_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void ec_deinit_log() $/;"	f
+ec_deinit_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void ec_deinit_log() $/;"	f
+ec_deinit_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void ec_deinit_log() $/;"	f
+ec_deinit_log	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void ec_deinit_log() $/;"	f
+ec_del_profile_key	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_del_profile_key (int idx, char *section, char *key, int bCancel)$/;"	f
+ec_digits2nibble	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_digits2nibble(char *nib_buf, int niblen, char *dig_buf, int len)$/;"	f
+ec_dump_bytes	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void ec_dump_bytes( char *p, int len, int base )$/;"	f
+ec_dump_bytes	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void ec_dump_bytes( char *p, int len, int base )$/;"	f
+ec_dump_bytes	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void ec_dump_bytes( char *p, int len, int base )$/;"	f
+ec_dump_bytes	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void ec_dump_bytes( char *p, int len, int base )$/;"	f
+ec_dump_bytes	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void ec_dump_bytes( char *p, int len, int base )$/;"	f
+ec_end_all_inifiles	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^void ec_end_all_inifiles ()$/;"	f
+ec_end_inifile	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^void ec_end_inifile (int idx)$/;"	f
+ec_get_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^int ec_get_loglevel()$/;"	f
+ec_get_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^int ec_get_loglevel()$/;"	f
+ec_get_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^int ec_get_loglevel()$/;"	f
+ec_get_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^int ec_get_loglevel()$/;"	f
+ec_get_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^int ec_get_loglevel()$/;"	f
+ec_get_profile_int	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_get_profile_int (int idx, char *section, char *key, int def)$/;"	f
+ec_get_profile_keylist	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_get_profile_keylist (int idx, char *section, char *def, char *dest, int* destsize)$/;"	f
+ec_get_profile_keyvaluelist	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_get_profile_keyvaluelist (int idx, char *section, char *def, char *dest, int* destsize)$/;"	f
+ec_get_profile_sectionlist	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_get_profile_sectionlist (int idx, char *def, char *dest, int* destsize)$/;"	f
+ec_get_profile_string	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_get_profile_string (int idx, char *section, char *key, char *def, char *dest)$/;"	f
+ec_init_inifile	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_init_inifile (const char *name)$/;"	f
+ec_init_log	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^int ec_init_log( const char *pcLogFileName$/;"	f
+ec_init_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^int ec_init_log( const char *pcLogFileName$/;"	f
+ec_init_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^int ec_init_log( const char *pcLogFileName$/;"	f
+ec_init_log	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^int ec_init_log( const char *pcLogFileName$/;"	f
+ec_init_log	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^int ec_init_log( const char *pcLogFileName$/;"	f
+ec_loglevel2str	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void ec_loglevel2str(int iloglovel, char *strLogLevel) $/;"	f
+ec_loglevel2str	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void ec_loglevel2str(int iloglovel, char *strLogLevel) $/;"	f
+ec_loglevel2str	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void ec_loglevel2str(int iloglovel, char *strLogLevel) $/;"	f
+ec_loglevel2str	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void ec_loglevel2str(int iloglovel, char *strLogLevel) $/;"	f
+ec_loglevel2str	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void ec_loglevel2str(int iloglovel, char *strLogLevel) $/;"	f
+ec_ltrim	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_ltrim(char *pbuf)$/;"	f
+ec_make_fmttime	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_make_fmttime(time_t base, char *fmt, char *pbuf)$/;"	f
+ec_make_time	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^time_t ec_make_time(char *timestr, char *fmt)$/;"	f
+ec_msleep	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^void ec_msleep(time_t msec)$/;"	f
+ec_nibble2digits	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_nibble2digits(char *dig_buf, char *nib_buf, int len)$/;"	f
+ec_plus_fmttime	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_plus_fmttime(char *baseptr, char *basefmt, time_t sec, char *outfmt, char *pbuf)$/;"	f
+ec_rtrim	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_rtrim(char *pbuf)$/;"	f
+ec_set_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void ec_set_loglevel( int newLogLevel ) $/;"	f
+ec_set_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void ec_set_loglevel( int newLogLevel ) $/;"	f
+ec_set_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void ec_set_loglevel( int newLogLevel ) $/;"	f
+ec_set_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void ec_set_loglevel( int newLogLevel ) $/;"	f
+ec_set_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void ec_set_loglevel( int newLogLevel ) $/;"	f
+ec_set_profile_int	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_set_profile_int (int idx, char *section, char *key, int value)$/;"	f
+ec_set_profile_keyvaluelist	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_set_profile_keyvaluelist (int idx, char *section, int keycount, char *keylist)$/;"	f
+ec_set_profile_string	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^int ec_set_profile_string (int idx, char *section, char *key, char *value)$/;"	f
+ec_shm_attach	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.c	/^int ec_shm_attach(key_t key, int size, int* shmid, char** segptr)$/;"	f
+ec_shm_changemode	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.c	/^int ec_shm_changemode(int shmid, char *mode) $/;"	f
+ec_shm_create	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.c	/^int ec_shm_create(key_t key, int size, int* shmid, char** segptr)$/;"	f
+ec_shm_detach	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.c	/^int ec_shm_detach(char* segptr)$/;"	f
+ec_shm_remove	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.c	/^int ec_shm_remove(int shmid)$/;"	f
+ec_strlist2loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^int ec_strlist2loglevel(const char *str, int *pLevel ) $/;"	f
+ec_strlist2loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^int ec_strlist2loglevel(const char *str, int *pLevel ) $/;"	f
+ec_strlist2loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^int ec_strlist2loglevel(const char *str, int *pLevel ) $/;"	f
+ec_strlist2loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^int ec_strlist2loglevel(const char *str, int *pLevel ) $/;"	f
+ec_strlist2loglevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^int ec_strlist2loglevel(const char *str, int *pLevel ) $/;"	f
+ec_strlower	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_strlower(char *pbuf)$/;"	f
+ec_strupper	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_strupper(char *pbuf)$/;"	f
+ec_trim	/home/khchoi/library/libeluonutil-R2.0.0/elnutil.c	/^char * ec_trim(char *pbuf)$/;"	f
+ec_unset_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^void ec_unset_loglevel( int newLogLevel ) $/;"	f
+ec_unset_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void ec_unset_loglevel( int newLogLevel ) $/;"	f
+ec_unset_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void ec_unset_loglevel( int newLogLevel ) $/;"	f
+ec_unset_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void ec_unset_loglevel( int newLogLevel ) $/;"	f
+ec_unset_loglevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void ec_unset_loglevel( int newLogLevel ) $/;"	f
+elapsed	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long elapsed;$/;"	m	struct:_stmr
+elapsed	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long elapsed;$/;"	m	struct:_stmr
+fi	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static FILEINFO fi[MAXFILES];$/;"	v	file:
+filename	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^	char *filename;$/;"	m	struct:__anon1	file:
+fire	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long fire;$/;"	m	struct:_stmr
+fire	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long fire;$/;"	m	struct:_stmr
+flag	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	int flag;$/;"	m	struct:_stmr
+flag	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	int flag;$/;"	m	struct:_stmr
+fp	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	FILE 			*fp ;			\/\/ file pointer of LogFile$/;"	m	struct:_LOGHANDLE
+fp	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^	FILE *fp;$/;"	m	struct:__anon1	file:
+gDebugKeyNames	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^DebugKeys gDebugKeyNames[]=$/;"	v
+gDebugKeyNames	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^DebugKeys gDebugKeyNames[]=$/;"	v
+gDebugKeyNames	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^DebugKeys gDebugKeyNames[]=$/;"	v
+gDebugKeyNames	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^DebugKeys gDebugKeyNames[]=$/;"	v
+gDebugKeyNames	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^DebugKeys gDebugKeyNames[]=$/;"	v
+g_LastSec	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^long 		g_LastSec;$/;"	v
+g_LastSec	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^long 		g_LastSec;$/;"	v
+g_LastSec	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^long 		g_LastSec;$/;"	v
+g_Queue	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^itq_t		g_Queue;$/;"	v
+g_Queue	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^itq_t		g_Queue;$/;"	v
+g_Queue	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^itq_t		g_Queue;$/;"	v
+g_debug_mutex	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^pthread_mutex_t g_debug_mutex;$/;"	v
+g_debug_mutex	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^pthread_mutex_t g_debug_mutex;$/;"	v
+g_jcb	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^static JCB g_jcb[MAX_JDR_CNT];$/;"	v	file:
+g_jcb_cnt	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^static int g_jcb_cnt;$/;"	v	file:
+g_loghandle	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^LOG_HANDLE g_loghandle;$/;"	v
+g_loghandle	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^LOG_HANDLE g_loghandle;$/;"	v
+g_loghandle	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^LOG_HANDLE g_loghandle;$/;"	v
+g_loghandle	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^LOG_HANDLE g_loghandle;$/;"	v
+g_loghandle	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^LOG_HANDLE g_loghandle;$/;"	v
+g_uAbandonedJobCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^long		g_uAbandonedJobCnt;$/;"	v
+g_uAbandonedJobCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^long		g_uAbandonedJobCnt;$/;"	v
+g_uAbandonedJobCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^long		g_uAbandonedJobCnt;$/;"	v
+get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^	uint64_t 			get_cnt;$/;"	m	struct:it_queue2
+get_filename	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static char *get_filename (int idx)$/;"	f	file:
+gpcb	./include/main.h	/^PCB gpcb[1];$/;"	v
+gseq	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^int		gseq = 1;$/;"	v
+head	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	struct list_head head;$/;"	m	struct:_list_handle	typeref:struct:_list_handle::list_head
+head	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	struct list_head head;$/;"	m	struct:_stmr_handle	typeref:struct:_stmr_handle::list_head
+head	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^	struct list_head head;$/;"	m	struct:_list_handle	typeref:struct:_list_handle::list_head
+head	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	struct list_head head;$/;"	m	struct:_stmr_handle	typeref:struct:_stmr_handle::list_head
+header	./include/recv.h	/^    Header header;$/;"	m	struct:_packet
+host	./include/db.h	/^	char host[MAX_HOST];$/;"	m	struct:_db_info
+iLevelIndex	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int			iLevelIndex;$/;"	m	struct:_LOGINFO
+iLevelIndex	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int			iLevelIndex;$/;"	m	struct:_LOGINFO
+iLevelIndex	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int			iLevelIndex;$/;"	m	struct:_LOGINFO
+iLevelIndex	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int			iLevelIndex;$/;"	m	struct:_LOGINFO
+iLevelIndex	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int			iLevelIndex;$/;"	m	struct:_LOGINFO
+iLevelIndex	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int			iLevelIndex;$/;"	m	struct:_LOGINFO
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				iLogCnt ;		\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogFileSize	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				iLogFileSize ;	\/\/ Log File size$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxCount	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				iLogMaxCount ;	\/\/ Max LogCount$/;"	m	struct:_LOGHANDLE
+iLogMaxQueue	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				iLogMaxQueue ; 	\/\/ Maximum Queuing Size$/;"	m	struct:_LOGHANDLE
+iLogMaxQueue	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				iLogMaxQueue ; 	\/\/ Maximum Queuing Size$/;"	m	struct:_LOGHANDLE
+iLogMaxQueue	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				iLogMaxQueue ; 	\/\/ Maximum Queuing Size$/;"	m	struct:_LOGHANDLE
+iLogMaxQueue	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				iLogMaxQueue ; 	\/\/ Maximum Queuing Size$/;"	m	struct:_LOGHANDLE
+iLogMaxQueue	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				iLogMaxQueue ; 	\/\/ Maximum Queuing Size$/;"	m	struct:_LOGHANDLE
+iLogMaxQueue	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				iLogMaxQueue ; 	\/\/ Maximum Queuing Size$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iLogTodayCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				iLogTodayCnt ;	\/\/ Log Count$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+iSysAlertCnt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				iSysAlertCnt ; 	\/\/ count syslog call$/;"	m	struct:_LOGHANDLE
+idx	./include/db.h	/^	int idx;$/;"	m	struct:_db_info
+is_comment_line	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static int is_comment_line (char *line)$/;"	f	file:
+is_identical_file	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static int is_identical_file (const char *file1, const char *file2)$/;"	f	file:
+is_valid_idx	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static int is_valid_idx (int idx)$/;"	f	file:
+it_queue	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^typedef struct it_queue {$/;"	s
+it_queue	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^typedef struct it_queue {$/;"	s
+it_queue2	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^typedef struct it_queue2 {$/;"	s
+it_queue2_info_t	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^} it_queue2_info_t;$/;"	t	typeref:struct:it_queue2
+it_queue_info_t	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^} it_queue_info_t;$/;"	t	typeref:struct:it_queue
+it_queue_info_t	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^} it_queue_info_t;$/;"	t	typeref:struct:it_queue
+itq2_msg	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^typedef struct itq2_msg {$/;"	s
+itq2_msg_t	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^} itq2_msg_t;$/;"	t	typeref:struct:itq2_msg
+itq2_t	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^typedef it_queue2_info_t *itq2_t;$/;"	t
+itq_H_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	pthread_mutex_t		itq_H_lock;$/;"	m	struct:it_queue
+itq_H_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    pthread_mutex_t     itq_H_lock;$/;"	m	struct:it_queue2
+itq_H_lock	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	pthread_mutex_t		itq_H_lock;$/;"	m	struct:it_queue
+itq_T_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	pthread_mutex_t		itq_T_lock;$/;"	m	struct:it_queue
+itq_T_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    pthread_mutex_t     itq_T_lock;$/;"	m	struct:it_queue2
+itq_T_lock	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	pthread_mutex_t		itq_T_lock;$/;"	m	struct:it_queue
+itq_create	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^itq_t itq_create()$/;"	f
+itq_empty	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	int					itq_empty;	$/;"	m	struct:it_queue
+itq_empty	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    uint32_t            itq_empty;$/;"	m	struct:it_queue2
+itq_empty	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	int					itq_empty;	$/;"	m	struct:it_queue
+itq_get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	58;"	d
+itq_get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	58;"	d
+itq_get_msg	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^int itq_get_msg(itq_t q, void *buf, int len)$/;"	f
+itq_get_msg_to	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^int itq_get_msg_to(itq_t q, void *buf, int len)$/;"	f
+itq_head	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	itq_msg_t			*itq_head;$/;"	m	struct:it_queue
+itq_head	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    itq2_msg_t           *itq_head;$/;"	m	struct:it_queue2
+itq_head	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	itq_msg_t			*itq_head;$/;"	m	struct:it_queue
+itq_icnt	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	unsigned long		itq_icnt;$/;"	m	struct:it_queue
+itq_icnt	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	unsigned long		itq_icnt;$/;"	m	struct:it_queue
+itq_msg	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^typedef struct itq_msg {$/;"	s
+itq_msg	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^typedef struct itq_msg {$/;"	s
+itq_msg_t	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^} itq_msg_t;$/;"	t	typeref:struct:itq_msg
+itq_msg_t	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^} itq_msg_t;$/;"	t	typeref:struct:itq_msg
+itq_ocnt	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	unsigned long		itq_ocnt;$/;"	m	struct:it_queue
+itq_ocnt	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	unsigned long		itq_ocnt;$/;"	m	struct:it_queue
+itq_put_msg	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^int itq_put_msg(itq_t q, void *msg, int len)$/;"	f
+itq_sleep	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^static void itq_sleep(long timeout)$/;"	f	file:
+itq_t	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^typedef it_queue_info_t	*itq_t;$/;"	t
+itq_t	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^typedef it_queue_info_t	*itq_t;$/;"	t
+itq_tail	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	itq_msg_t			*itq_tail;$/;"	m	struct:it_queue
+itq_tail	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    itq2_msg_t           *itq_tail;$/;"	m	struct:it_queue2
+itq_tail	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	itq_msg_t			*itq_tail;$/;"	m	struct:it_queue
+itq_wait	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	pthread_cond_t		itq_wait;$/;"	m	struct:it_queue
+itq_wait	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^	sem_t 				itq_wait;$/;"	m	struct:it_queue2
+itq_wait	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	pthread_cond_t		itq_wait;$/;"	m	struct:it_queue
+jdr_debug_mutex	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^pthread_mutex_t jdr_debug_mutex[MAX_JDR_CNT];$/;"	v
+jdr_extern	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_extern[32];$/;"	m	struct:_jdr_control_block
+jdr_extern	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_extern[32];$/;"	m	struct:_jdr_control_block
+jdr_file	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_file[256];$/;"	m	struct:_jdr_control_block
+jdr_file	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_file[256];$/;"	m	struct:_jdr_control_block
+jdr_idx	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    int    jdr_idx; $/;"	m	struct:_jdr_control_block
+jdr_idx	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    int    jdr_idx; $/;"	m	struct:_jdr_control_block
+jdr_move_dir	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_move_dir[256];$/;"	m	struct:_jdr_control_block
+jdr_move_dir	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_move_dir[256];$/;"	m	struct:_jdr_control_block
+jdr_move_file	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_move_file[256]; $/;"	m	struct:_jdr_control_block
+jdr_move_file	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^int jdr_move_file(char *src_file, char *dst_file)$/;"	f
+jdr_move_file	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_move_file[256]; $/;"	m	struct:_jdr_control_block
+jdr_period	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    int    jdr_period; $/;"	m	struct:_jdr_control_block
+jdr_period	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    int    jdr_period; $/;"	m	struct:_jdr_control_block
+jdr_write_dir	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_write_dir[256];$/;"	m	struct:_jdr_control_block
+jdr_write_dir	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_write_dir[256];$/;"	m	struct:_jdr_control_block
+jdr_write_file	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_write_file[256];$/;"	m	struct:_jdr_control_block
+jdr_write_file	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_write_file[256];$/;"	m	struct:_jdr_control_block
+jiffies_base	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long long jiffies_base;$/;"	m	struct:_stmr_handle
+jiffies_base	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long long jiffies_base;$/;"	m	struct:_stmr_handle
+jiffies_curr	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long long jiffies_curr;$/;"	m	struct:_stmr_handle
+jiffies_curr	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long long jiffies_curr;$/;"	m	struct:_stmr_handle
+jiffies_prev	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long long jiffies_prev;$/;"	m	struct:_stmr_handle
+jiffies_prev	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long long jiffies_prev;$/;"	m	struct:_stmr_handle
+len	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	int					len;$/;"	m	struct:itq_msg
+len	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    int                 len;$/;"	m	struct:itq2_msg
+len	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	int					len;$/;"	m	struct:itq_msg
+length	./include/recv.h	/^    int length;$/;"	m	struct:_header
+link	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	struct list_head link;$/;"	m	struct:_stmr	typeref:struct:_stmr::list_head
+link	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	struct list_head link;$/;"	m	struct:_stmr	typeref:struct:_stmr::list_head
+list_add_elem	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	220;"	d
+list_add_elem	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	220;"	d
+list_add_elem_nolock	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	234;"	d
+list_add_elem_nolock	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	234;"	d
+list_add_tail	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void list_add_tail(struct list_head *elem, struct list_head *head)$/;"	f
+list_add_tail	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void list_add_tail(struct list_head *elem, struct list_head *head)$/;"	f
+list_del	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void list_del(struct list_head *entry)$/;"	f
+list_del	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void list_del(struct list_head *entry)$/;"	f
+list_del_elem	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	227;"	d
+list_del_elem	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	227;"	d
+list_del_elem_nolock	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	235;"	d
+list_del_elem_nolock	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	235;"	d
+list_del_init	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void list_del_init(struct list_head *entry)$/;"	f
+list_del_init	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void list_del_init(struct list_head *entry)$/;"	f
+list_empty	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ int list_empty(struct list_head *head)$/;"	f
+list_empty	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ int list_empty(struct list_head *head)$/;"	f
+list_entry	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	144;"	d
+list_entry	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	144;"	d
+list_for_each	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	152;"	d
+list_for_each	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	152;"	d
+list_for_each_safe	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	162;"	d
+list_for_each_safe	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	162;"	d
+list_free_handle	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	217;"	d
+list_free_handle	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	217;"	d
+list_get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	237;"	d
+list_get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	237;"	d
+list_get_elem	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ struct list_head * list_get_elem(list_handle_t *h)$/;"	f
+list_get_elem	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ struct list_head * list_get_elem(list_handle_t *h)$/;"	f
+list_get_head	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	236;"	d
+list_get_head	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	236;"	d
+list_get_name	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	238;"	d
+list_get_name	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	238;"	d
+list_handle_t	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^} list_handle_t;$/;"	t	typeref:struct:_list_handle
+list_handle_t	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^} list_handle_t;$/;"	t	typeref:struct:_list_handle
+list_head	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^struct list_head {$/;"	s
+list_head	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^struct list_head {$/;"	s
+list_init_handle	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ list_handle_t * list_init_handle(char *name)$/;"	f
+list_init_handle	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ list_handle_t * list_init_handle(char *name)$/;"	f
+list_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	218;"	d
+list_lock	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	218;"	d
+list_splice	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^static __inline__ void list_splice(struct list_head *list, struct list_head *head)$/;"	f
+list_splice	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^static __inline__ void list_splice(struct list_head *list, struct list_head *head)$/;"	f
+list_unlock	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	219;"	d
+list_unlock	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	219;"	d
+lock	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	pthread_mutex_t lock;$/;"	m	struct:_list_handle
+lock	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	pthread_mutex_t lock;$/;"	m	struct:_stmr_handle
+lock	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^	pthread_mutex_t lock;$/;"	m	struct:_list_handle
+lock	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	pthread_mutex_t lock;$/;"	m	struct:_stmr_handle
+log_file_name	./include/main.h	/^	char log_file_name[MAX_FILE_NAME];$/;"	m	struct:_config
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_fntype	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				log_fntype ;	\/\/ Log FileName Type$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_level	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int				log_level ; 	\/\/ Log Level$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+log_lock	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	pthread_mutex_t log_lock ;$/;"	m	struct:_LOGHANDLE
+main	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^main()$/;"	f
+max_file_size	./include/main.h	/^	int max_file_size;$/;"	m	struct:_config
+max_log_count	./include/main.h	/^	int max_log_count;$/;"	m	struct:_config
+max_queue_count	./include/main.h	/^	int max_queue_count;$/;"	m	struct:_config
+name	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	char name[64];$/;"	m	struct:_list_handle
+name	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^	char name[64];$/;"	m	struct:_list_handle
+next	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	struct itq_msg		*next;$/;"	m	struct:itq_msg	typeref:struct:itq_msg::itq_msg
+next	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    struct itq2_msg      *next;$/;"	m	struct:itq2_msg	typeref:struct:itq2_msg::itq2_msg
+next	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
+next	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	struct itq_msg		*next;$/;"	m	struct:itq_msg	typeref:struct:itq_msg::itq_msg
+next	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::list_head
+password	./include/db.h	/^	char password[MAX_PASSWORD];$/;"	m	struct:_db_info
+port	./include/db.h	/^	int port;$/;"	m	struct:_db_info
+prev	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::
+prev	/home/khchoi/library/libeluonutil-R2.0.0/simple_list.h	/^	struct list_head *next, *prev;$/;"	m	struct:list_head	typeref:struct:list_head::
+provider	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^void *provider(void *data)$/;"	f
+pthread_id	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	int			pthread_id;$/;"	m	struct:_LOGINFO
+pthread_id	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	int			pthread_id;$/;"	m	struct:_LOGINFO
+pthread_id	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	int			pthread_id;$/;"	m	struct:_LOGINFO
+pthread_id	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	int			pthread_id;$/;"	m	struct:_LOGINFO
+pthread_id	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	int			pthread_id;$/;"	m	struct:_LOGINFO
+pthread_id	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	int			pthread_id;$/;"	m	struct:_LOGINFO
+put_cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^	uint64_t 			put_cnt;$/;"	m	struct:it_queue2
+quark_cache	/home/khchoi/library/libeluonutil-R2.0.0/include/itq.h	/^	struct it_queue		*quark_cache;$/;"	m	struct:it_queue	typeref:struct:it_queue::it_queue
+quark_cache	/home/khchoi/library/libeluonutil-R2.0.0/include/itq2.h	/^    struct it_queue2     *quark_cache;$/;"	m	struct:it_queue2	typeref:struct:it_queue2::it_queue2
+quark_cache	/home/khchoi/library/libeluonutil-R2.0.0/itq.h	/^	struct it_queue		*quark_cache;$/;"	m	struct:it_queue	typeref:struct:it_queue::it_queue
+queue	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^itq_t	queue = NULL;$/;"	v
+rcsid	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^static char rcsid[]= "$Id: JDRLOG.C 1.1 1997\/10\/15 03:25:28 weon Exp $";$/;"	v	file:
+resol	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long resol; \/\/ timer resolution$/;"	m	struct:_stmr_handle
+resol	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long resol; \/\/ timer resolution$/;"	m	struct:_stmr_handle
+status	./include/db.h	/^	int status;$/;"	m	struct:_db_info
+stmr_cb_on_free_t	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^typedef void (*stmr_cb_on_free_t)(void *data);$/;"	t
+stmr_cb_on_free_t	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^typedef void (*stmr_cb_on_free_t)(void *data);$/;"	t
+stmr_cb_on_timer_t	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^typedef void (*stmr_cb_on_timer_t)(stmr_handle_t *h, void *data);$/;"	t
+stmr_cb_on_timer_t	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^typedef void (*stmr_cb_on_timer_t)(stmr_handle_t *h, void *data);$/;"	t
+stmr_del_timer	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c	/^void stmr_del_timer(stmr_handle_t *h, stmr_t *tmr)$/;"	f
+stmr_get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	40;"	d
+stmr_get_cnt	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	40;"	d
+stmr_handle_t	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^typedef struct _stmr_handle stmr_handle_t;$/;"	t	typeref:struct:_stmr_handle
+stmr_handle_t	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^typedef struct _stmr_handle stmr_handle_t;$/;"	t	typeref:struct:_stmr_handle
+stmr_init_handle	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c	/^stmr_handle_t * stmr_init_handle(long resol)$/;"	f
+stmr_init_timer	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c	/^void stmr_init_timer(stmr_t *tmr)$/;"	f
+stmr_run_timer	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c	/^static void * stmr_run_timer(void *arg)$/;"	f	file:
+stmr_set_timer	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c	/^void stmr_set_timer(stmr_handle_t *h, stmr_t *tmr, long fire, stmr_cb_on_timer_t on_timer, void *data)$/;"	f
+stmr_sleep	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c	/^static void stmr_sleep(long msec)$/;"	f	file:
+stmr_t	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^typedef struct _stmr stmr_t;$/;"	t	typeref:struct:_stmr
+stmr_t	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^typedef struct _stmr stmr_t;$/;"	t	typeref:struct:_stmr
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogDir	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char			strLogDir[256];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileBaseTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char			strLogFileBaseTitle[64];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileExt	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char			strLogFileExt[12];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileName	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char			strLogFileName[256];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140109.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+strLogFileTitle	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char			strLogFileTitle[128];$/;"	m	struct:_LOGHANDLE
+szOutputStr	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char        szOutputStr[MAX_LOG_LENGTH];$/;"	m	struct:_LOGINFO
+szOutputStr	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char        szOutputStr[MAX_LOG_LENGTH];$/;"	m	struct:_LOGINFO
+szOutputStr	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char        *szOutputStr;$/;"	m	struct:_LOGINFO
+szOutputStr	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char        szOutputStr[MAX_LOG_LENGTH];$/;"	m	struct:_LOGINFO
+szOutputStr	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char        szOutputStr[MAX_LOG_LENGTH];$/;"	m	struct:_LOGINFO
+szOutputStr	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char        *szOutputStr;$/;"	m	struct:_LOGINFO
+szTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	/^	char        szTraceTime[64];$/;"	m	struct:_LOGINFO
+szTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	/^	char        szTraceTime[64];$/;"	m	struct:_LOGINFO
+szTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	/^	char        szTraceTime[64];$/;"	m	struct:_LOGINFO
+szTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	/^	char        szTraceTime[64];$/;"	m	struct:_LOGINFO
+szTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	/^	char        szTraceTime[64];$/;"	m	struct:_LOGINFO
+szTraceTime	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	/^	char        szTraceTime[64];$/;"	m	struct:_LOGINFO
+t_DwLogWrite	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^pthread_t t_DwLogWrite;$/;"	v
+t_DwLogWrite	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^pthread_t t_DwLogWrite;$/;"	v
+t_DwLogWrite	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^pthread_t t_DwLogWrite;$/;"	v
+t_JDRMoveLog	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^pthread_t t_JDRMoveLog[MAX_JDR_CNT];$/;"	v
+trim_string	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static char *trim_string (char *pbuf)$/;"	f	file:
+type	./include/recv.h	/^    int type;$/;"	m	struct:_header
+username	./include/db.h	/^	char username[MAX_USERNAME];$/;"	m	struct:_db_info
+version	/home/khchoi/library/libeluonutil-R2.0.0/debug.c	/^char *version = "DebugLog Version 1.3	2004.11.16 released." ;$/;"	v
+version	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^char *version = "DebugLog Version 1.3	2004.11.16 released." ;$/;"	v
+version	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^char *version = "DebugLog Version 1.3	2004.11.16 released." ;$/;"	v
+version	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^char *version = "DebugLog Version 1.3	2004.11.16 released." ;$/;"	v
+version	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^char *version = "DebugLog Version 1.3	2004.11.16 released." ;$/;"	v
