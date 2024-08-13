@@ -61,6 +61,8 @@ void get_select_all(int);
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
 void get_repcheck_status(int);
+void get_replication_on(int fd);
+void get_replication_off(int fd);
 
 //function recv.c
 int make_connection();

@@ -10,8 +10,15 @@ void type_categorizer(int type, int fd){
 	switch(type){
 		case SQL_SELECT:
 		get_select_all(fd);
+        break;
         case REP_CHECK:
         get_repcheck_status(fd);
+		break;
+        case REP_ON:
+        get_replication_on(fd);
+		break;
+        case REP_OFF:
+        get_replication_off(fd);
 		break;
 	}
 }

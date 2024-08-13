@@ -4,6 +4,8 @@
 
 #define SQL_SELECT 101
 #define REP_CHECK 201
+#define REP_ON 202
+#define REP_OFF 203
 #define EVT_WARNING 400
 #define EVT_ERROR 401
 
