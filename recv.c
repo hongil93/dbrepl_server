@@ -6,8 +6,26 @@
 
 #define ec_log(x) DwDebugLog x;
 
-void type_categorizer(int type, int fd, char *buf){
-	switch(type){
+void type_categorizer(int fd, Packet packet){
+	char* send_buf;
+	time_t now = time(NULL);
+	char datetime[30];
+	strftime(datetime, sizeof(datetime), "[%Y-%m-%d]%H:%M:%S", localtime(&now));
+
+	switch(packet.header.type){
+		case SQL_SELECT:
+			JDRLog((REQUEST, "%s,SQL_SELECT\n", datetime));
+		    send_buf = get_select_all();
+			if (send_buf != NULL){
+				send_message(fd, SQL_SELECT, send_buf);
+				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time_now()));
+				free(send_buf);
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time_now()));
+				break;
+			}
         case REP_CHECK:
         get_repcheck_status(fd);
 		break;
@@ -17,12 +35,40 @@ void type_categorizer(int type, int fd, char *buf){
         case REP_OFF:
         get_replication_off(fd);
 		break;
-        case SQL_SELECT:
-		get_sql_select_all(fd, buf);
-        break;
-        case SQL_INSERT:
+		case SQL_INSERT:
         get_sql_insert_table(fd, buf);
-        break;
+        case SQL_COMPARE:
+			JDRLog((REQUEST, "%s,DB_COMPARE\n", datetime));
+            get_db_data(2);
+			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
+				printf("cannot create file_check thread\n");
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", datetime));
+				break;
+			}else{
+				printf("check_file thread created\n");
+				if(pthread_join(check_file_t, NULL)!=0){
+					printf("join_error\n");
+				}
+			}
+
+            send_buf = compare_table(atoi(packet.buf));
+			if (send_buf != NULL){
+				send_message(fd, SQL_COMPARE, send_buf);
+				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", datetime, packet.buf));
+				free(send_buf);
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time_now()));
+				break;
+			}
+
+
+            break;
+			
+		default:
+			printf("unknown Type\n");
+			break;
 	}
 }
 
@@ -75,6 +121,7 @@ void recv_message(int clfd) {
         } else if (recv_len == 0) {
             printf("Client disconnected.\n");
 			ec_log((DEB_DEBUG, ">>>[TCP] Client disconnected.\n", NULL));
+			remove_client(clfd);
             close(clfd);
             return;
         }
@@ -98,7 +145,6 @@ void recv_message(int clfd) {
             }
         } else if (recv_len == 0) {
             printf("Client disconnected.\n");
-			remove_client(clfd);
             close(clfd);
             return;
         }

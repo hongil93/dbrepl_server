@@ -10,6 +10,11 @@
 #define EVT_WARNING 400
 #define EVT_ERROR 401
 
+#define SQL_RESTORE 500
+#define SQL_RESTORE2 501
+
+
+
 typedef struct _header{
     int length;
     int type;
