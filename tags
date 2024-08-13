@@ -203,8 +203,8 @@ DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
-EVT_ERROR	./include/recv.h	10;"	d
-EVT_WARNING	./include/recv.h	9;"	d
+EVT_ERROR	./include/recv.h	11;"	d
+EVT_WARNING	./include/recv.h	10;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	23;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	23;"	d
 E_FILEREAD	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	24;"	d
@@ -460,14 +460,15 @@ PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^} DebugKe
 PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
 PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
 Packet	./include/recv.h	/^} Packet;$/;"	t	typeref:struct:_packet
-REP_CHECK	./include/recv.h	6;"	d
-REP_OFF	./include/recv.h	8;"	d
-REP_ON	./include/recv.h	7;"	d
+REP_CHECK	./include/recv.h	7;"	d
+REP_OFF	./include/recv.h	9;"	d
+REP_ON	./include/recv.h	8;"	d
 SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	8;"	d
 SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	8;"	d
 SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	7;"	d
 SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	7;"	d
 SONAME	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SONAME=$(LIBBASE).$(MAJOR)$/;"	m
+SQL_INSERT	./include/recv.h	6;"	d
 SQL_SELECT	./include/recv.h	5;"	d
 SRCS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SRCS= debug.c inifile.c elnutil.c elnshm.c itq.c simple_timer.c jdrlog.c$/;"	m
 STDC_HEADERS	/home/khchoi/library/libeluonutil-R2.0.0/config.h	122;"	d

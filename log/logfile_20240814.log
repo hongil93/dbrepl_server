@@ -1,0 +1,345 @@
+00:31:40 12284.1172863040> DEBUG : >>>[INIT] success log INIT
+00:31:40 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:31:45 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:31:47 12284.1172863040> DEBUG : >>>[TCP] Client connected.
+00:31:50 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:31:56 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:01 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:06 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:11 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:16 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:21 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:26 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:31 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:36 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:41 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:46 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:49 12284.1172863040> DEBUG : >>>[TCP] Received Message Type: 102, Length: 45, Msg: INSERT INTO USER_TB VALUE ('5', 'kwanghyeok')00:32:51 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:32:56 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:01 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:06 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:11 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:16 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:22 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:27 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:32 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:37 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:42 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:47 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:52 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:33:57 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:02 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:07 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:12 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:18 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:23 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:28 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:33 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:38 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:43 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:48 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:53 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:34:58 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:04 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:09 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:14 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:19 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:24 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:29 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:34 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:39 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:44 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:49 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:54 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:35:59 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:04 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:09 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:15 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:20 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:25 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:30 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:35 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:40 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:45 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:50 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:36:55 12284.1113630464> DEBUG : >>>[DB] db_check_success
+00:50:28 14850.0707639360> DEBUG : >>>[INIT] success log INIT
+00:50:28 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:50:33 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:50:36 14850.0707639360> DEBUG : >>>[TCP] Client connected.
+00:50:38 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:50:44 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:50:49 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:50:54 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:50:59 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:51:04 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:51:06 14850.0707639360> DEBUG : >>>[TCP] Received Message Type: 102, Length: 45, Msg: INSERT INTO USER_TB VALUE ('5', 'kwanghyeok')00:51:06 14850.0707639360> ERROR : >>>[db] mysql_query_error
+00:51:09 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:51:14 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:51:19 14850.0648406784> DEBUG : >>>[DB] db_check_success
+00:58:00 15733.3907401792> DEBUG : >>>[INIT] success log INIT
+00:58:00 15733.3848169216> DEBUG : >>>[DB] db_check_success
+00:58:04 15733.3907401792> DEBUG : >>>[TCP] Client connected.
+00:58:05 15733.3848169216> DEBUG : >>>[DB] db_check_success
+00:58:10 15733.3848169216> DEBUG : >>>[DB] db_check_success
+00:58:16 15733.3848169216> DEBUG : >>>[DB] db_check_success
+00:58:21 15733.3848169216> DEBUG : >>>[DB] db_check_success
+00:58:22 15733.3907401792> DEBUG : >>>[TCP] Received Message Type: 102, Length: 45, Msg: INSERT INTO USER_TB VALUE ('5', 'kwanghyeok')01:17:50 17600.2494347328> DEBUG : >>>[INIT] success log INIT
+01:17:51 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:17:56 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:17:58 17600.2494347328> DEBUG : >>>[TCP] Client connected.
+01:18:01 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:06 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:11 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:16 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:21 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:25 17600.2494347328> DEBUG : >>>[TCP] Received Message Type: 102, Length: 41, Msg: INSERT INTO USER_TB VALUE ('6', 'gerard')01:18:25 17600.2494347328> DEBUG : >>>[db] mysql_send_success
+01:18:26 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:31 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:36 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:41 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:47 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:52 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:18:57 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:02 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:07 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:12 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:12 17600.2494347328> DEBUG : >>>[TCP] Client disconnected.
+01:19:13 17600.2494347328> DEBUG : >>>[TCP] Client connected.
+01:19:18 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:23 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:28 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:30 17600.2494347328> DEBUG : >>>[TCP] Received Message Type: 102, Length: 40, Msg: INSERT INTO USER_TB VALUE ('8', 'dfdfd')01:19:30 17600.2494347328> DEBUG : >>>[db] mysql_send_success
+01:19:33 17600.2494347328> DEBUG : >>>[TCP] Client disconnected.
+01:19:33 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:39 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:44 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:49 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:54 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:19:59 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:04 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:10 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:15 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:21 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:26 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:33 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:38 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:43 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:48 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:53 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:20:59 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:04 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:09 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:14 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:19 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:24 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:29 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:35 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:40 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:45 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:50 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:55 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:21:56 17600.2494347328> DEBUG : >>>[TCP] Client connected.
+01:22:01 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:06 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:11 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:16 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:21 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:22 17600.2494347328> DEBUG : >>>[TCP] Received Message Type: 102, Length: 40, Msg: INSERT INTO USER_TB VALUE ('1', 'merry')01:22:22 17600.2494347328> DEBUG : >>>[db] mysql_send_success
+01:22:26 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:31 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:31 17600.2494347328> DEBUG : >>>[TCP] Client disconnected.
+01:22:36 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:41 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:46 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:51 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:22:56 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:01 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:06 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:12 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:17 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:22 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:27 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:32 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:38 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:43 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:48 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:53 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:23:58 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:24:03 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:24:08 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:24:13 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:24:18 17600.2435114752> DEBUG : >>>[DB] db_check_success
+01:28:37 19781.0891533376> DEBUG : >>>[INIT] success log INIT
+01:28:37 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:28:42 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:28:48 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:28:48 19781.0891533376> DEBUG : >>>[TCP] Client connected.
+01:28:52 19781.0891533376> DEBUG : >>>[TCP] Received Message Type: 102, Length: 44, Msg: INSERT INTO USER_TB VALUE ('2', 'fdjkafdjk')01:28:52 19781.0891533376> DEBUG : >>>[db] mysql_send_success
+01:28:53 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:28:58 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:29:03 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:29:08 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:29:13 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:29:18 19781.0832300800> DEBUG : >>>[DB] db_check_success
+01:45:39 21127.0517969984> DEBUG : >>>[INIT] success log INIT
+01:45:40 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:45:44 21127.0517969984> DEBUG : >>>[TCP] Client connected.
+01:45:45 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:45:50 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:45:52 21127.0517969984> DEBUG : >>>[TCP] Client disconnected.
+01:45:55 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:00 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:05 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:10 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:15 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:20 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:25 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:26 21127.0517969984> DEBUG : >>>[TCP] Client connected.
+01:46:26 21127.0517969984> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:46:26 21127.0517969984> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:46:30 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:35 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:40 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:46 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:51 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:46:56 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:01 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:06 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:11 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:16 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:21 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:26 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:31 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:37 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:42 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:47 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:52 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:47:57 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:03 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:08 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:14 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:19 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:24 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:29 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:34 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:39 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:44 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:49 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:54 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:48:59 21127.0458737408> DEBUG : >>>[DB] db_check_success
+01:49:12 22321.2784303168> DEBUG : >>>[INIT] success log INIT
+01:50:33 22481.2009172032> DEBUG : >>>[INIT] success log INIT
+01:50:33 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:50:38 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:50:40 22481.2009172032> DEBUG : >>>[TCP] Client connected.
+01:50:40 22481.2009172032> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:50:40 22481.2009172032> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:50:43 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:50:49 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:50:54 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:50:59 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:04 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:09 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:14 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:19 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:24 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:29 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:34 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:39 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:51:44 22481.1949939456> DEBUG : >>>[DB] db_check_success
+01:52:47 23084.4216842304> DEBUG : >>>[INIT] success log INIT
+01:52:47 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:52:52 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:52:52 23084.4216842304> DEBUG : >>>[TCP] Client connected.
+01:52:52 23084.4216842304> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:52:52 23084.4216842304> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:52:57 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:02 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:07 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:07 23084.4216842304> DEBUG : >>>[TCP] Client disconnected.
+01:53:11 23084.4216842304> DEBUG : >>>[TCP] Client connected.
+01:53:11 23084.4216842304> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:53:11 23084.4216842304> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:53:13 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:18 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:23 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:28 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:34 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:39 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:44 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:49 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:53:55 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:00 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:05 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:10 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:13 23084.4216842304> DEBUG : >>>[TCP] Client disconnected.
+01:54:15 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:20 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:24 23084.4216842304> DEBUG : >>>[TCP] Client connected.
+01:54:24 23084.4216842304> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:54:25 23084.4216842304> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:54:25 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:31 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:36 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:41 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:54:46 23084.4157609728> DEBUG : >>>[DB] db_check_success
+01:55:02 23859.2794195008> DEBUG : >>>[INIT] success log INIT
+01:56:51 23985.0560076864> DEBUG : >>>[INIT] success log INIT
+01:56:51 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:56:55 23985.0560076864> DEBUG : >>>[TCP] Client connected.
+01:56:55 23985.0560076864> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:56:55 23985.0560076864> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:56:57 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:02 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:07 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:08 23985.0560076864> DEBUG : >>>[TCP] Client disconnected.
+01:57:12 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:13 23985.0560076864> DEBUG : >>>[TCP] Client connected.
+01:57:13 23985.0560076864> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:57:13 23985.0560076864> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:57:18 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:23 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:28 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:33 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:38 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:43 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:48 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:53 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:57:58 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:03 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:08 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:13 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:18 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:23 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:29 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:34 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:39 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:45 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:46 23985.0560076864> DEBUG : >>>[TCP] Client disconnected.
+01:58:51 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:58:54 23985.0560076864> DEBUG : >>>[TCP] Client connected.
+01:58:54 23985.0560076864> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:58:54 23985.0560076864> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:58:57 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:02 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:07 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:13 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:14 23985.0560076864> DEBUG : >>>[TCP] Client disconnected.
+01:59:18 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:19 23985.0560076864> DEBUG : >>>[TCP] Client connected.
+01:59:19 23985.0560076864> DEBUG : >>>[TCP] Received Message Type: 101, Length: 21, Msg: SELECT * FROM USER_TB01:59:19 23985.0560076864> DEBUG : >>>[DB] SQL Request :: select * from USER_TB
+01:59:23 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:28 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:33 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:38 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:43 23985.0560076864> DEBUG : >>>[TCP] Client disconnected.
+01:59:44 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:49 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:54 23985.0500844288> DEBUG : >>>[DB] db_check_success
+01:59:59 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:05 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:11 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:16 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:26 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:31 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:37 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:42 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:49 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:54 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:00:59 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:01:04 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:01:09 23985.0500844288> DEBUG : >>>[DB] db_check_success
+02:01:16 23985.0500844288> DEBUG : >>>[DB] db_check_success

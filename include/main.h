@@ -57,12 +57,13 @@ int read_log_cfg();
 int connecting_db(MYSQL*, MYSQL*);
 void selectall(MYSQL*);
 void* check_db(void*);
-void get_select_all(int);
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
 void get_repcheck_status(int);
 void get_replication_on(int fd);
 void get_replication_off(int fd);
+void get_sql_select_all(int fd, const char *query);
+void get_sql_insert_table(int fd, const char *query);
 
 //function recv.c
 int make_connection();

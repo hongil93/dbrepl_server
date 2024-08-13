@@ -119,7 +119,7 @@ void* check_db(void* args)
 
 }
 
-void get_select_all(int fd)
+void get_sql_select_all(int fd, const char *query)
 {
     Packet packet;
 	MYSQL* conn;
@@ -137,15 +137,16 @@ void get_select_all(int fd)
 
     connect_main_db(active_db, conn);
 
-    if (mysql_query(conn, "select * from USER_TB"))
+    if (mysql_query(conn, query))
     {
         printf("query fail\n");
+        ec_log((DEB_ERROR, ">>>[db] mysql_query_error\n", NULL));
     }
 
     res = mysql_store_result(conn);
 
     int num_fields = mysql_num_fields(res);
-    int buffer_size = 1024; // �ʱ� ���� ũ��
+    int buffer_size = 1024;
     char* result_buffer = (char*)malloc(buffer_size);
     if (result_buffer == NULL)
     {
@@ -258,7 +259,6 @@ void selectall(MYSQL* conn)
             strcat(result_buffer, row[i] ? row[i] : "NULL");
             strcat(result_buffer, " ");
         }
-        strcat(result_buffer, "\n");
     }
 
     printf("Result:\n%s", result_buffer);
@@ -579,6 +579,66 @@ void get_replication_off(int fd)
     // 데이터 전송
     send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
     ec_log((DEB_DEBUG, ">>>[REPLIE] Replication_stop_success\n", NULL));
+    free(result_buffer);
+    mysql_close(conn_ptr);
+}
+/* CRUD mysql query */
+void get_sql_insert_table(int fd, const char *query)
+{
+    Packet packet;
+    MYSQL *conn_ptr = mysql_init(NULL);
+
+    // conn init
+    if (conn_ptr == NULL) {
+        fprintf(stderr, "mysql_init() failed\n");
+        return; 
+    }
+    
+    // conn exception
+    int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn_ptr);
+    if (active_db == 0){
+		printf("all_db_is_down\n");
+        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+        mysql_close(conn_ptr);
+        return;
+	}
+
+    // conn connect
+    connect_main_db(active_db, conn_ptr);
+
+    // buffer exception
+    char* result_buffer = (char*)malloc(BUF_SIZE);
+    if (result_buffer == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        mysql_close(conn_ptr);
+        exit(1);
+    }
+
+    // buffer last string
+    result_buffer[0] = '\0';
+
+    // buffer init
+    memset(result_buffer, 0, BUF_SIZE);
+
+    // accept query
+    if(mysql_query(conn_ptr, query))
+    {
+        printf("query error: %s\n", mysql_error(conn_ptr));
+        ec_log((DEB_ERROR, ">>>[db] mysql_query_error\n", NULL));
+        return;
+    }
+    // restore result
+    strcat(result_buffer, "INSERT SUCCESS" ? "INSERT SUCCESS" : "NULL");
+    // 패킷 준비
+    printf("Result:\n%s\n", result_buffer);
+    packet.header.type = SQL_INSERT; // 패킷 타입 설정
+    strncpy(packet.buf, result_buffer, BUF_SIZE - 1); // 결과 버퍼 복사
+    packet.header.length = strlen(packet.buf); // 패킷 길이 설정
+
+    // 데이터 전송
+    send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
+    ec_log((DEB_DEBUG, ">>>[db] mysql_send_success\n", NULL));
     free(result_buffer);
     mysql_close(conn_ptr);
 }

@@ -6,11 +6,8 @@
 
 #define ec_log(x) DwDebugLog x;
 
-void type_categorizer(int type, int fd){
+void type_categorizer(int type, int fd, char *buf){
 	switch(type){
-		case SQL_SELECT:
-		get_select_all(fd);
-        break;
         case REP_CHECK:
         get_repcheck_status(fd);
 		break;
@@ -20,6 +17,12 @@ void type_categorizer(int type, int fd){
         case REP_OFF:
         get_replication_off(fd);
 		break;
+        case SQL_SELECT:
+		get_sql_select_all(fd, buf);
+        break;
+        case SQL_INSERT:
+        get_sql_insert_table(fd, buf);
+        break;
 	}
 }
 
@@ -108,7 +111,7 @@ void recv_message(int clfd) {
            msg.header.type, msg.header.length, msg.buf);
 	ec_log((DEB_DEBUG, ">>>[TCP] Received Message Type: %d, Length: %d, Msg: %s", msg.header.type, msg.header.length, msg.buf));
 	
-	type_categorizer(msg.header.type, clfd);
+	type_categorizer(msg.header.type, clfd, msg.buf);
 }
 
 int set_non_blocking(int sfd) {
