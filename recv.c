@@ -10,6 +10,8 @@ void type_categorizer(int type, int fd){
 	switch(type){
 		case SQL_SELECT:
 		get_select_all(fd);
+        case REP_CHECK:
+        get_repcheck_status(fd);
 		break;
 	}
 }
@@ -143,7 +145,7 @@ int make_connection()
 	//bind, listen socket
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY;
-	address.sin_port = htons(4444);
+	address.sin_port = htons(9999);
 
 	if (bind(sfd, (struct sockaddr*)&address, sizeof(address)) < 0) {
 		perror("bind error");

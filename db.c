@@ -11,7 +11,7 @@ int connecting_test(MYSQL* conn1, MYSQL* conn2)
 	printf("start connecting_db\n");
     conn1 = mysql_init(NULL);
 
-	if(mysql_real_connect(conn1, "localhost", "repluser", "repl", "repl_test01", 3306, NULL, 0)==NULL)
+	if(mysql_real_connect(conn1, "10.0.2.4", "slave_db", "0000", "eluon", 3306, NULL, 0)==NULL)
 	{
 		fprintf(stderr, "%s\n", mysql_error(conn1));
 		printf("Can not connect to DB01");
@@ -24,7 +24,7 @@ int connecting_test(MYSQL* conn1, MYSQL* conn2)
 
 	conn2 = mysql_init(NULL);
 
-	if(mysql_real_connect(conn2, "10.0.2.4", "repluser", "repl", "repl_test01", 3306, NULL, 0)==NULL)
+	if(mysql_real_connect(conn2, "10.0.2.5", "slave_db", "0000", "eluon", 3306, NULL, 0)==NULL)
 	{
 		fprintf(stderr, "%s\n", mysql_error(conn2));
 		printf("Can not connect to DB02");
@@ -137,7 +137,7 @@ void get_select_all(int fd)
 
     connect_main_db(active_db, conn);
 
-    if (mysql_query(conn, "select * from user"))
+    if (mysql_query(conn, "select * from USER_TB"))
     {
         printf("query fail\n");
     }
@@ -145,7 +145,7 @@ void get_select_all(int fd)
     res = mysql_store_result(conn);
 
     int num_fields = mysql_num_fields(res);
-    int buffer_size = 1024; // ÃÊ±â ¹öÆÛ Å©±â
+    int buffer_size = 1024; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
     char* result_buffer = (char*)malloc(buffer_size);
     if (result_buffer == NULL)
     {
@@ -155,15 +155,15 @@ void get_select_all(int fd)
         exit(1);
     }
 
-    result_buffer[0] = '\0'; // ºó ¹®ÀÚ¿­·Î ÃÊ±âÈ­
+    result_buffer[0] = '\0';
 
     while ((row = mysql_fetch_row(res)))
     {
         for (i = 0; i < num_fields; i++)
         {
-            // ÇÊ¿äÇÏ´Ù¸é °¢ ÇÊµå¿¡ ´ëÇØ ¹öÆÛ Å©±â¸¦ µ¿ÀûÀ¸·Î È®Àå
-            int field_length = row[i] ? strlen(row[i]) : 4; // "NULL"ÀÇ ±æÀÌ´Â 4
-            int required_length = strlen(result_buffer) + field_length + 2; // °ø¹é°ú '\0' Æ÷ÇÔ
+
+            int field_length = row[i] ? strlen(row[i]) : 4;
+            int required_length = strlen(result_buffer) + field_length + 2;
 
             if (required_length > buffer_size)
             {
@@ -191,7 +191,7 @@ void get_select_all(int fd)
 
     send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
     printf("send select * data\n");
-    ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: select * from user\n", NULL));
+    ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: select * from USER_TB\n", NULL));
 
     free(result_buffer);
     mysql_free_result(res);
@@ -206,7 +206,7 @@ void selectall(MYSQL* conn)
     conn = mysql_init(NULL);
     int i;
 
-    if (mysql_real_connect(conn, "10.0.2.4", "root", "root", "repl_test01", 3306, NULL, 0) == NULL)
+    if (mysql_real_connect(conn, "10.0.2.4", "slave_db", "0000", "eluon", 3306, NULL, 0) == NULL)
     {
         fprintf(stderr, "%s\n", mysql_error(conn));
         mysql_close(conn);
@@ -214,7 +214,7 @@ void selectall(MYSQL* conn)
     }
     printf("selectall-connected\n");
 
-    if (mysql_query(conn, "select * from user"))
+    if (mysql_query(conn, "select * from USER_TB"))
     {
         printf("query fail\n");
     }
@@ -222,7 +222,7 @@ void selectall(MYSQL* conn)
     res = mysql_store_result(conn);
 
     int num_fields = mysql_num_fields(res);
-    int buffer_size = 1024; // ÃÊ±â ¹öÆÛ Å©±â
+    int buffer_size = 1024; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
     char* result_buffer = (char*)malloc(buffer_size);
     if (result_buffer == NULL)
     {
@@ -232,15 +232,15 @@ void selectall(MYSQL* conn)
         exit(1);
     }
 
-    result_buffer[0] = '\0'; // ºó ¹®ÀÚ¿­·Î ÃÊ±âÈ­
+    result_buffer[0] = '\0'; // ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
     while ((row = mysql_fetch_row(res)))
     {
         for (i = 0; i < num_fields; i++)
         {
-            // ÇÊ¿äÇÏ´Ù¸é °¢ ÇÊµå¿¡ ´ëÇØ ¹öÆÛ Å©±â¸¦ µ¿ÀûÀ¸·Î È®Àå
-            int field_length = row[i] ? strlen(row[i]) : 4; // "NULL"ÀÇ ±æÀÌ´Â 4
-            int required_length = strlen(result_buffer) + field_length + 2; // °ø¹é°ú '\0' Æ÷ÇÔ
+            // ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ ï¿½ï¿½ ï¿½Êµå¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+            int field_length = row[i] ? strlen(row[i]) : 4; // "NULL"ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ 4
+            int required_length = strlen(result_buffer) + field_length + 2; // ï¿½ï¿½ï¿½ï¿½ï¿½ '\0' ï¿½ï¿½ï¿½ï¿½
 
             if (required_length > buffer_size)
             {
@@ -327,3 +327,98 @@ void print_db_ver()
 	printf("MySQL Client Version: %s\n", mysql_get_client_info());
 
 }
+
+/* hyogi code */
+/* 2. replication check */
+void get_repcheck_status(int fd)
+{
+    Packet packet;
+    MYSQL *conn_ptr = mysql_init(NULL);
+
+    // conn init
+    if (conn_ptr == NULL) {
+        fprintf(stderr, "mysql_init() failed\n");
+        return; 
+    }
+    
+    // conn exception
+    int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn_ptr);
+    if (active_db == 0){
+		printf("all_db_is_down\n");
+        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+        mysql_close(conn_ptr);
+        return;
+	}
+
+    // conn connect
+    connect_main_db(active_db, conn_ptr);
+
+    // buffer exception
+    char* result_buffer = (char*)malloc(BUF_SIZE);
+    if (result_buffer == NULL)
+    {
+        fprintf(stderr, "Memory allocation failed\n");
+        mysql_close(conn_ptr);
+        exit(1);
+    }
+
+    // buffer last string
+    result_buffer[0] = '\0';
+
+    // buffer init
+    memset(result_buffer, 0, BUF_SIZE);
+
+    // query exception
+    if (mysql_query(conn_ptr, "SHOW SLAVE STATUS"))
+    {
+        printf("query error: %s\n", mysql_error(conn_ptr));
+        return;
+    }
+
+    MYSQL_RES *result = mysql_store_result(conn_ptr);
+    // result exception
+    if (result == NULL)
+    {
+        fprintf(stderr, "result error: %s\n", mysql_error(conn_ptr));
+        return;
+    }
+
+    int num_fields = mysql_num_fields(result);
+    MYSQL_ROW row;
+
+    while ((row = mysql_fetch_row(result)) != NULL) {
+        for (int i = 0; i < num_fields; i++) {
+            const char *field_name = mysql_fetch_field_direct(result, i)->name;
+
+            if(strcmp(field_name, "Slave_IO_Running") == 0)
+            {   
+                printf("=======================================\n");
+                printf("\tSlave_IO_Running: %s\n", row[i]);
+                strcat(result_buffer, row[i] ? row[i] : "NULL");
+                strcat(result_buffer, " ");
+            }
+
+            if (strcmp(field_name, "Slave_SQL_Running") == 0)
+			{
+				printf("\tSlave_SQL_Running: %s\n", row[i]);
+				printf("=======================================\n\n");
+                strcat(result_buffer, row[i] ? row[i] : "NULL");
+			}
+        }
+    }
+    mysql_free_result(result);
+
+    // íŒ¨í‚· ì¤€ë¹„
+    printf("Result:\n%s\n", result_buffer);
+    packet.header.type = REP_CHECK; // íŒ¨í‚· íƒ€ìž… ì„¤ì •
+    strncpy(packet.buf, result_buffer, BUF_SIZE - 1); // ê²°ê³¼ ë²„í¼ ë³µì‚¬
+    packet.header.length = strlen(packet.buf); // íŒ¨í‚· ê¸¸ì´ ì„¤ì •
+
+    // ë°ì´í„° ì „ì†¡
+    send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
+    ec_log((DEB_DEBUG, ">>>[REPLIE] replication_status_success\n", NULL));
+    free(result_buffer);
+    mysql_close(conn_ptr);
+}
+
+

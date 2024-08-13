@@ -15,8 +15,6 @@ void make_thread(pthread_t thread)
 
 int main(int argc, char* argv[])
 {
-	
-	
 	pthread_t check_db_status_t;
 	print_db_ver();
 	set_config_name(argv[1]);
@@ -27,7 +25,6 @@ int main(int argc, char* argv[])
 	make_thread(check_db_status_t);
 	make_connection();
 
-	
 	if(pthread_join(check_db_status_t, NULL)!=0){
 		printf("join_error\n");
 	}

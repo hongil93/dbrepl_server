@@ -15,10 +15,8 @@
 #include "db.h"
 
 
-
 //define
 #define MAX_FILE_NAME 256
-
 //struct
 
 typedef struct _config{
@@ -62,6 +60,7 @@ void* check_db(void*);
 void get_select_all(int);
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
+void get_repcheck_status(int);
 
 //function recv.c
 int make_connection();
@@ -69,5 +68,4 @@ void broadcast_message(const char*, int);
 void add_client(int);
 void remove_client(int);
 void send_message(int, int, const char*);
-void broadcast_message(const char*, int);
 //void type_categorizer(int);

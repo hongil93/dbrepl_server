@@ -203,8 +203,8 @@ DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
-EVT_ERROR	./include/recv.h	7;"	d
-EVT_WARNING	./include/recv.h	6;"	d
+EVT_ERROR	./include/recv.h	8;"	d
+EVT_WARNING	./include/recv.h	7;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	23;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	23;"	d
 E_FILEREAD	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	24;"	d
@@ -377,7 +377,7 @@ MAXFILES	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	17;"	d
 MAX_CLIENTS	./include/recv.h	3;"	d
 MAX_DBNAME	./include/db.h	5;"	d
 MAX_EPOLL_EVENT	./include/recv.h	2;"	d
-MAX_FILE_NAME	./include/main.h	20;"	d
+MAX_FILE_NAME	./include/main.h	19;"	d
 MAX_HOST	./include/db.h	2;"	d
 MAX_JDR_CNT	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	47;"	d
 MAX_JDR_CNT	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	47;"	d
@@ -460,6 +460,7 @@ PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^} DebugKe
 PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
 PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
 Packet	./include/recv.h	/^} Packet;$/;"	t	typeref:struct:_packet
+REP_CHECK	./include/recv.h	6;"	d
 SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	8;"	d
 SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	8;"	d
 SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	7;"	d
