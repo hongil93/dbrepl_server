@@ -6,11 +6,46 @@
 
 #define ec_log(x) DwDebugLog x;
 
-void type_categorizer(int type, int fd){
-	switch(type){
+void type_categorizer(int fd, Packet packet){
+	char* send_buf;
+	time_t now = time(NULL);
+	char datetime[30];
+	strftime(datetime, sizeof(datetime), "[%Y-%m-%d]%H:%M:%S", localtime(&now));
+
+	switch(packet.header.type){
 		case SQL_SELECT:
-		get_select_all(fd);
-		break;
+			JDRLog((REQUEST, "%s,SQL_SELECT\n", datetime));
+		    send_buf = get_select_all();
+			if (send_buf != NULL){
+				send_message(fd, SQL_SELECT, send_buf);
+				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time_now()));
+				free(send_buf);
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time_now()));
+				break;
+			}
+			
+        case SQL_COMPARE:
+			JDRLog((REQUEST, "%s,DB_COMPARE\n", datetime));
+            get_db_data(2);
+			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
+				printf("cannot create file_check thread\n");
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", datetime));
+				break;
+			}else{
+				printf("check_file thread created\n");
+				if(pthread_join(check_file_t, NULL)!=0){
+					printf("join_error\n");
+				}
+			}
+            compare_table(fd, atoi(packet.buf));
+            break;
+			
+		default:
+			printf("unknown Type\n");
+			break;
 	}
 }
 
@@ -99,7 +134,7 @@ void recv_message(int clfd) {
            msg.header.type, msg.header.length, msg.buf);
 	ec_log((DEB_DEBUG, ">>>[TCP] Received Message Type: %d, Length: %d, Msg: %s", msg.header.type, msg.header.length, msg.buf));
 	
-	type_categorizer(msg.header.type, clfd);
+	type_categorizer(clfd, msg);
 }
 
 int set_non_blocking(int sfd) {

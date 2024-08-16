@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 #define MAX_HOST 128
 #define MAX_USERNAME 64
 #define MAX_PASSWORD 64

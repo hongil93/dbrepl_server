@@ -9,11 +9,12 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <pthread.h>
+#include <sys/stat.h>
 #include "elnutil.h"
 #include "inifile.h"
 #include "debug.h"
 #include "db.h"
-
+#include "jdrlog.h"
 
 
 //define
@@ -37,10 +38,19 @@ typedef struct _process_control_block{
 	DB_INFO db02;
 }PCB;
 
+enum jdr_type{
+	DB = 0,
+	SQL,
+	REQUEST,
+	RESPONSE
 
+};
 
 //init Global
 PCB gpcb[1];
+pthread_t check_db_status_t;
+pthread_t check_file_t;
+
 /*
 DB_INFO db01;
 DB_INFO db02;
@@ -56,12 +66,15 @@ int read_db_cfg();
 int read_log_cfg();
 
 //function db.c
-int connecting_db(MYSQL*, MYSQL*);
-void selectall(MYSQL*);
 void* check_db(void*);
-void get_select_all(int);
+char* get_select_all();
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
+int get_db_data(int);
+MYSQL* connect_db(MYSQL*, int);
+void compare_table(int, int);
+void* check_file(void*);
+char* time_now();
 
 //function recv.c
 int make_connection();
@@ -71,3 +84,7 @@ void remove_client(int);
 void send_message(int, int, const char*);
 void broadcast_message(const char*, int);
 //void type_categorizer(int);
+
+
+//util.c
+char* time_now();

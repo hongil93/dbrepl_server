@@ -6,45 +6,12 @@
 
 #define ec_log(x) DwDebugLog x;
 
-int connecting_test(MYSQL* conn1, MYSQL* conn2)
-{
-	printf("start connecting_db\n");
-    conn1 = mysql_init(NULL);
-
-	if(mysql_real_connect(conn1, "localhost", "repluser", "repl", "repl_test01", 3306, NULL, 0)==NULL)
-	{
-		fprintf(stderr, "%s\n", mysql_error(conn1));
-		printf("Can not connect to DB01");
-		mysql_close(conn1);
-	}
-
-	printf("DB01 is ON\n");
-	
-	mysql_close(conn1);
-
-	conn2 = mysql_init(NULL);
-
-	if(mysql_real_connect(conn2, "10.0.2.4", "repluser", "repl", "repl_test01", 3306, NULL, 0)==NULL)
-	{
-		fprintf(stderr, "%s\n", mysql_error(conn2));
-		printf("Can not connect to DB02");
-		mysql_close(conn2);
-	}
-
-    printf("DB02 is ON\n");
-
-	mysql_close(conn2);
-
-	return 0;	
-}
 
 void* check_db(void* args)
 {
 
 	DB_INFO *db01 = &(gpcb->db01);
 	DB_INFO *db02 = &(gpcb->db02);
-	//DB_INFO *db01 = &gpcb->db01;
-	//DB_INFO *db02 = &gpcb->db02;
 	MYSQL* conn1 = db01->conn;
 	MYSQL* conn2 = db02->conn;
 	while(1)
@@ -52,14 +19,7 @@ void* check_db(void* args)
 		conn1 = mysql_init(NULL);
 		conn2 = mysql_init(NULL);
 
-		if(mysql_real_connect(conn1, 
-					db01->host,
-					db01->username, 
-					db01->password,
-					db01->dbname,
-					db01->port,
-					NULL,
-					0)==NULL)
+        if(connect_db(conn1, 1)==NULL)
 		{
 			fprintf(stderr, "%s\n", mysql_error(conn1));
 			gpcb->db01.status = 0;
@@ -67,18 +27,10 @@ void* check_db(void* args)
 			mysql_close(conn1);
 		}else{
 			gpcb->db01.status = 1;
-			printf("DB01 is ON\n");
 			mysql_close(conn1);
 		}
 
-		if(mysql_real_connect(conn2, 
-					db02->host,
-					db02->username, 
-					db02->password,
-					db02->dbname,
-					db02->port,
-					NULL,
-					0)==NULL)
+		if(connect_db(conn2, 2)==NULL)
 		{
 			fprintf(stderr, "%s\n", mysql_error(conn2));
 			gpcb->db02.status = 0;
@@ -86,13 +38,13 @@ void* check_db(void* args)
 			mysql_close(conn2);
 		}else{
 			gpcb->db02.status = 1;
-			printf("DB02 is ON\n");
 			mysql_close(conn2);
 		}
 
         if(gpcb->db01.status == 0 && gpcb->db02.status == 0){
             broadcast_message("ALL DB IS DOWN", EVT_WARNING);
             ec_log((DEB_ERROR, ">>>[DB] ALL DB IS DOWN\n", NULL));
+			JDRLog((DB, "%s\n" , "ALLDOWN"));
             sleep(5);
             continue;
         }
@@ -100,18 +52,21 @@ void* check_db(void* args)
         if((gpcb->db01.status) == 0){
             broadcast_message("DB01 IS DOWN", EVT_WARNING);
             ec_log((DEB_WARN, ">>>[DB] DB01 IS DOWN\n", NULL));
+			JDRLog((DB, "%s\n" , "DB01DOWN"));
             sleep(5);
             continue;
 		}
         if((gpcb->db02.status) == 0){
             broadcast_message("DB02 IS DOWN", EVT_WARNING);
             ec_log((DEB_WARN, ">>>[DB] DB02 IS DOWN\n", NULL));
+			JDRLog((DB, "%s\n" , "DB02DOWN"));
             sleep(5);
             continue;
 		}
 
         if (gpcb->db01.status == 1 && gpcb->db02.status ==1){
             ec_log((DEB_DEBUG, ">>>[DB] db_check_success\n", NULL));
+			JDRLog((DB, "%s\n" , "SUCCEES"));
             sleep(5);
             continue;
 		}
@@ -119,17 +74,16 @@ void* check_db(void* args)
 
 }
 
-void get_select_all(int fd)
+char* get_select_all()
 {
-    Packet packet;
 	MYSQL* conn;
     MYSQL_RES* res;
     MYSQL_ROW row;
+    char* result;
 	int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn);
 	if (active_db == 0){
 		printf("all_db_is_down\n");
-        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-        return;
+        return NULL;
 	}
 
     conn = mysql_init(NULL);
@@ -184,40 +138,176 @@ void get_select_all(int fd)
         strcat(result_buffer, "\n");
     }
 
-    printf("Result:\n%s", result_buffer);
-    packet.header.type = SQL_SELECT;
-	strncpy(packet.buf, result_buffer, BUF_SIZE -1);
-    packet.header.length = strlen(packet.buf);
+    result = result_buffer;
 
-    send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
-    printf("send select * data\n");
     ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: select * from user\n", NULL));
 
-    free(result_buffer);
+    //free(result_buffer);
     mysql_free_result(res);
     mysql_close(conn);
+
+    printf("%s", result);
+
+    return result;
 }
 
-void selectall(MYSQL* conn)
+int set_main_db(int db01_st, int db02_st, MYSQL* conn)
 {
-    printf("start selectall\n");
+	if((db01_st)==1){
+		conn = gpcb->db01.conn;
+        printf("main DB is DB01\n");
+        return 1;
+	}
+	if((db02_st)==1){
+		conn = gpcb->db02.conn;
+        printf("main DB is DB02\n");
+        return 2;
+	}
+	return 0;
+}
+
+void connect_main_db(int activated_db, MYSQL* conn)
+{
+    DB_INFO *db01 = &(gpcb->db01);
+	DB_INFO *db02 = &(gpcb->db02);
+    if(activated_db == 1){
+        if(connect_db(conn, 1)==NULL)
+        {
+            fprintf(stderr, "%s\n", mysql_error(conn));
+            mysql_close(conn);
+            exit(0);
+        }
+
+    }
+
+    if(activated_db == 2){
+         if(connect_db(conn, 2)==NULL)
+        {
+            fprintf(stderr, "%s\n", mysql_error(conn));
+            mysql_close(conn);
+            exit(0);
+        }
+
+    }
+}
+
+MYSQL* connect_db(MYSQL* conn, int db_idx){
+    DB_INFO *db;
+    MYSQL* ret;
+    if (db_idx == 1) {
+        db = &(gpcb->db01);
+    }
+
+    if (db_idx == 2){
+        db = &(gpcb->db02);
+    }
+
+    ret = mysql_real_connect(conn, 
+        db->host,
+		db->username, 
+		db->password,
+		db->dbname,
+		db->port,
+		NULL,
+		0);
+    
+    return ret;
+
+}
+
+void* check_file(void* args){
+	struct stat statbuf;
+	char* path = (char*)args;
+	while(1){
+		if ((stat(path, &statbuf))==0){
+			printf("%s file exist\n", path);
+			break;
+		}
+	}
+}	
+
+int get_db_data(int db_idx){
+	FILE *fp;
+	char path[BUF_SIZE];
+
+    //get db02 data csv
+	fp = popen("mysql -h 10.0.2.4 -e \"SELECT * FROM user;\" repl_test01 > /home/kim/backup/db02_data.csv", "r");
+	if (fp == NULL){
+		printf("popen fail\n");
+		return 0;
+	}
+
+	while (fgets(path, sizeof(path), fp) != NULL) {
+		printf("%s", path);
+	}
+	
+	pclose(fp);
+	return 0;
+}
+
+void compare_table(int fd, int db_index)
+{
+	time_t now = time(NULL);
+	char datetime[30];
+    Packet packet;
+	MYSQL* conn;
     MYSQL_RES* res;
     MYSQL_ROW row;
+    const char *sql_truncate = "TRUNCATE user_tmp;";
+    const char *sql_load_data = "LOAD DATA LOCAL INFILE '/home/kim/backup/db02_data.csv' "
+                                "INTO TABLE user_tmp "
+                                "FIELDS TERMINATED BY '\t' "
+                                "LINES TERMINATED BY '\n' "
+                                "IGNORE 1 ROWS;";
+    
+    const char *sql_select1 = "SELECT u.* "
+                                "FROM user u "
+                                "LEFT JOIN user_tmp t ON u.id = t.id AND u.name = t.name "
+                                "WHERE t.id IS NULL;";
+
+    const char *sql_select2 = "SELECT t.* "
+                                "FROM user_tmp t "
+                                "LEFT JOIN user u ON t.id = u.id AND t.name = u.name "
+                                "WHERE u.id IS NULL;";
+
+	strftime(datetime, sizeof(datetime), "[%Y-%m-%d]%H:%M:%S", localtime(&now));
+	int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn);
+	if (active_db == 0){
+		printf("all_db_is_down\n");
+        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+		JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", datetime));
+        return;
+	}
+
     conn = mysql_init(NULL);
     int i;
 
-    if (mysql_real_connect(conn, "10.0.2.4", "root", "root", "repl_test01", 3306, NULL, 0) == NULL)
-    {
-        fprintf(stderr, "%s\n", mysql_error(conn));
-        mysql_close(conn);
-        exit(0);
-    }
-    printf("selectall-connected\n");
+    connect_main_db(active_db, conn);
 
-    if (mysql_query(conn, "select * from user"))
+    printf("init, connect\n");
+
+    if (mysql_query(conn, sql_truncate))
+    {
+        printf("query fail\n");
+		JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,query fail\n", datetime));
+    }
+
+    if (mysql_query(conn, sql_load_data))
     {
         printf("query fail\n");
     }
+
+	if (db_index == 1){
+		if (mysql_query(conn, sql_select1))
+		{
+			printf("query fail\n");
+		}
+	}else{
+		if (mysql_query(conn, sql_select2))
+		{
+			printf("query fail\n");
+		}
+	}
 
     res = mysql_store_result(conn);
 
@@ -262,65 +352,19 @@ void selectall(MYSQL* conn)
     }
 
     printf("Result:\n%s", result_buffer);
+    packet.header.type = SQL_COMPARE;
+	strncpy(packet.buf, result_buffer, BUF_SIZE -1);
+    packet.header.length = strlen(packet.buf);
+
+    send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
+    ec_log((DEB_DEBUG, ">>>[DB] Request Check DB data\n", NULL));
+	JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%dDATA\n", datetime, db_index));
 
     free(result_buffer);
     mysql_free_result(res);
     mysql_close(conn);
 }
 
-int set_main_db(int db01_st, int db02_st, MYSQL* conn)
-{
-	if((db01_st)==1){
-		conn = gpcb->db01.conn;
-        printf("main DB is DB01\n");
-        return 1;
-	}
-	if((db02_st)==1){
-		conn = gpcb->db02.conn;
-        printf("main DB is DB02\n");
-        return 2;
-	}
-	return 0;
-}
-
-void connect_main_db(int activated_db, MYSQL* conn)
-{
-    DB_INFO *db01 = &(gpcb->db01);
-	DB_INFO *db02 = &(gpcb->db02);
-    if(activated_db == 1){
-        if(mysql_real_connect(conn, 
-			db01->host,
-			db01->username, 
-			db01->password,
-			db01->dbname,
-			db01->port,
-			NULL,
-			0)==NULL)
-        {
-            fprintf(stderr, "%s\n", mysql_error(conn));
-            mysql_close(conn);
-            exit(0);
-        }
-
-    }
-
-    if(activated_db == 2){
-        if(mysql_real_connect(conn, 
-			db02->host,
-			db02->username, 
-			db02->password,
-			db02->dbname,
-			db02->port,
-			NULL,
-			0)==NULL)
-        {
-            fprintf(stderr, "%s\n", mysql_error(conn));
-            mysql_close(conn);
-            exit(0);
-        }
-
-    }
-}
 
 void print_db_ver()
 {

@@ -1,5 +1,5 @@
 TARGET = repl
-SRCS = main.c db.c init.c recv.c
+SRCS = main.c db.c init.c recv.c util.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 
@@ -21,9 +21,11 @@ $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS) $(IFLAGS) -pthread
 	rm -f tags
 	ctags -R /home/kim/libeluon/* ./include/
+	ctags -R
 
 %.o: %.c
-	$(CC) -std=c99 $(CFLAGS) $< -o $@ 
+#	$(CC) -std=c99 $(CFLAGS) $< -o $@ 
+	$(CC) -std=gnu99 $(CFLAGS) $< -o $@ 
 
 clean:
 	rm -f $(OBJS) $(TARGET)
