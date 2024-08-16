@@ -60,7 +60,7 @@ check_file_t	include/main.h	/^pthread_t check_file_t;$/;"	v
 client_count	include/recv.h	/^    int client_count;$/;"	m	struct:_client_list
 client_list	include/recv.h	/^CLIENT_LIST client_list;$/;"	v
 client_sockets	include/recv.h	/^    int client_sockets[MAX_CLIENTS];$/;"	m	struct:_client_list
-compare_table	db.c	/^void compare_table(int fd, int db_index)$/;"	f
+compare_table	db.c	/^char* compare_table(int db_index)$/;"	f
 config_file_name	include/main.h	/^	char config_file_name[MAX_FILE_NAME];$/;"	m	struct:_config
 conn	include/db.h	/^	MYSQL* conn;$/;"	m	struct:_db_info
 connect_db	db.c	/^MYSQL* connect_db(MYSQL* conn, int db_idx){$/;"	f

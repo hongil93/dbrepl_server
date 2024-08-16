@@ -72,7 +72,7 @@ int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
 int get_db_data(int);
 MYSQL* connect_db(MYSQL*, int);
-void compare_table(int, int);
+char* compare_table(int);
 void* check_file(void*);
 char* time_now();
 
@@ -83,8 +83,6 @@ void add_client(int);
 void remove_client(int);
 void send_message(int, int, const char*);
 void broadcast_message(const char*, int);
-//void type_categorizer(int);
-
 
 //util.c
 char* time_now();

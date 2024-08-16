@@ -40,7 +40,20 @@ void type_categorizer(int fd, Packet packet){
 					printf("join_error\n");
 				}
 			}
-            compare_table(fd, atoi(packet.buf));
+
+            send_buf = compare_table(atoi(packet.buf));
+			if (send_buf != NULL){
+				send_message(fd, SQL_COMPARE, send_buf);
+				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", datetime, packet.buf));
+				free(send_buf);
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time_now()));
+				break;
+			}
+
+
             break;
 			
 		default:
@@ -98,6 +111,7 @@ void recv_message(int clfd) {
         } else if (recv_len == 0) {
             printf("Client disconnected.\n");
 			ec_log((DEB_DEBUG, ">>>[TCP] Client disconnected.\n", NULL));
+			remove_client(clfd);
             close(clfd);
             return;
         }
@@ -121,7 +135,6 @@ void recv_message(int clfd) {
             }
         } else if (recv_len == 0) {
             printf("Client disconnected.\n");
-			remove_client(clfd);
             close(clfd);
             return;
         }

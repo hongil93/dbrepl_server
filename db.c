@@ -79,7 +79,8 @@ char* get_select_all()
 	MYSQL* conn;
     MYSQL_RES* res;
     MYSQL_ROW row;
-    char* result;
+    int i;
+
 	int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn);
 	if (active_db == 0){
 		printf("all_db_is_down\n");
@@ -87,8 +88,7 @@ char* get_select_all()
 	}
 
     conn = mysql_init(NULL);
-    int i;
-
+   
     connect_main_db(active_db, conn);
 
     if (mysql_query(conn, "select * from user"))
@@ -137,15 +137,12 @@ char* get_select_all()
         }
         strcat(result_buffer, "\n");
     }
-
-    result = result_buffer;
-
     ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: select * from user\n", NULL));
 
     //free(result_buffer);
     mysql_free_result(res);
     mysql_close(conn);
-    return result;
+    return result_buffer;
 }
 
 int set_main_db(int db01_st, int db02_st, MYSQL* conn)
@@ -242,14 +239,13 @@ int get_db_data(int db_idx){
 	return 0;
 }
 
-void compare_table(int fd, int db_index)
+char* compare_table(int db_index)
 {
-	time_t now = time(NULL);
-	char datetime[30];
-    Packet packet;
 	MYSQL* conn;
     MYSQL_RES* res;
     MYSQL_ROW row;
+    int i;
+
     const char *sql_truncate = "TRUNCATE user_tmp;";
     const char *sql_load_data = "LOAD DATA LOCAL INFILE '/home/kim/backup/db02_data.csv' "
                                 "INTO TABLE user_tmp "
@@ -266,19 +262,14 @@ void compare_table(int fd, int db_index)
                                 "FROM user_tmp t "
                                 "LEFT JOIN user u ON t.id = u.id AND t.name = u.name "
                                 "WHERE u.id IS NULL;";
-
-	strftime(datetime, sizeof(datetime), "[%Y-%m-%d]%H:%M:%S", localtime(&now));
 	int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn);
 	if (active_db == 0){
 		printf("all_db_is_down\n");
-        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-		JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", datetime));
-        return;
+        return NULL;
 	}
 
     conn = mysql_init(NULL);
-    int i;
-
+   
     connect_main_db(active_db, conn);
 
     printf("init, connect\n");
@@ -286,7 +277,6 @@ void compare_table(int fd, int db_index)
     if (mysql_query(conn, sql_truncate))
     {
         printf("query fail\n");
-		JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,query fail\n", datetime));
     }
 
     if (mysql_query(conn, sql_load_data))
@@ -348,18 +338,12 @@ void compare_table(int fd, int db_index)
         strcat(result_buffer, "\n");
     }
 
-    printf("Result:\n%s", result_buffer);
-    packet.header.type = SQL_COMPARE;
-	strncpy(packet.buf, result_buffer, BUF_SIZE -1);
-    packet.header.length = strlen(packet.buf);
-
-    send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
     ec_log((DEB_DEBUG, ">>>[DB] Request Check DB data\n", NULL));
-	JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%dDATA\n", datetime, db_index));
 
-    free(result_buffer);
     mysql_free_result(res);
     mysql_close(conn);
+
+    return result_buffer;
 }
 
 
