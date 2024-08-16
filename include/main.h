@@ -66,7 +66,7 @@ int read_db_cfg();
 int read_log_cfg();
 
 //function db.c
-void* check_db(void*);
+int check_db();
 char* get_select_all();
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
@@ -83,6 +83,9 @@ void add_client(int);
 void remove_client(int);
 void send_message(int, int, const char*);
 void broadcast_message(const char*, int);
+
+//send.c
+void* send_server_status(void*);
 
 //util.c
 char* time_now();

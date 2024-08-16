@@ -14,6 +14,7 @@ DB_INFO	include/db.h	/^} DB_INFO;$/;"	t	typeref:struct:_db_info
 DB_LIB_DIR	Makefile	/^DB_LIB_DIR = \/usr\/lib64\/$/;"	m
 DB_LIST	include/db.h	/^} DB_LIST;$/;"	t	typeref:struct:_db_list
 EVT_ERROR	include/recv.h	8;"	d
+EVT_STATUS	include/recv.h	9;"	d
 EVT_WARNING	include/recv.h	7;"	d
 Header	include/recv.h	/^} Header;$/;"	t	typeref:struct:_header
 IFLAGS	Makefile	/^IFLAGS = -I$(INC_DIR1) -I$(INC_DIR2) -I$(INC_DIR3)$/;"	m
@@ -37,10 +38,10 @@ REQUEST	include/main.h	/^	REQUEST,$/;"	e	enum:jdr_type
 RESPONSE	include/main.h	/^	RESPONSE$/;"	e	enum:jdr_type
 SQL	include/main.h	/^	SQL,$/;"	e	enum:jdr_type
 SQL_COMPARE	include/recv.h	6;"	d
-SQL_RESTORE	include/recv.h	10;"	d
-SQL_RESTORE2	include/recv.h	11;"	d
+SQL_RESTORE	include/recv.h	11;"	d
+SQL_RESTORE2	include/recv.h	12;"	d
 SQL_SELECT	include/recv.h	5;"	d
-SRCS	Makefile	/^SRCS = main.c db.c init.c recv.c util.c$/;"	m
+SRCS	Makefile	/^SRCS = main.c db.c init.c recv.c send.c util.c$/;"	m
 TARGET	Makefile	/^TARGET = repl$/;"	m
 _client_list	include/recv.h	/^typedef struct _client_list{$/;"	s
 _config	include/main.h	/^typedef struct _config{$/;"	s
@@ -53,7 +54,7 @@ add_client	recv.c	/^void add_client(int clfd) {$/;"	f
 broadcast_message	recv.c	/^void broadcast_message(const char* message, int type) {$/;"	f
 buf	include/recv.h	/^    char buf[BUF_SIZE];$/;"	m	struct:_packet
 cfg	include/main.h	/^	CFG cfg[1];$/;"	m	struct:_process_control_block
-check_db	db.c	/^void* check_db(void* args)$/;"	f
+check_db	db.c	/^int check_db()$/;"	f
 check_db_status_t	include/main.h	/^pthread_t check_db_status_t;$/;"	v
 check_file	db.c	/^void* check_file(void* args){$/;"	f
 check_file_t	include/main.h	/^pthread_t check_file_t;$/;"	v
@@ -73,6 +74,7 @@ dbname	include/db.h	/^	char dbname[MAX_DBNAME];$/;"	m	struct:_db_info
 debug_level	include/main.h	/^	int debug_level;$/;"	m	struct:_config
 ec_log	db.c	7;"	d	file:
 ec_log	recv.c	7;"	d	file:
+ec_log	send.c	4;"	d	file:
 get_db_data	db.c	/^int get_db_data(int db_idx){$/;"	f
 get_select_all	db.c	/^char* get_select_all()$/;"	f
 gpcb	include/main.h	/^PCB gpcb[1];$/;"	v
@@ -97,6 +99,7 @@ recv_message	recv.c	/^void recv_message(int clfd) {$/;"	f
 recv_packet	recv.c	/^int recv_packet(int sock, Packet *msg) {$/;"	f
 remove_client	recv.c	/^void remove_client(int clfd) {$/;"	f
 send_message	recv.c	/^void send_message(int clfd, int type, const char* message) {$/;"	f
+send_server_status	send.c	/^void* send_server_status(void* args){$/;"	f
 set_config_name	init.c	/^void set_config_name(char* config_file_name){$/;"	f
 set_main_db	db.c	/^int set_main_db(int db01_st, int db02_st, MYSQL* conn)$/;"	f
 set_non_blocking	recv.c	/^int set_non_blocking(int sfd) {$/;"	f

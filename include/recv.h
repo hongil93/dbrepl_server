@@ -6,6 +6,7 @@
 #define SQL_COMPARE 102
 #define EVT_WARNING 400
 #define EVT_ERROR 401
+#define EVT_STATUS 402
 
 #define SQL_RESTORE 500
 #define SQL_RESTORE2 501

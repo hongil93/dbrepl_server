@@ -1,0 +1,27 @@
+
+[JDR]
+--REQUEST
+TIME : 발생한 시간
+TYPE : 받은타입
+
+ex)
+JDRLog((REQUEST, "%s,SQL_SELECT\n", datetime));
+
+
+
+
+
+
+--RESPONSE
+TIME : 발생한 시간
+TYPE : 보낼타입
+STATUS : FAIL/SUCCESS
+MSG : 성공/실패한 내용
+
+ex)               TIME   TYPE   STATUS   MSG
+JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time_now()));
+
+
+
+[SEND_STATUS]
+

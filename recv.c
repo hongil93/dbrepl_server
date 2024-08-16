@@ -52,8 +52,6 @@ void type_categorizer(int fd, Packet packet){
 				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time_now()));
 				break;
 			}
-
-
             break;
 			
 		default:
