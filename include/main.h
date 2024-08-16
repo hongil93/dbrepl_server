@@ -42,7 +42,6 @@ enum jdr_type{
 	SQL,
 	REQUEST,
 	RESPONSE
-
 };
 
 //init Global

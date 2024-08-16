@@ -66,23 +66,21 @@ char* get_select_all()
 	int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn);
 	if (active_db == 0){
 		printf("all_db_is_down\n");
-        return NULL;
 	}
 
     conn = mysql_init(NULL);
-   
+
     connect_main_db(active_db, conn);
 
-    if (mysql_query(conn, "select * from user;"))
+    if (mysql_query(conn, "select * from user"))
     {
         printf("query fail\n");
-        ec_log((DEB_ERROR, ">>>[db] mysql_query_error\n", NULL));
     }
 
     res = mysql_store_result(conn);
 
     int num_fields = mysql_num_fields(res);
-    int buffer_size = 1024;
+    int buffer_size = 1024; // ÃÊ±â ¹öÆÛ Å©±â
     char* result_buffer = (char*)malloc(buffer_size);
     if (result_buffer == NULL)
     {
@@ -92,15 +90,15 @@ char* get_select_all()
         exit(1);
     }
 
-    result_buffer[0] = '\0';
+    result_buffer[0] = '\0'; // ºó ¹®ÀÚ¿­·Î ÃÊ±âÈ­
 
     while ((row = mysql_fetch_row(res)))
     {
         for (i = 0; i < num_fields; i++)
         {
-
-            int field_length = row[i] ? strlen(row[i]) : 4;
-            int required_length = strlen(result_buffer) + field_length + 2;
+            // ÇÊ¿äÇÏ´Ù¸é °¢ ÇÊµå¿¡ ´ëÇØ ¹öÆÛ Å©±â¸¦ µ¿ÀûÀ¸·Î È®Àå
+            int field_length = row[i] ? strlen(row[i]) : 4; // "NULL"ÀÇ ±æÀÌ´Â 4
+            int required_length = strlen(result_buffer) + field_length + 2; // °ø¹é°ú '\0' Æ÷ÇÔ
 
             if (required_length > buffer_size)
             {
@@ -122,7 +120,6 @@ char* get_select_all()
     }
     ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: select * from user\n", NULL));
 
-    //free(result_buffer);
     mysql_free_result(res);
     mysql_close(conn);
     return result_buffer;
@@ -282,7 +279,7 @@ char* compare_table(int db_index)
     res = mysql_store_result(conn);
 
     int num_fields = mysql_num_fields(res);
-    int buffer_size = 1024; // ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
+    int buffer_size = 1024; 
     char* result_buffer = (char*)malloc(buffer_size);
     if (result_buffer == NULL)
     {
@@ -292,15 +289,15 @@ char* compare_table(int db_index)
         exit(1);
     }
 
-    result_buffer[0] = '\0'; // ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+    result_buffer[0] = '\0';
 
     while ((row = mysql_fetch_row(res)))
     {
         for (i = 0; i < num_fields; i++)
         {
-            // ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ ï¿½ï¿½ ï¿½Êµå¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
-            int field_length = row[i] ? strlen(row[i]) : 4; // "NULL"ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ 4
-            int required_length = strlen(result_buffer) + field_length + 2; // ï¿½ï¿½ï¿½ï¿½ï¿? '\0' ï¿½ï¿½ï¿½ï¿½
+            
+            int field_length = row[i] ? strlen(row[i]) : 4;
+            int required_length = strlen(result_buffer) + field_length + 2;
 
             if (required_length > buffer_size)
             {
@@ -318,6 +315,7 @@ char* compare_table(int db_index)
             strcat(result_buffer, row[i] ? row[i] : "NULL");
             strcat(result_buffer, " ");
         }
+        strcat(result_buffer, "\n");
     }
 
     ec_log((DEB_DEBUG, ">>>[DB] Request Check DB data\n", NULL));
@@ -528,6 +526,7 @@ void get_replication_on(int fd)
     free(result_buffer);
     mysql_close(conn_ptr);
 }
+
 void get_replication_off(int fd)
 {
     Packet packet;

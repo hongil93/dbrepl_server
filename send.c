@@ -9,6 +9,7 @@ void* send_server_status(void* args){
     while(1){
         int client_cnt = client_list.client_count;
         int db_status;
+        int tps;
         int len;
         db_status = check_db();
 

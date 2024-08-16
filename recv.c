@@ -8,30 +8,27 @@
 
 void type_categorizer(int fd, Packet packet){
 	char* send_buf;
-	time_t now = time(NULL);
-	char datetime[30];
-	strftime(datetime, sizeof(datetime), "[%Y-%m-%d]%H:%M:%S", localtime(&now));
-
+	char* time = time_now();
 	switch(packet.header.type){
 		case SQL_SELECT:
-			JDRLog((REQUEST, "%s,SQL_SELECT\n", datetime));
+			JDRLog((REQUEST, "%s,SQL_SELECT\n", time));
 		    send_buf = get_select_all();
 			if (send_buf != NULL){
 				send_message(fd, SQL_SELECT, send_buf);
-				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time_now()));
+				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time));
 				free(send_buf);
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time_now()));
+				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
         case SQL_COMPARE:
-			JDRLog((REQUEST, "%s,DB_COMPARE\n", datetime));
+			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
             get_db_data(2);
 			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
 				printf("cannot create file_check thread\n");
-				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", datetime));
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
 				break;
 			}else{
 				printf("check_file thread created\n");
@@ -43,12 +40,12 @@ void type_categorizer(int fd, Packet packet){
             send_buf = compare_table(atoi(packet.buf));
 			if (send_buf != NULL){
 				send_message(fd, SQL_COMPARE, send_buf);
-				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", datetime, packet.buf));
+				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
 				free(send_buf);
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time_now()));
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
             break;
@@ -57,6 +54,7 @@ void type_categorizer(int fd, Packet packet){
 			printf("unknown Type\n");
 			break;
 	}
+	free(time);
 }
 
 int recv_packet(int sock, Packet *msg) {
