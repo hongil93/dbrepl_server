@@ -145,9 +145,6 @@ char* get_select_all()
     //free(result_buffer);
     mysql_free_result(res);
     mysql_close(conn);
-
-    printf("%s", result);
-
     return result;
 }
 
