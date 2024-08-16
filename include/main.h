@@ -19,7 +19,6 @@
 
 //define
 #define MAX_FILE_NAME 256
-
 //struct
 
 typedef struct _config{
@@ -75,6 +74,11 @@ MYSQL* connect_db(MYSQL*, int);
 char* compare_table(int);
 void* check_file(void*);
 char* time_now();
+void get_repcheck_status(int);
+void get_replication_on(int fd);
+void get_replication_off(int fd);
+void get_sql_select_all(int fd, const char *query);
+void get_sql_insert_table(int fd, const char *query);
 
 //function recv.c
 int make_connection();

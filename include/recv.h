@@ -3,7 +3,10 @@
 #define MAX_CLIENTS 64
 
 #define SQL_SELECT 101
-#define SQL_COMPARE 102
+#define SQL_INSERT 102
+#define REP_CHECK 201
+#define REP_ON 202
+#define REP_OFF 203
 #define EVT_WARNING 400
 #define EVT_ERROR 401
 #define EVT_STATUS 402

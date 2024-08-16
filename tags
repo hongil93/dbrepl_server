@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
@@ -108,3 +109,5 @@ time_now	util.c	/^char* time_now(){$/;"	f
 type	include/recv.h	/^    int type;$/;"	m	struct:_header
 type_categorizer	recv.c	/^void type_categorizer(int fd, Packet packet){$/;"	f
 username	include/db.h	/^	char username[MAX_USERNAME];$/;"	m	struct:_db_info
+=======
+>>>>>>> ebca0420bba7e2fc272d5ccee0931870f83fb2ed
