@@ -1,3 +1,6 @@
 /jdr
 /log
 /.gitignore
+*.o
+repl
+tags
