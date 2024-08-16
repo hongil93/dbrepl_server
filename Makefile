@@ -1,12 +1,12 @@
 TARGET = repl
-SRCS = main.c db.c init.c recv.c send.c util.c
+SRCS = main.c db.c init.c send.c recv.c util.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 
-LIB_DIR = /home/khchoi/library/libeluonutil-R2.0.0/lib
+LIB_DIR = /home/kim/libeluon/lib
 DB_LIB_DIR = /usr/lib64/
-INC_DIR1 = /home/khchoi/library/libeluonutil-R2.0.0/include
-INC_DIR2 = /home/khchoi/dbrepl_server/include
+INC_DIR1 = /home/kim/libeluon/include
+INC_DIR2 = /home/kim/project/dbrepl_server/include
 INC_DIR3 = /usr/include/mysql
 CFLAGS = -c $(IFLAGS)
 #LDFLAGS = -L$(LIB_DIR) -leluonutil
@@ -20,10 +20,9 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS) $(IFLAGS) -pthread
 	rm -f tags
-	ctags -R /home/khchoi/library/libeluonutil-R2.0.0/* ./include/
+	ctags -R /home/kim/libeluon/* ./include/
 
 %.o: %.c
-#	$(CC) -std=c99 $(CFLAGS) $< -o $@ 
 	$(CC) -std=gnu99 $(CFLAGS) $< -o $@ 
 
 clean:
