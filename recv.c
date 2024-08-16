@@ -26,17 +26,6 @@ void type_categorizer(int fd, Packet packet){
 				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time_now()));
 				break;
 			}
-        case REP_CHECK:
-        get_repcheck_status(fd);
-		break;
-        case REP_ON:
-        get_replication_on(fd);
-		break;
-        case REP_OFF:
-        get_replication_off(fd);
-		break;
-		case SQL_INSERT:
-        get_sql_insert_table(fd, buf);
         case SQL_COMPARE:
 			JDRLog((REQUEST, "%s,DB_COMPARE\n", datetime));
             get_db_data(2);
@@ -155,7 +144,7 @@ void recv_message(int clfd) {
            msg.header.type, msg.header.length, msg.buf);
 	ec_log((DEB_DEBUG, ">>>[TCP] Received Message Type: %d, Length: %d, Msg: %s", msg.header.type, msg.header.length, msg.buf));
 	
-	type_categorizer(msg.header.type, clfd, msg.buf);
+	type_categorizer(clfd, msg);
 }
 
 int set_non_blocking(int sfd) {
@@ -199,7 +188,7 @@ int make_connection()
 	//bind, listen socket
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY;
-	address.sin_port = htons(9999);
+	address.sin_port = htons(33333);
 
 	if (bind(sfd, (struct sockaddr*)&address, sizeof(address)) < 0) {
 		perror("bind error");

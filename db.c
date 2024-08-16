@@ -73,7 +73,7 @@ char* get_select_all()
    
     connect_main_db(active_db, conn);
 
-    if (mysql_query(conn, query))
+    if (mysql_query(conn, "select * from user;"))
     {
         printf("query fail\n");
         ec_log((DEB_ERROR, ">>>[db] mysql_query_error\n", NULL));
@@ -300,7 +300,7 @@ char* compare_table(int db_index)
         {
             // ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ ï¿½ï¿½ ï¿½Êµå¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
             int field_length = row[i] ? strlen(row[i]) : 4; // "NULL"ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ 4
-            int required_length = strlen(result_buffer) + field_length + 2; // ï¿½ï¿½ï¿½ï¿½ï¿½ '\0' ï¿½ï¿½ï¿½ï¿½
+            int required_length = strlen(result_buffer) + field_length + 2; // ï¿½ï¿½ï¿½ï¿½ï¿? '\0' ï¿½ï¿½ï¿½ï¿½
 
             if (required_length > buffer_size)
             {
@@ -402,21 +402,21 @@ void get_repcheck_status(int fd)
                 printf("=======================================\n");
                 printf("\tSlave_IO_Running: %s\n", row[i]);
                 strcat(result_buffer, row[i] ? row[i] : "NULL");
-                strcat(result_buffer, ","); // ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„
+                strcat(result_buffer, ","); // ?„?–´?“°ê¸°ë¡œ êµ¬ë¶„
             }
 
             if (strcmp(field_name, "Slave_SQL_Running") == 0)
 			{
 				printf("\tSlave_SQL_Running: %s\n", row[i]);
                 strcat(result_buffer, row[i] ? row[i] : "NULL");
-                strcat(result_buffer, ","); // ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„
+                strcat(result_buffer, ","); // ?„?–´?“°ê¸°ë¡œ êµ¬ë¶„
 			}
 
             if (strcmp(field_name, "Last_IO_Errno") == 0)
 			{
 				printf("\tLast_IO_Errno: %s\n", row[i]);
                 strcat(result_buffer, row[i] ? row[i] : "NULL");
-                strcat(result_buffer, ","); // ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„
+                strcat(result_buffer, ","); // ?„?–´?“°ê¸°ë¡œ êµ¬ë¶„
 			}
 
             if (strcmp(field_name, "Last_IO_Error") == 0)
@@ -428,14 +428,14 @@ void get_repcheck_status(int fd)
                     strcat(result_buffer, row[i]);
                     printf("\tLast_IO_Error: %s\n", row[i]);
                 }
-                strcat(result_buffer, ","); // ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„
+                strcat(result_buffer, ","); // ?„?–´?“°ê¸°ë¡œ êµ¬ë¶„
             }   
 
             if (strcmp(field_name, "Last_SQL_Errno") == 0)
 			{
 				printf("\tLast_SQL_Errno: %s\n", row[i]);
                 strcat(result_buffer, row[i] ? row[i] : "NULL");
-                strcat(result_buffer, ","); // ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„
+                strcat(result_buffer, ","); // ?„?–´?“°ê¸°ë¡œ êµ¬ë¶„
 			}
 
             if (strcmp(field_name, "Last_SQL_Error") == 0)
@@ -453,13 +453,13 @@ void get_repcheck_status(int fd)
     }
     mysql_free_result(result);
 
-    // íŒ¨í‚· ì¤€ë¹„
+    // ?Œ¨?‚· ì¤?ë¹?
     printf("Result:\n%s\n", result_buffer);
-    packet.header.type = REP_CHECK; // íŒ¨í‚· íƒ€ìž… ì„¤ì •
+    packet.header.type = REP_CHECK; // ?Œ¨?‚· ????ž… ?„¤? •
     strncpy(packet.buf, result_buffer, BUF_SIZE - 1); // ê²°ê³¼ ë²„í¼ ë³µì‚¬
-    packet.header.length = strlen(packet.buf); // íŒ¨í‚· ê¸¸ì´ ì„¤ì •
+    packet.header.length = strlen(packet.buf); // ?Œ¨?‚· ê¸¸ì´ ?„¤? •
 
-    // ë°ì´í„° ì „ì†¡
+    // ?°?´?„° ? „?†¡
     send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
     ec_log((DEB_DEBUG, ">>>[REPLIE] Replication_status_success\n", NULL));
     free(result_buffer);
@@ -516,13 +516,13 @@ void get_replication_on(int fd)
     // restore result
     strcat(result_buffer, "START Replication" ? "START Replication" : "NULL");
 
-    // íŒ¨í‚· ì¤€ë¹„
+    // ?Œ¨?‚· ì¤?ë¹?
     printf("Result:\n%s\n", result_buffer);
-    packet.header.type = REP_ON; // íŒ¨í‚· íƒ€ìž… ì„¤ì •
+    packet.header.type = REP_ON; // ?Œ¨?‚· ????ž… ?„¤? •
     strncpy(packet.buf, result_buffer, BUF_SIZE - 1); // ê²°ê³¼ ë²„í¼ ë³µì‚¬
-    packet.header.length = strlen(packet.buf); // íŒ¨í‚· ê¸¸ì´ ì„¤ì •
+    packet.header.length = strlen(packet.buf); // ?Œ¨?‚· ê¸¸ì´ ?„¤? •
 
-    // ë°ì´í„° ì „ì†¡
+    // ?°?´?„° ? „?†¡
     send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
     ec_log((DEB_DEBUG, ">>>[REPLIE] Replication_start_success\n", NULL));
     free(result_buffer);
@@ -577,76 +577,15 @@ void get_replication_off(int fd)
     // restore result
     strcat(result_buffer, "STOP Replication" ? "STOP Replication" : "NULL");
 
-    // íŒ¨í‚· ì¤€ë¹„
+    // ?Œ¨?‚· ì¤?ë¹?
     printf("Result:\n%s\n", result_buffer);
-    packet.header.type = REP_OFF; // íŒ¨í‚· íƒ€ìž… ì„¤ì •
+    packet.header.type = REP_OFF; // ?Œ¨?‚· ????ž… ?„¤? •
     strncpy(packet.buf, result_buffer, BUF_SIZE - 1); // ê²°ê³¼ ë²„í¼ ë³µì‚¬
-    packet.header.length = strlen(packet.buf); // íŒ¨í‚· ê¸¸ì´ ì„¤ì •
+    packet.header.length = strlen(packet.buf); // ?Œ¨?‚· ê¸¸ì´ ?„¤? •
 
-    // ë°ì´í„° ì „ì†¡
+    // ?°?´?„° ? „?†¡
     send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
     ec_log((DEB_DEBUG, ">>>[REPLIE] Replication_stop_success\n", NULL));
     free(result_buffer);
     mysql_close(conn_ptr);
 }
-/* CRUD mysql query */
-void get_sql_insert_table(int fd, const char *query)
-{
-    Packet packet;
-    MYSQL *conn_ptr = mysql_init(NULL);
-
-    // conn init
-    if (conn_ptr == NULL) {
-        fprintf(stderr, "mysql_init() failed\n");
-        return; 
-    }
-    
-    // conn exception
-    int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn_ptr);
-    if (active_db == 0){
-		printf("all_db_is_down\n");
-        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-        mysql_close(conn_ptr);
-        return;
-	}
-
-    // conn connect
-    connect_main_db(active_db, conn_ptr);
-
-    // buffer exception
-    char* result_buffer = (char*)malloc(BUF_SIZE);
-    if (result_buffer == NULL)
-    {
-        fprintf(stderr, "Memory allocation failed\n");
-        mysql_close(conn_ptr);
-        exit(1);
-    }
-
-    // buffer last string
-    result_buffer[0] = '\0';
-
-    // buffer init
-    memset(result_buffer, 0, BUF_SIZE);
-
-    // accept query
-    if(mysql_query(conn_ptr, query))
-    {
-        printf("query error: %s\n", mysql_error(conn_ptr));
-        ec_log((DEB_ERROR, ">>>[db] mysql_query_error\n", NULL));
-        return;
-    }
-    // restore result
-    strcat(result_buffer, "INSERT SUCCESS" ? "INSERT SUCCESS" : "NULL");
-    // íŒ¨í‚· ì¤€ë¹„
-    printf("Result:\n%s\n", result_buffer);
-    packet.header.type = SQL_INSERT; // íŒ¨í‚· íƒ€ìž… ì„¤ì •
-    strncpy(packet.buf, result_buffer, BUF_SIZE - 1); // ê²°ê³¼ ë²„í¼ ë³µì‚¬
-    packet.header.length = strlen(packet.buf); // íŒ¨í‚· ê¸¸ì´ ì„¤ì •
-
-    // ë°ì´í„° ì „ì†¡
-    send(fd, &packet, sizeof(packet.header) + packet.header.length, 0);
-    ec_log((DEB_DEBUG, ">>>[db] mysql_send_success\n", NULL));
-    free(result_buffer);
-    mysql_close(conn_ptr);
-}
-
