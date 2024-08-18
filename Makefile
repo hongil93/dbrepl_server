@@ -1,5 +1,5 @@
 TARGET = repl
-SRCS = main.c db.c init.c recv.c
+SRCS = main.c db.c init.c send.c recv.c util.c
 OBJS = $(SRCS:.c=.o)
 CC = gcc
 

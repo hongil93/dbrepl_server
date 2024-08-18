@@ -27,6 +27,7 @@ CC	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^CC      = gcc$/;"	m
 CFG	./include/main.h	/^}CFG;$/;"	t	typeref:struct:_config
 CFLAGS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^CFLAGS  = -fPIC -g #-g3 -ggdb -gdwarf-2$/;"	m
 CLIENT_LIST	./include/recv.h	/^} CLIENT_LIST;$/;"	t	typeref:struct:_client_list
+DB	./include/main.h	/^	DB = 0,$/;"	e	enum:jdr_type
 DB_INFO	./include/db.h	/^} DB_INFO;$/;"	t	typeref:struct:_db_info
 DB_LIST	./include/db.h	/^} DB_LIST;$/;"	t	typeref:struct:_db_list
 DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	41;"	d
@@ -203,8 +204,9 @@ DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
-EVT_ERROR	./include/recv.h	11;"	d
-EVT_WARNING	./include/recv.h	10;"	d
+EVT_ERROR	./include/recv.h	12;"	d
+EVT_STATUS	./include/recv.h	13;"	d
+EVT_WARNING	./include/recv.h	11;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	23;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	23;"	d
 E_FILEREAD	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	24;"	d
@@ -377,7 +379,7 @@ MAXFILES	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	17;"	d
 MAX_CLIENTS	./include/recv.h	3;"	d
 MAX_DBNAME	./include/db.h	5;"	d
 MAX_EPOLL_EVENT	./include/recv.h	2;"	d
-MAX_FILE_NAME	./include/main.h	19;"	d
+MAX_FILE_NAME	./include/main.h	21;"	d
 MAX_HOST	./include/db.h	2;"	d
 MAX_JDR_CNT	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	47;"	d
 MAX_JDR_CNT	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	47;"	d
@@ -460,15 +462,21 @@ PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^} DebugKe
 PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
 PDebugKeys	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^} DebugKeys, *PDebugKeys;$/;"	t	typeref:struct:_DebugKeys	file:
 Packet	./include/recv.h	/^} Packet;$/;"	t	typeref:struct:_packet
-REP_CHECK	./include/recv.h	7;"	d
-REP_OFF	./include/recv.h	9;"	d
-REP_ON	./include/recv.h	8;"	d
+REP_CHECK	./include/recv.h	8;"	d
+REP_OFF	./include/recv.h	10;"	d
+REP_ON	./include/recv.h	9;"	d
+REQUEST	./include/main.h	/^	REQUEST,$/;"	e	enum:jdr_type
+RESPONSE	./include/main.h	/^	RESPONSE$/;"	e	enum:jdr_type
 SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	8;"	d
 SHM_ERROR	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	8;"	d
 SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/elnshm.h	7;"	d
 SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	7;"	d
 SONAME	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SONAME=$(LIBBASE).$(MAJOR)$/;"	m
+SQL	./include/main.h	/^	SQL,$/;"	e	enum:jdr_type
+SQL_COMPARE	./include/recv.h	7;"	d
 SQL_INSERT	./include/recv.h	6;"	d
+SQL_RESTORE	./include/recv.h	15;"	d
+SQL_RESTORE2	./include/recv.h	16;"	d
 SQL_SELECT	./include/recv.h	5;"	d
 SRCS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SRCS= debug.c inifile.c elnutil.c elnshm.c itq.c simple_timer.c jdrlog.c$/;"	m
 STDC_HEADERS	/home/khchoi/library/libeluonutil-R2.0.0/config.h	122;"	d
@@ -582,8 +590,10 @@ cFiles	/home/khchoi/library/libeluonutil-R2.0.0/inifile.c	/^static int cFiles = 
 cb_on_timer	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	stmr_cb_on_timer_t cb_on_timer;$/;"	m	struct:_stmr
 cb_on_timer	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	stmr_cb_on_timer_t cb_on_timer;$/;"	m	struct:_stmr
 cfg	./include/main.h	/^	CFG cfg[1];$/;"	m	struct:_process_control_block
+check_db_status_t	./include/main.h	/^pthread_t check_db_status_t;$/;"	v
+check_file_t	./include/main.h	/^pthread_t check_file_t;$/;"	v
 client_count	./include/recv.h	/^    int client_count;$/;"	m	struct:_client_list
-client_list	./include/recv.h	/^CLIENT_LIST client_list;$/;"	v
+client_list	./include/recv.h	/^CLIENT_LIST client_list;/;"	v
 client_sockets	./include/recv.h	/^    int client_sockets[MAX_CLIENTS];$/;"	m	struct:_client_list
 cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_list.h	/^	unsigned long cnt;$/;"	m	struct:_list_handle
 cnt	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	unsigned long cnt;$/;"	m	struct:_stmr_handle
@@ -848,6 +858,7 @@ jdr_move_file	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^int jdr_move_f
 jdr_move_file	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_move_file[256]; $/;"	m	struct:_jdr_control_block
 jdr_period	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    int    jdr_period; $/;"	m	struct:_jdr_control_block
 jdr_period	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    int    jdr_period; $/;"	m	struct:_jdr_control_block
+jdr_type	./include/main.h	/^enum jdr_type{$/;"	g
 jdr_write_dir	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_write_dir[256];$/;"	m	struct:_jdr_control_block
 jdr_write_dir	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	/^    char   jdr_write_dir[256];$/;"	m	struct:_jdr_control_block
 jdr_write_file	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	/^    char   jdr_write_file[256];$/;"	m	struct:_jdr_control_block

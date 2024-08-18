@@ -6,24 +6,75 @@
 
 #define ec_log(x) DwDebugLog x;
 
-void type_categorizer(int type, int fd, char *buf){
-	switch(type){
-        case REP_CHECK:
-        get_repcheck_status(fd);
-		break;
+void type_categorizer(int fd, Packet packet){
+	char* send_buf;
+	char* time = time_now();
+	switch(packet.header.type){
+		case REP_CHECK:
+			send_buf = get_repcheck_status();
+			if (send_buf != NULL){
+				send_message(fd, REP_CHECK, send_buf);
+				//JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER_TB\n", time));
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				//JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
+				break;
+			}
         case REP_ON:
-        get_replication_on(fd);
-		break;
+			get_replication_on(fd);
+			break;
         case REP_OFF:
-        get_replication_off(fd);
-		break;
-        case SQL_SELECT:
-		get_sql_select_all(fd, buf);
-        break;
+			get_replication_off(fd);
+			break;
         case SQL_INSERT:
-        get_sql_insert_table(fd, buf);
-        break;
+			get_sql_insert_table(fd, packet.buf);
+			break;
+		case SQL_SELECT:
+			//JDRLog((REQUEST, "%s,SQL_SELECT\n", time));
+		    send_buf = get_select_all();
+			if (send_buf != NULL){
+				send_message(fd, SQL_SELECT, send_buf);
+				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER_TB\n", time));
+				free(send_buf);
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
+				break;
+			}
+        case SQL_COMPARE:
+			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
+            //get_db_data(2);
+			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
+				printf("cannot create file_check thread\n");
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
+				break;
+			}else{
+				printf("check_file thread created\n");
+				if(pthread_join(check_file_t, NULL)!=0){
+					printf("join_error\n");
+				}
+			}
+
+            send_buf = compare_table(atoi(packet.buf));
+			if (send_buf != NULL){
+				send_message(fd, SQL_COMPARE, send_buf);
+				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
+				free(send_buf);
+		    	break;
+			}else{
+				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
+				break;
+			}
+            break;
+			
+		default:
+			printf("unknown Type\n");
+			break;
 	}
+	free(time);
 }
 
 int recv_packet(int sock, Packet *msg) {
@@ -75,6 +126,7 @@ void recv_message(int clfd) {
         } else if (recv_len == 0) {
             printf("Client disconnected.\n");
 			ec_log((DEB_DEBUG, ">>>[TCP] Client disconnected.\n", NULL));
+			remove_client(clfd);
             close(clfd);
             return;
         }
@@ -98,7 +150,6 @@ void recv_message(int clfd) {
             }
         } else if (recv_len == 0) {
             printf("Client disconnected.\n");
-			remove_client(clfd);
             close(clfd);
             return;
         }
@@ -111,7 +162,7 @@ void recv_message(int clfd) {
            msg.header.type, msg.header.length, msg.buf);
 	ec_log((DEB_DEBUG, ">>>[TCP] Received Message Type: %d, Length: %d, Msg: %s", msg.header.type, msg.header.length, msg.buf));
 	
-	type_categorizer(msg.header.type, clfd, msg.buf);
+	type_categorizer(clfd, msg);
 }
 
 int set_non_blocking(int sfd) {

@@ -1,4 +1,6 @@
 #include "main.h"
+#define JDR_SECTION "JDR"
+
 
 void set_config_name(char* config_file_name){
 	CFG *gcfg = gpcb->cfg;
@@ -92,6 +94,8 @@ int read_log_cfg()
 	}
 
 	printf("log_file_name: %s\n", gcfg->log_file_name);
+
+	InitJDRSupport(gcfg->config_file_name , JDR_SECTION);
 	
 	ec_end_inifile(cfd);
 
@@ -99,20 +103,3 @@ int read_log_cfg()
 
 	return 1;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
