@@ -64,8 +64,7 @@ int read_db_cfg();
 int read_log_cfg();
 
 //function db.c
-int check_db();
-char* get_select_all();
+void* check_db(void*);
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
 int get_db_data(int);

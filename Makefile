@@ -23,7 +23,8 @@ $(TARGET): $(OBJS)
 	ctags -R /home/khchoi/library/libeluonutil-R2.0.0/* ./include/
 
 %.o: %.c
-	$(CC) -std=c99 $(CFLAGS) $< -o $@ 
+#	$(CC) -std=c99 $(CFLAGS) $< -o $@ 
+	$(CC) -std=gnu99 $(CFLAGS) $< -o $@ 
 
 clean:
 	rm -f $(OBJS) $(TARGET)
