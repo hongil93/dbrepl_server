@@ -9,6 +9,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <pthread.h>
+#include <dirent.h>
+#include <sys/types.h>
 #include <sys/stat.h>
 #include "elnutil.h"
 #include "inifile.h"
@@ -64,7 +66,7 @@ int read_db_cfg();
 int read_log_cfg();
 
 //function db.c
-int check_db();
+void* check_db(void*);
 char* get_select_all();
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
@@ -88,7 +90,9 @@ void send_message(int, int, const char*);
 void broadcast_message(const char*, int);
 
 //send.c
-void* send_server_status(void*);
+int send_server_status(int);
 
 //util.c
 char* time_now();
+int count_files(const char*);
+int all_request(const char*);

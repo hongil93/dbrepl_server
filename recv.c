@@ -49,6 +49,11 @@ void type_categorizer(int fd, Packet packet){
 				break;
 			}
             break;
+
+		case EVT_STATUS:
+			send_server_status(fd);
+			break;
+			
 			
 		default:
 			printf("unknown Type\n");

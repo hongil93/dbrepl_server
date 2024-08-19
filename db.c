@@ -7,54 +7,50 @@
 #define ec_log(x) DwDebugLog x;
 
 
-int check_db()
+void* check_db(void* args)
 {
 	DB_INFO *db01 = &(gpcb->db01);
 	DB_INFO *db02 = &(gpcb->db02);
 	MYSQL* conn1 = db01->conn;
 	MYSQL* conn2 = db02->conn;
 
-    conn1 = mysql_init(NULL);
-    conn2 = mysql_init(NULL);
-    
-    if(connect_db(conn1, 1)==NULL)
-    {
-        fprintf(stderr, "%s\n", mysql_error(conn1));
-        gpcb->db01.status = 0;
-        printf("Can not connect to DB01\n");
-        mysql_close(conn1);
-    }else{
-        gpcb->db01.status = 1;
-        mysql_close(conn1);
-    }
+    while(1){
+        conn1 = mysql_init(NULL);
+        conn2 = mysql_init(NULL);
 
-    if(connect_db(conn2, 2)==NULL)
-    {
-        fprintf(stderr, "%s\n", mysql_error(conn2));
-        gpcb->db02.status = 0;
-        printf("Can not connect to DB02\n");
-        mysql_close(conn2);
-    }else{
-        gpcb->db02.status = 1;
-        mysql_close(conn2);
-    }
-    if(gpcb->db01.status == 0 && gpcb->db02.status == 0){
-        return 0;
-    }
+        if(connect_db(conn1, 1)==NULL)
+        {
+            fprintf(stderr, "%s\n", mysql_error(conn1));
+            gpcb->db01.status = 0;
+            printf("Can not connect to DB01\n");
+            ec_log((DEB_WARN, ">>>[DB] DB01 IS DOWN\n", NULL));
+            mysql_close(conn1);
+        }else{
+            gpcb->db01.status = 1;
+            mysql_close(conn1);
+        }
 
-    if((gpcb->db01.status) == 0){
-        return 1;
-    }
-    if((gpcb->db02.status) == 0){
-        return 2;
-    }
+        if(connect_db(conn2, 2)==NULL)
+        {
+            fprintf(stderr, "%s\n", mysql_error(conn2));
+            gpcb->db02.status = 0;
+            printf("Can not connect to DB02\n");
+            ec_log((DEB_WARN, ">>>[DB] DB02 IS DOWN\n", NULL));
+            mysql_close(conn2);
+        }else{
+            gpcb->db02.status = 1;
+            mysql_close(conn2);
+        }
 
-    if (gpcb->db01.status == 1 && gpcb->db02.status ==1){
-        return 3;
+        if (gpcb->db02.status == 0 && gpcb->db01.status ==0){
+            ec_log((DEB_ERROR, ">>>[DB] ALL DB DOWN\n", NULL));
+        }
+
+        sleep(5);
     }
-    return -1;
 
 }
+
 
 char* get_select_all()
 {

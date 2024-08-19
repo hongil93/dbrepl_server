@@ -1,5 +1,6 @@
 /jdr
 /log
+/.vscode
 *.o
 repl
 tags
