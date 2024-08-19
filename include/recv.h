@@ -14,7 +14,7 @@
 #define SQL_RESTORE 500
 #define SQL_RESTORE2 501
 
-
+#define STAT_RECENT 600
 
 typedef struct _header{
     int length;

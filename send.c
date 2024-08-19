@@ -3,66 +3,12 @@
 
 #define ec_log(x) DwDebugLog x;
 
-// void* send_server_status(void* args){
-//     char server_status[BUF_SIZE];
-//     char* cdb_status;
-//     while(1){
-//         int client_cnt = client_list.client_count;
-//         int db_status;
-//         int all_request_cnt;
-//         int len;
-//         all_request_cnt = all_request("/home/kim/project/dbrepl_server/jdr/req_done");
-//         db_status = check_db();
-
-//         switch (db_status) {
-//             case 0:
-//                 cdb_status = "DB01: DOWN\nDB02: DOWN";
-//                 ec_log((DEB_ERROR, ">>>[DB] ALL DB DOWN\n", NULL));
-//                 JDRLog((DB, "%s,%s\n" , time_now(),"ALLDOWN"));
-//                 break;
-//             case 1:
-//                 cdb_status = "DB01: DOWN\nDB02: ON";
-//                 ec_log((DEB_WARN, ">>>[DB] DB01 IS DOWN\n", NULL));
-//                 JDRLog((DB, "%s,%s\n" , time_now(),"DB01DOWN"));
-//                 break;
-//             case 2:
-//                 cdb_status = "DB01: ON\nDB02: DOWN";
-//                 ec_log((DEB_WARN, ">>>[DB] DB02 IS DOWN\n", NULL));
-//                 JDRLog((DB, "%s,%s\n" , time_now(),"DB02DOWN"));
-//                 break;
-//             case 3:
-//                 cdb_status = "DB01: ON\nDB02: ON";
-//                 ec_log((DEB_DEBUG, ">>>[DB] ALL DB OK\n", NULL));
-//                 JDRLog((DB, "%s,%s\n" , time_now(), "ALLOK"));
-//                 break;
-//             default:
-//                 cdb_status = "UNKNOWN DB STATUS";
-                
-//                 break;
-//         }
-        
-//         snprintf(server_status, BUF_SIZE, \
-//         "=======SERVER_STATUS=======\n"\
-//         "%s\n"\
-//         "Client Count: %d\n"\
-//         "All Request: %d\n"\
-//         "===========================\n"\
-//         , cdb_status, client_cnt, all_request_cnt);
-
-//         if(client_cnt > 0 ){
-//             broadcast_message(server_status, EVT_STATUS);
-//             ec_log((DEB_DEBUG, ">>>[TCP] Send Status\n", NULL));
-//         }
-//         sleep(5);
-//     }
-// }
-
 int send_server_status(int fd){
     char server_status[BUF_SIZE];
     char* db01_status = "DOWN";
 	char* db02_status = "DOWN";
     int client_cnt = client_list.client_count;
-    char* replstatus = get_repcheck_status();
+    char* replstatus = "ERROR";
 
 	if (gpcb->db01.status == 1){
 		db01_status = "ON";
@@ -72,22 +18,138 @@ int send_server_status(int fd){
 		db02_status = "ON";
 	}
 
+    if (gpcb->repl_status){
+        replstatus = "OK";
+    } else {
+        replstatus = "ERROR";
+    }
+
     snprintf(server_status, BUF_SIZE, \
     "=======SERVER_STATUS=======\n"\
 	"DB01: %s\n"\
 	"DB02: %s\n"\
     "Clients: %d\n"\
-    "===========================\n"\
-    "%s\n"\
+    "Replication: %s\n"\
+    "===========================\n\n"\
     , db01_status, db02_status, client_cnt, replstatus);
 
     send_message(fd, EVT_STATUS, server_status);
-    free(replstatus);
+    JDRLog((RESPONSE, "%s,EVT_STATUS,SUCCESS,DB01:%s,DB02:%s,Clients:%d,Replication:%s\n", time_now(), db01_status, db02_status, client_cnt, replstatus));
 
     return 0;
 }
 
-char* make_repl_status(int fd){
+int send_repl_status(int fd){
+    char error_log[BUF_SIZE];
+    char res[BUF_SIZE * 2];
+
+    if(gpcb->db01.status == 0 && gpcb->db02.status == 0){
+        sprintf(res, "ALL DB DOWN\n");
+        send_message(fd, REP_CHECK, res);
+        JDRLog((RESPONSE, "%s,REP_CHECK,FAIL,%s\n", time_now(), "ALL_DB_DOWN"));
+        return 0;
+    }
+
+    snprintf(res, BUF_SIZE, \
+    "=======DB01 MASTER STATUS=======\n"\
+    "File: %s\n"\
+    "Position: %s\n"\
+    "=======DB01 SLAVE STATUS=======\n"\
+    "File: %s\n"\
+    "Position: %s\n"\
+    "Slave_IO_Running: %s\n"\
+    "Slave_SQL_Running: %s\n\n"\
+    "=======DB02 MASTER STATUS=======\n"\
+    "File: %s\n"\
+    "Position: %s\n"\
+    "=======DB02 SLAVE STATUS=======\n"\
+    "File: %s\n"\
+    "Position: %s\n"\
+    "Slave_IO_Running: %s\n"\
+    "Slave_SQL_Running: %s\n"\
+    , gpcb->db01.repl_master_status.File, gpcb->db01.repl_master_status.Position
+    , gpcb->db01.repl_slave_status.Master_Log_File, gpcb->db01.repl_slave_status.Read_Master_Log_Pos, gpcb->db01.repl_slave_status.Slave_IO_Running, gpcb->db01.repl_slave_status.Slave_SQL_Running
+    , gpcb->db02.repl_master_status.File, gpcb->db02.repl_master_status.Position
+    , gpcb->db02.repl_slave_status.Master_Log_File, gpcb->db02.repl_slave_status.Read_Master_Log_Pos, gpcb->db02.repl_slave_status.Slave_IO_Running, gpcb->db02.repl_slave_status.Slave_SQL_Running
+    );
+
+    snprintf(error_log, BUF_SIZE, \
+    "\n=======DB01 ERROR=======\n"\
+    "Last_IO_Errno: %s\n"\
+    "Last_IO_Error: %s\n\n"\
+    "Last_SQL_Errno: %s\n"\
+    "Last_SQL_Error: %s\n\n"\
+    "=======DB02 ERROR=======\n"\
+    "Last_IO_Errno: %s\n"\
+    "Last_IO_Error: %s\n\n"\
+    "Last_SQL_Errno: %s\n"\
+    "Last_SQL_Error: %s\n\n"\
+    , gpcb->db01.repl_slave_status.Last_IO_Errno, gpcb->db01.repl_slave_status.Last_IO_Error, gpcb->db01.repl_slave_status.Last_SQL_Errno, gpcb->db01.repl_slave_status.Last_SQL_Error
+    , gpcb->db02.repl_slave_status.Last_IO_Errno, gpcb->db02.repl_slave_status.Last_IO_Error, gpcb->db02.repl_slave_status.Last_SQL_Errno, gpcb->db02.repl_slave_status.Last_SQL_Error
+    );
+
+    strncat(res, error_log, sizeof(error_log));
+
+    send_message(fd, REP_CHECK, res);
+    JDRLog((RESPONSE, "%s,REP_CHECK,SUCCESS,%s\n", time_now(), ""));
+
+    return 0;
+}
+
+// int repl_status(char* raw){
+//     if(raw == NULL){
+//         return 0;
+//     }
+//     char *repl_status[2][12];
+//     char *token = strtok(raw, ",");
+//     for(int db = 0; db < 2; db++){
+//         for(int i = 0; i < 12; i++){
+//             if(token != NULL){
+//                 repl_status[db][i] = token;
+//                 token = strtok(NULL, ","); // next token
+//             }
+//         }
+//     }
+
+//     // gpcb->db01.repl.Slave_IO_Running = repl_status[0][2];
+//     // gpcb->db01.repl.Slave_SQL_Running = repl_status[0][3];
+//     // gpcb->db02.repl.Slave_IO_Running = repl_status[1][2];
+//     // gpcb->db02.repl.Slave_SQL_Running = repl_status[1][3];
+
+//     if (strcmp(repl_status[0][2], "Yes") == 0 && strcmp(repl_status[0][3], "Yes") == 0 
+//     && strcmp(repl_status[1][2], "Yes") == 0 && strcmp(repl_status[1][3], "Yes")){
+//         return 1;
+//     } else {
+//         return 0;
+//     }
+// }
+
+
+int send_recent_stat(int fd){
+    char res[BUF_SIZE];
+    int all_request_cnt=0;
+    int all_response_cnt=0;
+
+    int five_min_req=0;
+    int five_min_res=0;
+
+    all_request_cnt = all_request("/home/kim/project/dbrepl_server/jdr/req_done");
+    all_response_cnt = all_request("/home/kim/project/dbrepl_server/jdr/res_done");
+
+    five_min_req = five_min_request("/home/kim/project/dbrepl_server/jdr/req_done");
+    five_min_res = five_min_request("/home/kim/project/dbrepl_server/jdr/res_done");    
+    
+    snprintf(res, BUF_SIZE, \
+    "\n=======RECENT STATISTICS=======\n"\
+    "All request: %d\n"\
+    "All response: %d\n"\
+    "5min request: %d\n"\
+    "5min response: %d\n"\
+    , all_request_cnt, all_response_cnt, five_min_req, five_min_res
+    );
+    send_message(fd, STAT_RECENT, res);
+    JDRLog((RESPONSE, "%s,STAT_RECENT,SUCCESS,5minrequest:%d,5minresponse:%d,\n", time_now(), five_min_req, five_min_res));
+    return 0;
 
 }
 

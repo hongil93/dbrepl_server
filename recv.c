@@ -51,10 +51,19 @@ void type_categorizer(int fd, Packet packet){
             break;
 
 		case EVT_STATUS:
+			JDRLog((REQUEST, "%s,EVT_STATUS\n", time));
 			send_server_status(fd);
 			break;
+
+		case REP_CHECK:
+			JDRLog((REQUEST, "%s,REP_CHECK\n", time));
+			send_repl_status(fd);
+			break;
 			
-			
+		case STAT_RECENT:
+			JDRLog((REQUEST, "%s,STAT_RECENT\n", time));
+			send_recent_stat(fd);
+			break;
 		default:
 			printf("unknown Type\n");
 			break;

@@ -22,6 +22,7 @@ void* check_db(void* args)
         {
             fprintf(stderr, "%s\n", mysql_error(conn1));
             gpcb->db01.status = 0;
+            gpcb->repl_status = 0;
             printf("Can not connect to DB01\n");
             ec_log((DEB_WARN, ">>>[DB] DB01 IS DOWN\n", NULL));
             mysql_close(conn1);
@@ -34,6 +35,7 @@ void* check_db(void* args)
         {
             fprintf(stderr, "%s\n", mysql_error(conn2));
             gpcb->db02.status = 0;
+            gpcb->repl_status = 0;
             printf("Can not connect to DB02\n");
             ec_log((DEB_WARN, ">>>[DB] DB02 IS DOWN\n", NULL));
             mysql_close(conn2);
@@ -44,11 +46,32 @@ void* check_db(void* args)
 
         if (gpcb->db02.status == 0 && gpcb->db01.status ==0){
             ec_log((DEB_ERROR, ">>>[DB] ALL DB DOWN\n", NULL));
+            gpcb->repl_status = 0;
+        }
+
+        if (gpcb->db02.status == 1 && gpcb->db01.status ==1){
+            ec_log((DEB_ERROR, ">>>[DB] ALL DB ON\n", NULL));
+            get_repcheck_status();
+            gpcb->repl_status = repl_status();
         }
 
         sleep(5);
     }
 
+}
+
+int repl_status(){
+    REPL_SLAVE_STATUS *status_db01 = &gpcb->db01.repl_slave_status;
+    REPL_SLAVE_STATUS *status_db02 = &gpcb->db02.repl_slave_status;
+    REPL_MASTER_STATUS *m_status_db01 = &gpcb->db01.repl_master_status;
+    REPL_MASTER_STATUS *m_status_db02 = &gpcb->db02.repl_master_status;
+
+    if (strcmp(status_db01->Slave_IO_Running, "Yes") == 0 && strcmp(status_db01->Slave_SQL_Running, "Yes") == 0 
+    && strcmp(status_db02->Slave_IO_Running, "Yes") == 0 && strcmp(status_db02->Slave_SQL_Running, "Yes")){
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 
@@ -331,225 +354,372 @@ void print_db_ver()
 
 /* hyogi code */
 /* 2. replication check */
-char* get_repcheck_status()
+// char* get_repcheck_status()
+// {
+//     MYSQL_ROW row;
+//     MYSQL_RES *res_db1, *res_db2;
+//     MYSQL *conn_ptr_db1 = mysql_init(NULL);
+//     MYSQL *conn_ptr_db2 = mysql_init(NULL);
+
+//     // conn init
+//     if (conn_ptr_db1 == NULL || conn_ptr_db2 == NULL) {
+//         fprintf(stderr, "mysql_init() failed\n");
+//         ec_log((DEB_ERROR, ">>>[DB] INIT ERROR\n", NULL));
+//         return NULL;
+//     }
+    
+//     /* conn connect */
+//     // DB1
+//     if (connect_db(conn_ptr_db1, 1) == NULL) {
+//         fprintf(stderr, "Failed to connect to DB1: %s\n", mysql_error(conn_ptr_db1));
+//         mysql_close(conn_ptr_db1);
+//         ec_log((DEB_ERROR, ">>>[DB1] CONNECT ERROR\n", NULL));
+//         return NULL;
+//     }
+
+//     // DB2
+//     if (connect_db(conn_ptr_db2, 2) == NULL) {
+//         fprintf(stderr, "Failed to connect to DB2: %s\n", mysql_error(conn_ptr_db2));
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         ec_log((DEB_ERROR, ">>>[DB2] CONNECT ERROR\n", NULL));
+//         return NULL;
+//     }
+
+//     // buffer allocation
+//     char* result_buffer = (char*)malloc(BUF_SIZE);
+//     if (result_buffer == NULL)
+//     {
+//         fprintf(stderr, "Memory allocation failed\n");
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         ec_log((DEB_ERROR, ">>>[SYSTEM] Memory allocation ERROR\n", NULL));
+//         return NULL;
+//     }
+//     result_buffer[0] = '\0';
+
+//     /* SHOW SLAVE STATUS - DB01 */
+//     if (mysql_query(conn_ptr_db1, "SHOW SLAVE STATUS"))
+//     {
+//         printf("DB1 query error: %s\n", mysql_error(conn_ptr_db1));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     res_db1 = mysql_store_result(conn_ptr_db1);
+//     if (res_db1 == NULL)
+//     {
+//         fprintf(stderr, "res_db1 error: %s\n", mysql_error(conn_ptr_db1));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     int num_fields = mysql_num_fields(res_db1);
+//     while ((row = mysql_fetch_row(res_db1)) != NULL) {
+//         for (int i = 0; i < num_fields; i++) {
+//             const char *field_name = mysql_fetch_field_direct(res_db1, i)->name;
+
+//             /* string compare - slave status */
+//             if(strcmp(field_name, "Slave_IO_Running") == 0 ||
+//                strcmp(field_name, "Slave_SQL_Running") == 0 ||
+//                strcmp(field_name, "Last_IO_Errno") == 0 ||
+//                strcmp(field_name, "Last_SQL_Errno") == 0 ||
+//                strcmp(field_name, "Master_Log_File") == 0 ||
+//                strcmp(field_name, "Read_Master_Log_Pos") == 0) {
+//                /* string attach in result_buffer */
+//                strcat(result_buffer, row[i] ? row[i] : "NULL");
+//                strcat(result_buffer, ",");
+//             }
+//             /* string compare - slave error*/
+//             if(strcmp(field_name, "Last_IO_Error") == 0 ||
+//                strcmp(field_name, "Last_SQL_Error") == 0 ){
+//                /* string attach in result_buffer */
+//                strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
+//                strcat(result_buffer, ",");
+//             }
+//         }
+//     }
+//     mysql_free_result(res_db1);
+
+//     /* SHOW MASTER STATUS - DB01 */
+//     if (mysql_query(conn_ptr_db1, "SHOW MASTER STATUS"))
+//     {
+//         printf("DB1 query error: %s\n", mysql_error(conn_ptr_db1));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     res_db1 = mysql_store_result(conn_ptr_db1);
+//     if (res_db1 == NULL)
+//     {
+//         fprintf(stderr, "res_db1 error: %s\n", mysql_error(conn_ptr_db1));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db1);
+//         return NULL;
+//     }
+//     int num_fields2 = mysql_num_fields(res_db1);
+//     while ((row = mysql_fetch_row(res_db1)) != NULL) {
+//         for (int i = 0; i < num_fields2; i++) {
+//             const char *field_name = mysql_fetch_field_direct(res_db1, i)->name;
+
+//             /* string attach in result_buffer */
+//             strcat(result_buffer, row[i] ? row[i] : "NULL");
+//             strcat(result_buffer, ",");
+//             /* string compare */
+//             if(strcmp(field_name, "Binlog_Do_DB") == 0 ||
+//                strcmp(field_name, "Binlog_Ignore_DB") == 0 ){
+//                /* string attach in result_buffer */
+//                strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
+//                strcat(result_buffer, ",");
+//             }
+//         }
+//     }
+//     mysql_free_result(res_db1);
+
+//     /* SHOW SLAVE STATUS - DB02 */
+//     if (mysql_query(conn_ptr_db2, "SHOW SLAVE STATUS"))
+//     {
+//         printf("DB2 query error: %s\n", mysql_error(conn_ptr_db2));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     res_db2 = mysql_store_result(conn_ptr_db2);
+//     if (res_db2 == NULL)
+//     {
+//         fprintf(stderr, "res_db2 error: %s\n", mysql_error(conn_ptr_db2));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db2);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     int num_fields1 = mysql_num_fields(res_db2);
+//     while ((row = mysql_fetch_row(res_db2)) != NULL) {
+//         for (int i = 0; i < num_fields1; i++) {
+//             const char *field_name = mysql_fetch_field_direct(res_db2, i)->name;
+
+//             /* string compare - slave status */
+//             if(strcmp(field_name, "Slave_IO_Running") == 0 ||
+//                strcmp(field_name, "Slave_SQL_Running") == 0 ||
+//                strcmp(field_name, "Last_IO_Errno") == 0 ||
+//                strcmp(field_name, "Last_SQL_Errno") == 0 ||
+//                strcmp(field_name, "Master_Log_File") == 0 ||
+//                strcmp(field_name, "Read_Master_Log_Pos") == 0) {
+//                /* string attach in result_buffer */
+//                strcat(result_buffer, row[i] ? row[i] : "NULL");
+//                strcat(result_buffer, ",");
+//             }
+//             /* string compare - slave error*/
+//             if(strcmp(field_name, "Last_IO_Error") == 0 ||
+//                strcmp(field_name, "Last_SQL_Error") == 0) {
+//                /* string attach in result_buffer */
+//                strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
+//                strcat(result_buffer, ",");
+//             }
+//         }
+//     }
+//     mysql_free_result(res_db2);
+
+//     /* SHOW MASTER STATUS - DB02 */
+//     if (mysql_query(conn_ptr_db2, "SHOW MASTER STATUS"))
+//     {
+//         printf("DB2 query error: %s\n", mysql_error(conn_ptr_db2));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     res_db2 = mysql_store_result(conn_ptr_db2);
+//     if (res_db2 == NULL)
+//     {
+//         fprintf(stderr, "res_db2 error: %s\n", mysql_error(conn_ptr_db2));
+//         free(result_buffer);
+//         mysql_close(conn_ptr_db1);
+//         mysql_close(conn_ptr_db2);
+//         return NULL;
+//     }
+
+//     int num_fields3 = mysql_num_fields(res_db2);
+//     while ((row = mysql_fetch_row(res_db2)) != NULL) {
+//         for (int i = 0; i < num_fields3; i++) {
+//             const char *field_name = mysql_fetch_field_direct(res_db2, i)->name;
+
+//             /* string attach in result_buffer */
+//             strcat(result_buffer, row[i] ? row[i] : "NULL");
+//             strcat(result_buffer, ",");
+//             /* string compare */
+//             if(strcmp(field_name, "Binlog_Do_DB") == 0 ||
+//                strcmp(field_name, "Binlog_Ignore_DB") == 0 ){
+//                /* string attach in result_buffer */
+//                strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
+//                strcat(result_buffer, ",");
+//             }
+//         }
+//     }
+//     mysql_free_result(res_db2);
+//     mysql_close(conn_ptr_db1);
+//     mysql_close(conn_ptr_db2);
+    
+//     return result_buffer;
+// }
+
+int get_repcheck_status()
 {
     MYSQL_ROW row;
     MYSQL_RES *res_db1, *res_db2;
     MYSQL *conn_ptr_db1 = mysql_init(NULL);
     MYSQL *conn_ptr_db2 = mysql_init(NULL);
 
+    REPL_SLAVE_STATUS *status_db01 = &gpcb->db01.repl_slave_status;
+    REPL_MASTER_STATUS *m_status_db01 = &gpcb->db01.repl_master_status;
+
+    REPL_SLAVE_STATUS *status_db02 = &gpcb->db02.repl_slave_status;
+    REPL_MASTER_STATUS *m_status_db02 = &gpcb->db02.repl_master_status;
+
     // conn init
-    if (conn_ptr_db1 == NULL || conn_ptr_db2 == NULL) {
+    if (conn_ptr_db1 == NULL || conn_ptr_db2 == NULL)
+    {
         fprintf(stderr, "mysql_init() failed\n");
         ec_log((DEB_ERROR, ">>>[DB] INIT ERROR\n", NULL));
-        return NULL;
+        return -1;
     }
-    
+
     /* conn connect */
     // DB1
-    if (connect_db(conn_ptr_db1, 1) == NULL) {
+    if (connect_db(conn_ptr_db1, 1) == NULL)
+    {
         fprintf(stderr, "Failed to connect to DB1: %s\n", mysql_error(conn_ptr_db1));
         mysql_close(conn_ptr_db1);
         ec_log((DEB_ERROR, ">>>[DB1] CONNECT ERROR\n", NULL));
-        return NULL;
+        return -1;
     }
 
     // DB2
-    if (connect_db(conn_ptr_db2, 2) == NULL) {
+    if (connect_db(conn_ptr_db2, 2) == NULL)
+    {
         fprintf(stderr, "Failed to connect to DB2: %s\n", mysql_error(conn_ptr_db2));
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
         ec_log((DEB_ERROR, ">>>[DB2] CONNECT ERROR\n", NULL));
-        return NULL;
+        return -1;
     }
-
-    // buffer allocation
-    char* result_buffer = (char*)malloc(BUF_SIZE);
-    if (result_buffer == NULL)
-    {
-        fprintf(stderr, "Memory allocation failed\n");
-        mysql_close(conn_ptr_db1);
-        mysql_close(conn_ptr_db2);
-        ec_log((DEB_ERROR, ">>>[SYSTEM] Memory allocation ERROR\n", NULL));
-        return NULL;
-    }
-    result_buffer[0] = '\0';
 
     /* SHOW SLAVE STATUS - DB01 */
     if (mysql_query(conn_ptr_db1, "SHOW SLAVE STATUS"))
     {
         printf("DB1 query error: %s\n", mysql_error(conn_ptr_db1));
-        free(result_buffer);
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
-        return NULL;
+        return -1;
     }
 
     res_db1 = mysql_store_result(conn_ptr_db1);
-    if (res_db1 == NULL)
-    {
-        fprintf(stderr, "res_db1 error: %s\n", mysql_error(conn_ptr_db1));
-        free(result_buffer);
-        mysql_close(conn_ptr_db1);
-        mysql_close(conn_ptr_db2);
-        return NULL;
-    }
-
+    
     int num_fields = mysql_num_fields(res_db1);
-    while ((row = mysql_fetch_row(res_db1)) != NULL) {
-        for (int i = 0; i < num_fields; i++) {
-            const char *field_name = mysql_fetch_field_direct(res_db1, i)->name;
-            
-            /* string compare - slave status */
-            if(strcmp(field_name, "Slave_IO_Running") == 0 ||
-               strcmp(field_name, "Slave_SQL_Running") == 0 ||
-               strcmp(field_name, "Last_IO_Errno") == 0 ||
-               strcmp(field_name, "Last_SQL_Errno") == 0 ||
-               strcmp(field_name, "Master_Log_File") == 0 ||
-               strcmp(field_name, "Read_Master_Log_Pos") == 0) {
-               /* string attach in result_buffer */
-               strcat(result_buffer, row[i] ? row[i] : "NULL");
-               strcat(result_buffer, ",");
-            }
-            /* string compare - slave error*/
-            if(strcmp(field_name, "Last_IO_Error") == 0 ||
-               strcmp(field_name, "Last_SQL_Error") == 0 ){
-               /* string attach in result_buffer */
-               strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
-               strcat(result_buffer, ",");
-            }
-        }
-    }
-    mysql_free_result(res_db1);
+    row = mysql_fetch_row(res_db1);
+
+    status_db01->Master_Log_File = row[5];
+    status_db01->Read_Master_Log_Pos = row[6];
+    status_db01->Slave_IO_Running = row[10];
+    status_db01->Slave_SQL_Running = row[11];
+    status_db01->Last_IO_Errno = row[34];
+    status_db01->Last_IO_Error = row[35];
+    status_db01->Last_SQL_Errno = row[36];
+    status_db01->Last_SQL_Error = row[37];
+
+    //mysql_free_result(res_db1);
 
     /* SHOW MASTER STATUS - DB01 */
     if (mysql_query(conn_ptr_db1, "SHOW MASTER STATUS"))
     {
         printf("DB1 query error: %s\n", mysql_error(conn_ptr_db1));
-        free(result_buffer);
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
-        return NULL;
+        return -1;
     }
 
     res_db1 = mysql_store_result(conn_ptr_db1);
-    if (res_db1 == NULL)
-    {
-        fprintf(stderr, "res_db1 error: %s\n", mysql_error(conn_ptr_db1));
-        free(result_buffer);
-        mysql_close(conn_ptr_db1);
-        mysql_close(conn_ptr_db1);
-        return NULL;
-    }
+
     int num_fields2 = mysql_num_fields(res_db1);
-    while ((row = mysql_fetch_row(res_db1)) != NULL) {
-        for (int i = 0; i < num_fields2; i++) {
-            const char *field_name = mysql_fetch_field_direct(res_db1, i)->name;
-
-            /* string attach in result_buffer */
-            strcat(result_buffer, row[i] ? row[i] : "NULL");
-            strcat(result_buffer, ",");
-            /* string compare */
-            if(strcmp(field_name, "Binlog_Do_DB") == 0 ||
-               strcmp(field_name, "Binlog_Ignore_DB") == 0 ){
-               /* string attach in result_buffer */
-               strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
-               strcat(result_buffer, ",");
-            }
-        }
-    }
-    mysql_free_result(res_db1);
-
+    row = mysql_fetch_row(res_db1);
+    m_status_db01->File = row[0];
+    m_status_db01->Position = row[1];
+    m_status_db01->Binlog_Do_DB = row[2];
+    m_status_db01->Binlog_Ignore_DB = row[3];
+    
+    //mysql_free_result(res_db1);
+    
     /* SHOW SLAVE STATUS - DB02 */
     if (mysql_query(conn_ptr_db2, "SHOW SLAVE STATUS"))
     {
         printf("DB2 query error: %s\n", mysql_error(conn_ptr_db2));
-        free(result_buffer);
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
-        return NULL;
+        return -1;
     }
 
     res_db2 = mysql_store_result(conn_ptr_db2);
     if (res_db2 == NULL)
     {
         fprintf(stderr, "res_db2 error: %s\n", mysql_error(conn_ptr_db2));
-        free(result_buffer);
         mysql_close(conn_ptr_db2);
         mysql_close(conn_ptr_db2);
-        return NULL;
+        return -1;
     }
 
     int num_fields1 = mysql_num_fields(res_db2);
-    while ((row = mysql_fetch_row(res_db2)) != NULL) {
-        for (int i = 0; i < num_fields1; i++) {
-            const char *field_name = mysql_fetch_field_direct(res_db2, i)->name;
+    row = mysql_fetch_row(res_db2);
 
-            /* string compare - slave status */
-            if(strcmp(field_name, "Slave_IO_Running") == 0 ||
-               strcmp(field_name, "Slave_SQL_Running") == 0 ||
-               strcmp(field_name, "Last_IO_Errno") == 0 ||
-               strcmp(field_name, "Last_SQL_Errno") == 0 ||
-               strcmp(field_name, "Master_Log_File") == 0 ||
-               strcmp(field_name, "Read_Master_Log_Pos") == 0) {
-               /* string attach in result_buffer */
-               strcat(result_buffer, row[i] ? row[i] : "NULL");
-               strcat(result_buffer, ",");
-            }
-            /* string compare - slave error*/
-            if(strcmp(field_name, "Last_IO_Error") == 0 ||
-               strcmp(field_name, "Last_SQL_Error") == 0) {
-               /* string attach in result_buffer */
-               strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
-               strcat(result_buffer, ",");
-            }
-        }
-    }
-    mysql_free_result(res_db2);
+    status_db02->Master_Log_File = row[5];
+    status_db02->Read_Master_Log_Pos = row[6];
+    status_db02->Slave_IO_Running = row[10];
+    status_db02->Slave_SQL_Running = row[11];
+    status_db02->Last_IO_Errno = row[34];
+    status_db02->Last_IO_Error = row[35];
+    status_db02->Last_SQL_Errno = row[36];
+    status_db02->Last_SQL_Error = row[37];
+    
+    //mysql_free_result(res_db2);
 
     /* SHOW MASTER STATUS - DB02 */
     if (mysql_query(conn_ptr_db2, "SHOW MASTER STATUS"))
     {
         printf("DB2 query error: %s\n", mysql_error(conn_ptr_db2));
-        free(result_buffer);
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
-        return NULL;
+        return -1;
     }
 
     res_db2 = mysql_store_result(conn_ptr_db2);
-    if (res_db2 == NULL)
-    {
-        fprintf(stderr, "res_db2 error: %s\n", mysql_error(conn_ptr_db2));
-        free(result_buffer);
-        mysql_close(conn_ptr_db1);
-        mysql_close(conn_ptr_db2);
-        return NULL;
-    }
 
     int num_fields3 = mysql_num_fields(res_db2);
-    while ((row = mysql_fetch_row(res_db2)) != NULL) {
-        for (int i = 0; i < num_fields3; i++) {
-            const char *field_name = mysql_fetch_field_direct(res_db2, i)->name;
+    row = mysql_fetch_row(res_db2);
 
-            /* string attach in result_buffer */
-            strcat(result_buffer, row[i] ? row[i] : "NULL");
-            strcat(result_buffer, ",");
-            /* string compare */
-            if(strcmp(field_name, "Binlog_Do_DB") == 0 ||
-               strcmp(field_name, "Binlog_Ignore_DB") == 0 ){
-               /* string attach in result_buffer */
-               strcat(result_buffer, row[i] && strcmp(row[i], "") != 0 ? row[i] : "empty");
-               strcat(result_buffer, ",");
-            }
-        }
-    }
-    mysql_free_result(res_db2);
+    m_status_db02->File = row[0];
+    m_status_db02->Position = row[1];
+    m_status_db02->Binlog_Do_DB = row[2];
+    m_status_db02->Binlog_Ignore_DB = row[3];
+
+    //mysql_free_result(res_db2);
     mysql_close(conn_ptr_db1);
     mysql_close(conn_ptr_db2);
     
-    return result_buffer;
+    return 0;
 }
+
+
+
 
 /* 3. ON OFF replication */
 void get_replication_on(int fd)
