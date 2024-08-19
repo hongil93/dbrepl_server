@@ -14,7 +14,6 @@ void type_categorizer(int fd, Packet packet){
 			send_buf = get_repcheck_status();
 			if (send_buf != NULL){
 				send_message(fd, REP_CHECK, send_buf);
-				//JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER_TB\n", time));
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
@@ -35,20 +34,20 @@ void type_categorizer(int fd, Packet packet){
 		    send_buf = get_select_all();
 			if (send_buf != NULL){
 				send_message(fd, SQL_SELECT, send_buf);
-				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER_TB\n", time));
+				//JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER_TB\n", time));
 				free(send_buf);
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
+				//JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
         case SQL_COMPARE:
-			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
+			//JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
             //get_db_data(2);
 			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
 				printf("cannot create file_check thread\n");
-				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
+				//JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
 				break;
 			}else{
 				printf("check_file thread created\n");
@@ -60,12 +59,12 @@ void type_categorizer(int fd, Packet packet){
             send_buf = compare_table(atoi(packet.buf));
 			if (send_buf != NULL){
 				send_message(fd, SQL_COMPARE, send_buf);
-				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
+				//JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
 				free(send_buf);
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
+				//JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
             break;
