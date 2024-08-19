@@ -5,7 +5,7 @@
 void make_thread(pthread_t thread)
 {
 	//dbcheck_thread
-	if(pthread_create(&thread, NULL, send_server_status, NULL)!=0){
+	if(pthread_create(&thread, NULL, check_db, NULL)!=0){
 		printf("cannot create dbcheck thread\n");
 	}else{
 		printf("send_server_status thread created\n");

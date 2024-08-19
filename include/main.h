@@ -9,6 +9,8 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <pthread.h>
+#include <dirent.h>
+#include <sys/types.h>
 #include <sys/stat.h>
 #include "elnutil.h"
 #include "inifile.h"
@@ -65,6 +67,7 @@ int read_log_cfg();
 
 //function db.c
 void* check_db(void*);
+char* get_select_all();
 int set_main_db(int, int, MYSQL*);
 void connect_main_db(int, MYSQL*);
 int get_db_data(int);
@@ -77,6 +80,7 @@ void get_replication_on(int fd);
 void get_replication_off(int fd);
 void get_sql_select_all(int fd, const char *query);
 void get_sql_insert_table(int fd, const char *query);
+char *db_info_to_string(DB_INFO * db_info);
 
 //function recv.c
 int make_connection();
@@ -87,7 +91,9 @@ void send_message(int, int, const char*);
 void broadcast_message(const char*, int);
 
 //send.c
-void* send_server_status(void*);
+int send_server_status(int);
 
 //util.c
 char* time_now();
+int count_files(const char*);
+int all_request(const char*);

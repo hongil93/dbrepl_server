@@ -10,44 +10,26 @@ void type_categorizer(int fd, Packet packet){
 	char* send_buf;
 	char* time = time_now();
 	switch(packet.header.type){
-		case REP_CHECK:
-			send_buf = get_repcheck_status();
-			if (send_buf != NULL){
-				send_message(fd, REP_CHECK, send_buf);
-		    	break;
-			}else{
-				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				//JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
-				break;
-			}
-        case REP_ON:
-			get_replication_on(fd);
-			break;
-        case REP_OFF:
-			get_replication_off(fd);
-			break;
-        case SQL_INSERT:
-			get_sql_insert_table(fd, packet.buf);
-			break;
+		
 		case SQL_SELECT:
-			//JDRLog((REQUEST, "%s,SQL_SELECT\n", time));
+			JDRLog((REQUEST, "%s,SQL_SELECT\n", time));
 		    send_buf = get_select_all();
 			if (send_buf != NULL){
 				send_message(fd, SQL_SELECT, send_buf);
-				//JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER_TB\n", time));
+				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time));
 				free(send_buf);
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				//JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
+				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
         case SQL_COMPARE:
-			//JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
-            //get_db_data(2);
+			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
+            get_db_data(2);
 			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
 				printf("cannot create file_check thread\n");
-				//JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
 				break;
 			}else{
 				printf("check_file thread created\n");
@@ -59,15 +41,21 @@ void type_categorizer(int fd, Packet packet){
             send_buf = compare_table(atoi(packet.buf));
 			if (send_buf != NULL){
 				send_message(fd, SQL_COMPARE, send_buf);
-				//JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
+				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
 				free(send_buf);
 		    	break;
 			}else{
 				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				//JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
+				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
             break;
+
+		case EVT_STATUS:
+			send_server_status(fd);
+			
+			break;
+			
 			
 		default:
 			printf("unknown Type\n");
