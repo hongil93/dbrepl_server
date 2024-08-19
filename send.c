@@ -76,13 +76,19 @@ int send_server_status(int fd){
     "=======SERVER_STATUS=======\n"\
 	"DB01: %s\n"\
 	"DB02: %s\n"\
-    "Client Count: %d\n"\
+    "Clients: %d\n"\
     "===========================\n"\
     "%s\n"\
     , db01_status, db02_status, client_cnt, replstatus);
 
     send_message(fd, EVT_STATUS, server_status);
     free(replstatus);
+
+    return 0;
+}
+
+char* make_repl_status(int fd){
+
 }
 
 

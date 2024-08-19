@@ -399,7 +399,7 @@ char* get_repcheck_status()
     while ((row = mysql_fetch_row(res_db1)) != NULL) {
         for (int i = 0; i < num_fields; i++) {
             const char *field_name = mysql_fetch_field_direct(res_db1, i)->name;
-
+            
             /* string compare - slave status */
             if(strcmp(field_name, "Slave_IO_Running") == 0 ||
                strcmp(field_name, "Slave_SQL_Running") == 0 ||

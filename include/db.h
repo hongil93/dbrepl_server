@@ -14,8 +14,14 @@ typedef struct _db_info{
 	int port;
 	int idx;
 	int status;
-
+	REPL_INFO repl;
 } DB_INFO;
+
+
+typedef struct _repl_info{
+	char* Slave_IO_Running;
+
+}REPL_INFO;
 
 typedef struct _db_list{
 	DB_INFO* db01;
