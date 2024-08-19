@@ -75,7 +75,7 @@ MYSQL* connect_db(MYSQL*, int);
 char* compare_table(int);
 void* check_file(void*);
 char* time_now();
-void get_repcheck_status(int);
+char* get_repcheck_status();
 void get_replication_on(int fd);
 void get_replication_off(int fd);
 void get_sql_select_all(int fd, const char *query);

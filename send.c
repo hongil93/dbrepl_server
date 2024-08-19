@@ -62,6 +62,7 @@ int send_server_status(int fd){
     char* db01_status = "DOWN";
 	char* db02_status = "DOWN";
     int client_cnt = client_list.client_count;
+    char* replstatus = get_repcheck_status();
 
 	if (gpcb->db01.status == 1){
 		db01_status = "ON";
@@ -77,9 +78,11 @@ int send_server_status(int fd){
 	"DB02: %s\n"\
     "Client Count: %d\n"\
     "===========================\n"\
-    , db01_status, db02_status, client_cnt);
+    "%s\n"\
+    , db01_status, db02_status, client_cnt, replstatus);
 
     send_message(fd, EVT_STATUS, server_status);
+    free(replstatus);
 }
 
 
