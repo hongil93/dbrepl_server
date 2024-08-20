@@ -89,7 +89,7 @@ char* get_select_all()
 
     connect_main_db(active_db, conn);
 
-    if (mysql_query(conn, "select * from user"))
+    if (mysql_query(conn, "select * from eluon"))
     {
         printf("query fail\n");
     }
@@ -749,7 +749,7 @@ void print_db_ver()
 //     }
 // }
 
-/* 3. ON OFF replication */
+/* replication check */
 int get_repcheck_status()
 {
     MYSQL_ROW row;
@@ -810,9 +810,9 @@ int get_repcheck_status()
     status_db01->Slave_IO_Running = row[10];
     status_db01->Slave_SQL_Running = row[11];
     status_db01->Last_IO_Errno = row[34];
-    status_db01->Last_IO_Error = row[35];
+    status_db01->Last_IO_Error = strcmp(row[35], "") == 0 ? "NULL" : row[35];
     status_db01->Last_SQL_Errno = row[36];
-    status_db01->Last_SQL_Error = row[37];
+    status_db01->Last_SQL_Error = strcmp(row[37], "") == 0 ? "NULL" : row[37];
 
     //mysql_free_result(res_db1);
 
@@ -862,9 +862,9 @@ int get_repcheck_status()
     status_db02->Slave_IO_Running = row[10];
     status_db02->Slave_SQL_Running = row[11];
     status_db02->Last_IO_Errno = row[34];
-    status_db02->Last_IO_Error = row[35];
+    status_db02->Last_IO_Error = strcmp(row[35], "") == 0 ? "NULL" : row[35];
     status_db02->Last_SQL_Errno = row[36];
-    status_db02->Last_SQL_Error = row[37];
+    status_db02->Last_SQL_Error = strcmp(row[37], "") == 0 ? "NULL" : row[37];
     
     //mysql_free_result(res_db2);
 
@@ -894,7 +894,6 @@ int get_repcheck_status()
     return 0;
 }
 
-/* 3. ON OFF replication */
 /* 3. ON OFF replication */
 void get_replication_on(int fd)
 {
