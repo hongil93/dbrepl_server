@@ -7,7 +7,7 @@
 #define ec_log(x) DwDebugLog x;
 
 void type_categorizer(int fd, Packet packet){
-	char* send_buf;
+	char* send_buf = packet.buf;
 	char* time = time_now();
 	switch(packet.header.type){
 		
@@ -24,6 +24,15 @@ void type_categorizer(int fd, Packet packet){
 				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
+
+		case SQL_SHOW_TB:
+			send_server_showtb(fd);
+			break;
+
+		case SQL_SHOW_TB_LIST:
+			send_server_showtb_list(fd, send_buf);
+			break;
+		
         case SQL_COMPARE:
 			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
             get_db_data(2);
@@ -52,11 +61,19 @@ void type_categorizer(int fd, Packet packet){
             break;
 
 		case EVT_STATUS:
+			JDRLog((REQUEST, "%s,EVT_STATUS\n", time));
 			send_server_status(fd);
-			
+			break;
+
+		case REP_CHECK:
+			JDRLog((REQUEST, "%s,REP_CHECK\n", time));
+			send_repl_status(fd);
 			break;
 			
-			
+		case STAT_RECENT:
+			JDRLog((REQUEST, "%s,STAT_RECENT\n", time));
+			send_recent_stat(fd);
+			break;
 		default:
 			printf("unknown Type\n");
 			break;
@@ -193,7 +210,7 @@ int make_connection()
 	//bind, listen socket
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY;
-	address.sin_port = htons(9999);
+	address.sin_port = htons(33333);
 
 	if (bind(sfd, (struct sockaddr*)&address, sizeof(address)) < 0) {
 		perror("bind error");
@@ -265,6 +282,7 @@ int make_connection()
 
 	return 0;
 }
+
 
 void add_client(int clfd) {
     if (client_list.client_count < MAX_CLIENTS) {

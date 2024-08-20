@@ -31,7 +31,7 @@ CFLAGS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^CFLAGS  = -fPIC -g #-
 CLIENT_LIST	./include/recv.h	/^} CLIENT_LIST;$/;"	t	typeref:struct:_client_list
 DB	./include/main.h	/^	DB = 0,$/;"	e	enum:jdr_type
 DB_INFO	./include/db.h	/^} DB_INFO;$/;"	t	typeref:struct:_db_info
-DB_LIST	./include/db.h	/^} DB_LIST;$/;"	t	typeref:struct:_db_list
+DB_LIST	./include/db.h	/^} DB_LIST;/;"	t	typeref:struct:_db_list
 DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug.h	41;"	d
 DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h	40;"	d
 DEB_ALARM	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h	41;"	d
@@ -206,9 +206,9 @@ DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c	/^void
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
 DwUnSetLogLevel	/home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c	/^void DwUnSetLogLevel( LOG_HANDLE *pLogHandle , int newLogLevel ) $/;"	f
-EVT_ERROR	./include/recv.h	11;"	d
-EVT_STATUS	./include/recv.h	12;"	d
-EVT_WARNING	./include/recv.h	10;"	d
+EVT_ERROR	./include/recv.h	13;"	d
+EVT_STATUS	./include/recv.h	14;"	d
+EVT_WARNING	./include/recv.h	12;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	23;"	d
 E_FILEOPEN	/home/khchoi/library/libeluonutil-R2.0.0/inifile.h	23;"	d
 E_FILEREAD	/home/khchoi/library/libeluonutil-R2.0.0/include/inifile.h	24;"	d
@@ -422,6 +422,7 @@ MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h	76;"	d
 MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/include/debug.h	76;"	d
 MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_20140310.h	75;"	d
 MAX_QUEUE_JOB	/home/khchoi/library/libeluonutil-R2.0.0/include/debug_malloc.h	76;"	d
+MAX_REPL_ONOFF	./include/db.h	7;"	d
 MAX_STRING_LENGTH	./include/db.h	6;"	d
 MAX_TIME	/home/khchoi/library/libeluonutil-R2.0.0/include/jdrlog.h	23;"	d
 MAX_TIME	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h	23;"	d
@@ -474,10 +475,9 @@ Packet	./include/recv.h	/^} Packet;$/;"	t	typeref:struct:_packet
 Position	./include/db.h	/^	char *Position;$/;"	m	struct:_repl_master_status
 REPL_MASTER_STATUS	./include/db.h	/^} REPL_MASTER_STATUS;$/;"	t	typeref:struct:_repl_master_status
 REPL_SLAVE_STATUS	./include/db.h	/^} REPL_SLAVE_STATUS;$/;"	t	typeref:struct:_repl_slave_status
-REPL_STATUS	./include/db.h	/^}REPL_STATUS;$/;"	t	typeref:struct:_repl_status
-REP_CHECK	./include/recv.h	7;"	d
-REP_OFF	./include/recv.h	9;"	d
-REP_ON	./include/recv.h	8;"	d
+REP_CHECK	./include/recv.h	9;"	d
+REP_OFF	./include/recv.h	11;"	d
+REP_ON	./include/recv.h	10;"	d
 REQUEST	./include/main.h	/^	REQUEST,$/;"	e	enum:jdr_type
 RESPONSE	./include/main.h	/^	RESPONSE$/;"	e	enum:jdr_type
 Read_Master_Log_Pos	./include/db.h	/^	char *Read_Master_Log_Pos;$/;"	m	struct:_repl_slave_status
@@ -488,10 +488,13 @@ SHM_OK	/home/khchoi/library/libeluonutil-R2.0.0/include/elnshm.h	7;"	d
 SONAME	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SONAME=$(LIBBASE).$(MAJOR)$/;"	m
 SQL	./include/main.h	/^	SQL,$/;"	e	enum:jdr_type
 SQL_COMPARE	./include/recv.h	6;"	d
-SQL_RESTORE	./include/recv.h	14;"	d
-SQL_RESTORE2	./include/recv.h	15;"	d
+SQL_RESTORE	./include/recv.h	16;"	d
+SQL_RESTORE2	./include/recv.h	17;"	d
 SQL_SELECT	./include/recv.h	5;"	d
+SQL_SHOW_TB	./include/recv.h	7;"	d
+SQL_SHOW_TB_LIST	./include/recv.h	8;"	d
 SRCS	/home/khchoi/library/libeluonutil-R2.0.0/Makefile	/^SRCS= debug.c inifile.c elnutil.c elnshm.c itq.c simple_timer.c jdrlog.c$/;"	m
+STAT_RECENT	./include/recv.h	19;"	d
 STDC_HEADERS	/home/khchoi/library/libeluonutil-R2.0.0/config.h	122;"	d
 STDC_HEADERS	/home/khchoi/library/libeluonutil-R2.0.0/include/config.h	122;"	d
 Slave_IO_Running	./include/db.h	/^	char *Slave_IO_Running;$/;"	m	struct:_repl_slave_status
@@ -582,7 +585,6 @@ _packet	./include/recv.h	/^typedef struct _packet{$/;"	s
 _process_control_block	./include/main.h	/^typedef struct _process_control_block{$/;"	s
 _repl_master_status	./include/db.h	/^typedef struct _repl_master_status{$/;"	s
 _repl_slave_status	./include/db.h	/^typedef struct _repl_slave_status{$/;"	s
-_repl_status	./include/db.h	/^typedef struct _repl_status{$/;"	s
 _stmr	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^struct _stmr {$/;"	s
 _stmr	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^struct _stmr {$/;"	s
 _stmr_handle	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^struct _stmr_handle {$/;"	s
@@ -996,6 +998,7 @@ queue	/home/khchoi/library/libeluonutil-R2.0.0/itq.c	/^itq_t	queue = NULL;$/;"	v
 rcsid	/home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c	/^static char rcsid[]= "$Id: JDRLOG.C 1.1 1997\/10\/15 03:25:28 weon Exp $";$/;"	v	file:
 repl_master_status	./include/db.h	/^	REPL_MASTER_STATUS repl_master_status;$/;"	m	struct:_db_info
 repl_slave_status	./include/db.h	/^	REPL_SLAVE_STATUS repl_slave_status;$/;"	m	struct:_db_info
+repl_status	./include/main.h	/^	int repl_status;$/;"	m	struct:_process_control_block
 resol	/home/khchoi/library/libeluonutil-R2.0.0/include/simple_timer.h	/^	long resol; \/\/ timer resolution$/;"	m	struct:_stmr_handle
 resol	/home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h	/^	long resol; \/\/ timer resolution$/;"	m	struct:_stmr_handle
 status	./include/db.h	/^	int status;$/;"	m	struct:_db_info

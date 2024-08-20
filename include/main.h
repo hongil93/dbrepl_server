@@ -37,6 +37,7 @@ typedef struct _process_control_block{
 	CFG cfg[1];
 	DB_INFO db01;
 	DB_INFO db02;
+	int repl_status;
 }PCB;
 
 enum jdr_type{
@@ -75,12 +76,15 @@ MYSQL* connect_db(MYSQL*, int);
 char* compare_table(int);
 void* check_file(void*);
 char* time_now();
-char* get_repcheck_status();
+int get_repcheck_status();
 void get_replication_on(int fd);
 void get_replication_off(int fd);
 void get_sql_select_all(int fd, const char *query);
 void get_sql_insert_table(int fd, const char *query);
+int repl_status();
 char *db_info_to_string(DB_INFO * db_info);
+char *get_show_tb();
+char *get_show_tb_list(char *buf);
 
 //function recv.c
 int make_connection();
@@ -91,9 +95,14 @@ void send_message(int, int, const char*);
 void broadcast_message(const char*, int);
 
 //send.c
+int send_repl_status(int);
+int send_recent_stat(int);
 int send_server_status(int);
+int send_server_showtb(int);
+int send_server_showtb_list(int fd, char *buf);
 
 //util.c
 char* time_now();
 int count_files(const char*);
 int all_request(const char*);
+int five_min_request(const char*);

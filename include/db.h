@@ -4,6 +4,8 @@
 #define MAX_PASSWORD 64
 #define MAX_DBNAME 64
 #define MAX_STRING_LENGTH 2048
+#define MAX_REPL_ONOFF 2048
+
 typedef struct _repl_slave_status{
 	char *Master_Log_File;
 	char *Read_Master_Log_Pos;
@@ -22,11 +24,6 @@ typedef struct _repl_master_status{
 	char *Binlog_Ignore_DB;
 } REPL_MASTER_STATUS;
 
-typedef struct _repl_status{
-	
-}REPL_STATUS;
-
-
 typedef struct _db_info{
 	MYSQL* conn;
 	char host[MAX_HOST];
@@ -44,4 +41,3 @@ typedef struct _db_list{
 	DB_INFO* db01;
 	DB_INFO* db02;
 } DB_LIST;
-

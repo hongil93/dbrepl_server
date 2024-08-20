@@ -4,6 +4,8 @@
 
 #define SQL_SELECT 101
 #define SQL_COMPARE 102
+#define SQL_SHOW_TB 103
+#define SQL_SHOW_TB_LIST 104
 #define REP_CHECK 201
 #define REP_ON 202
 #define REP_OFF 203
@@ -14,7 +16,7 @@
 #define SQL_RESTORE 500
 #define SQL_RESTORE2 501
 
-
+#define STAT_RECENT 600
 
 typedef struct _header{
     int length;

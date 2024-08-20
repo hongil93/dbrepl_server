@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "unistd.h": "c",
-        "epoll.h": "c"
+        "epoll.h": "c",
+        "stdio.h": "c"
     }
 }
