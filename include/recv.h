@@ -6,6 +6,7 @@
 #define SQL_COMPARE 102
 #define SQL_SHOW_TB 103
 #define SQL_SHOW_TB_LIST 104
+#define SQL_SHOW_TB_DEL 105
 #define REP_CHECK 201
 #define REP_ON 202
 #define REP_OFF 203

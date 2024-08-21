@@ -797,6 +797,7 @@ int get_repcheck_status()
         printf("DB1 query error: %s\n", mysql_error(conn_ptr_db1));
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
+        ec_log((DEB_ERROR, ">>>[DB] QUERY ERROR\n", NULL));
         return -1;
     }
 
@@ -822,6 +823,7 @@ int get_repcheck_status()
         printf("DB1 query error: %s\n", mysql_error(conn_ptr_db1));
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
+        ec_log((DEB_ERROR, ">>>[DB] QUERY ERROR\n", NULL));
         return -1;
     }
 
@@ -842,6 +844,7 @@ int get_repcheck_status()
         printf("DB2 query error: %s\n", mysql_error(conn_ptr_db2));
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
+        ec_log((DEB_ERROR, ">>>[DB] QUERY ERROR\n", NULL));
         return -1;
     }
 
@@ -874,6 +877,7 @@ int get_repcheck_status()
         printf("DB2 query error: %s\n", mysql_error(conn_ptr_db2));
         mysql_close(conn_ptr_db1);
         mysql_close(conn_ptr_db2);
+        ec_log((DEB_ERROR, ">>>[DB] QUERY ERROR\n", NULL));
         return -1;
     }
 
@@ -1042,10 +1046,9 @@ char *get_show_tb()
     res = mysql_store_result(conn);
 
     int num_fields = mysql_num_fields(res);
-    int buffer_size = 1024;
-    char *result_buffer = (char *)malloc(buffer_size);
+    char *result_buffer = (char *)malloc(BUF_SIZE);
     result_buffer[0] = '\0';
-
+    int buffer_size = 1024;
     while ((row = mysql_fetch_row(res)))
     {
         for (int i = 0; i < num_fields; i++)
@@ -1053,10 +1056,10 @@ char *get_show_tb()
             int field_length = row[i] ? strlen(row[i]) : 4;
             int required_length = strlen(result_buffer) + field_length + 2;
 
-            if (required_length > buffer_size)
+            if (required_length > BUF_SIZE)
             {
                 buffer_size *= 2;
-                result_buffer = (char *)realloc(result_buffer, buffer_size);
+                result_buffer = (char *)realloc(result_buffer, BUF_SIZE);
                 if (result_buffer == NULL)
                 {
                     fprintf(stderr, "Memory reallocation failed\n");
@@ -1092,7 +1095,6 @@ char *get_show_tb_list(char *buf)
     }
 
     conn = mysql_init(NULL);
-
     connect_main_db(active_db, conn);
 
     /* exeption input query */
@@ -1108,22 +1110,32 @@ char *get_show_tb_list(char *buf)
 
     res = mysql_store_result(conn);
 
-    int num_fields = mysql_num_fields(res);
     int buffer_size = 1024;
-    char *result_buffer = (char *)malloc(buffer_size);
+    int num_fields = mysql_num_fields(res);
+    MYSQL_FIELD *fields = mysql_fetch_fields(res);
+    char *result_buffer = (char *)malloc(BUF_SIZE);
     result_buffer[0] = '\0';
 
+    // column name
+    for (int i = 0; i < num_fields; i++) {
+        strcat(result_buffer, fields[i].name);
+        strcat(result_buffer, "\t");
+    }
+    strcat(result_buffer, "\n+---------------------------+\n");
+
+    // colum data
     while ((row = mysql_fetch_row(res)))
     {
         for (int i = 0; i < num_fields; i++)
         {
+            
             int field_length = row[i] ? strlen(row[i]) : 4;
             int required_length = strlen(result_buffer) + field_length + 2;
-
-            if (required_length > buffer_size)
+            
+            if (required_length > BUF_SIZE)
             {
                 buffer_size *= 2;
-                result_buffer = (char *)realloc(result_buffer, buffer_size);
+                result_buffer = (char *)realloc(result_buffer, BUF_SIZE);
                 if (result_buffer == NULL)
                 {
                     fprintf(stderr, "Memory reallocation failed\n");
@@ -1133,10 +1145,56 @@ char *get_show_tb_list(char *buf)
                 }
             }
             strcat(result_buffer, row[i] ? row[i] : "NULL");
-            strcat(result_buffer, " ");
+            strcat(result_buffer, "\t\t");
         }
         strcat(result_buffer, "\n");
     }
+    ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: SHOW TABLE LIST\n", NULL));
+
+    mysql_free_result(res);
+    mysql_close(conn);
+    return result_buffer;
+}
+
+/* delete table data */
+char *get_show_tb_del(char *buf){
+
+    MYSQL_ROW row;
+    MYSQL *conn;
+    MYSQL_RES *res;
+
+    int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn);
+    if (active_db == 0)
+    {
+        printf("all_db_is_down\n");
+        ec_log((DEB_ERROR, ">>>[DB] all_db_is_down\n", NULL));
+    }
+
+    conn = mysql_init(NULL);
+
+    connect_main_db(active_db, conn);
+
+    /* exeption input query */
+    if(buf == NULL || strlen(buf) == 0){
+        printf("input is NULL");
+    }
+
+    char query[BUF_SIZE];
+
+    char *table_name;
+    char *condition_column;
+    char *condition_value;
+
+    char *result_buffer = (char *)malloc(BUF_SIZE);
+    result_buffer[0] = '\0';
+
+    table_name = strtok(buf, " ");
+    condition_column = strtok(NULL, " ");
+    condition_value = strtok(NULL, " ");
+
+    snprintf(query, BUF_SIZE, "DELETE FROM %s WHERE %s = '%s'", table_name, condition_column, condition_value);
+    mysql_query(conn, query);
+
     ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: SHOW TABLE LIST\n", NULL));
 
     mysql_free_result(res);

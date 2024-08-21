@@ -154,3 +154,15 @@ int send_server_showtb_list(int fd, char *buf){
     free(replstatus);
 }
 
+/* delete table data */
+int send_server_del(int fd, char *buf){
+    char showtblist[BUF_SIZE];
+    char* replstatus = get_show_tb_del(buf);
+
+    snprintf(showtblist, BUF_SIZE, \
+    "<----- DELETE SUCCESS ----->\n"\
+    , replstatus);
+
+    send_message(fd, SQL_SHOW_TB_DEL, showtblist);
+    free(replstatus);
+}
