@@ -9,6 +9,7 @@
 void type_categorizer(int fd, Packet packet){
 	char* send_buf;
 	char* time = time_now();
+	int* t_ret;
 	switch(packet.header.type){
 		case SQL_SELECT:
 			JDRLog((REQUEST, "%s,SQL_SELECT\n", time));
@@ -63,6 +64,27 @@ void type_categorizer(int fd, Packet packet){
 		case STAT_RECENT:
 			JDRLog((REQUEST, "%s,STAT_RECENT\n", time));
 			send_recent_stat(fd);
+			break;
+		
+		case DB_SYNC:
+			JDRLog((REQUEST, "%s,DB_SYNC\n", time));
+
+			if(pthread_create(&db_sync_t, NULL, db_sync, packet.buf)!=0){
+				printf("cannot create file_check thread\n");
+				JDRLog((RESPONSE, "%s,DB_SYNC,FAIL,cannot create db_sync thread \n", time));
+				break;
+			}else{
+				printf("check_file thread created\n");
+				if(pthread_join(db_sync_t, (void**)&t_ret)!=0){
+					printf("join_error\n");
+				}
+			}
+			if (t_ret == NULL){
+				send_message(fd, DB_SYNC, "fail");
+			}else{
+				send_message(fd, DB_SYNC, "success");
+			}
+			
 			break;
 		default:
 			printf("unknown Type\n");

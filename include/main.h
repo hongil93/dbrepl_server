@@ -51,6 +51,7 @@ enum jdr_type{
 PCB gpcb[1];
 pthread_t check_db_status_t;
 pthread_t check_file_t;
+pthread_t db_sync_t;
 
 /*
 DB_INFO db01;
@@ -82,6 +83,8 @@ void get_replication_off(int fd);
 void get_sql_select_all(int fd, const char *query);
 void get_sql_insert_table(int fd, const char *query);
 int repl_status();
+void* db_sync(void*);
+int repl_prepare(MYSQL*, MYSQL*);
 
 //function recv.c
 int make_connection();

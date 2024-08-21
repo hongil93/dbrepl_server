@@ -15,6 +15,7 @@
 #define SQL_RESTORE2 501
 
 #define STAT_RECENT 600
+#define DB_SYNC 700
 
 typedef struct _header{
     int length;

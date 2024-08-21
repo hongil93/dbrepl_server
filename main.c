@@ -15,8 +15,6 @@ void make_thread(pthread_t thread)
 
 int main(int argc, char* argv[])
 {
-	pthread_t check_db_status_t;
-	pthread_t check_file_t;
 	print_db_ver();
 	set_config_name(argv[1]);
 	read_db_cfg();
