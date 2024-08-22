@@ -86,6 +86,7 @@ char *db_info_to_string(DB_INFO * db_info);
 char *get_show_tb();
 char *get_show_tb_list(char *buf);
 char *get_show_tb_del(char *buf);
+char *get_show_tb_int(char *buf);
 
 //function recv.c
 int make_connection();
@@ -102,6 +103,7 @@ int send_server_status(int);
 int send_server_showtb(int);
 int send_server_showtb_list(int fd, char *buf);
 int send_server_del(int fd, char *buf);
+int send_server_int(int fd, char *buf);
 
 //util.c
 char* time_now();

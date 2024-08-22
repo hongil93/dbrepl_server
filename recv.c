@@ -35,6 +35,9 @@ void type_categorizer(int fd, Packet packet){
 		case SQL_SHOW_TB_DEL:
 			send_server_del(fd, send_buf);
 			break;
+		case SQL_SHOW_TB_INT:
+			send_server_int(fd, send_buf);
+			break;
         case SQL_COMPARE:
 			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
             get_db_data(2);

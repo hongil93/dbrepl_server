@@ -160,9 +160,22 @@ int send_server_del(int fd, char *buf){
     char* replstatus = get_show_tb_del(buf);
 
     snprintf(showtblist, BUF_SIZE, \
-    "<----- DELETE SUCCESS ----->\n"\
+    "<------------- DELETE ------------->\n"\
     , replstatus);
 
     send_message(fd, SQL_SHOW_TB_DEL, showtblist);
+    free(replstatus);
+}
+
+/* insert table data */
+int send_server_int(int fd, char *buf){
+    char showtblist[BUF_SIZE];
+    char* replstatus = get_show_tb_int(buf);
+
+    snprintf(showtblist, BUF_SIZE, \
+    "<------------- INSERT ------------->\n"\
+    , replstatus);
+
+    send_message(fd, SQL_SHOW_TB_INT, showtblist);
     free(replstatus);
 }
