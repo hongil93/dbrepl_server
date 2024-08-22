@@ -11,67 +11,55 @@ void type_categorizer(int fd, Packet packet){
 	char* time = time_now();
 	int* t_ret;
 	switch(packet.header.type){
-		case SQL_SELECT:
-			JDRLog((REQUEST, "%s,SQL_SELECT\n", time));
+		case REQ_CLSV_SQL_SELECT:
+			JDRLog((REQUEST, "%s,REQ_CLSV_SQL_SELECT\n", time));
 		    send_buf = get_select_all();
 			if (send_buf != NULL){
-				send_message(fd, SQL_SELECT, send_buf);
-				JDRLog((RESPONSE, "%s,SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time));
+				send_message(fd, RES_CLSV_SQL_SELECT, send_buf);
+				JDRLog((RESPONSE, "%s,REQ_CLSV_SQL_SELECT,SUCCESS,SELECT * FROM USER\n", time));
 				free(send_buf);
 		    	break;
 			}else{
-				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
+				send_message(fd, REQ_SVCL_EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,REQ_CLSV_SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
-        case SQL_COMPARE:
-			JDRLog((REQUEST, "%s,DB_COMPARE\n", time));
-            get_db_data(2);
-			if(pthread_create(&check_file_t, NULL, check_file, "/home/kim/backup/db02_data.csv")!=0){
-				printf("cannot create file_check thread\n");
-				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,cannot create file_check thread \n", time));
-				break;
-			}else{
-				printf("check_file thread created\n");
-				if(pthread_join(check_file_t, NULL)!=0){
-					printf("join_error\n");
-				}
-			}
-
+        case REQ_CLSV_DB_COMPARE:
+			JDRLog((REQUEST, "%s,REQ_CLSV_DB_COMPARE\n", time));
             send_buf = compare_table(atoi(packet.buf));
 			if (send_buf != NULL){
-				send_message(fd, SQL_COMPARE, send_buf);
-				JDRLog((RESPONSE, "%s,DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
+				send_message(fd, RES_CLSV_DB_COMPARE, send_buf);
+				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
 				free(send_buf);
 		    	break;
 			}else{
-				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
-				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
+				send_message(fd, REQ_SVCL_EVT_WARNING, "ALL DB IS DOWN");
+				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
+				free(send_buf);
 				break;
 			}
-            break;
 
-		case EVT_STATUS:
-			JDRLog((REQUEST, "%s,EVT_STATUS\n", time));
+		case REQ_CLSV_EVT_STATUS:
+			JDRLog((REQUEST, "%s,REQ_CLSV_EVT_STATUS\n", time));
 			send_server_status(fd);
 			break;
 
-		case REP_CHECK:
-			JDRLog((REQUEST, "%s,REP_CHECK\n", time));
+		case REQ_CLSV_REP_CHECK:
+			JDRLog((REQUEST, "%s,REQ_CLSV_REP_CHECK\n", time));
 			send_repl_status(fd);
 			break;
 			
-		case STAT_RECENT:
-			JDRLog((REQUEST, "%s,STAT_RECENT\n", time));
+		case REQ_CLSV_STAT_RECENT:
+			JDRLog((REQUEST, "%s, REQ_CLSV_STAT_RECENT\n", time));
 			send_recent_stat(fd);
 			break;
 		
-		case DB_SYNC:
-			JDRLog((REQUEST, "%s,DB_SYNC\n", time));
+		case REQ_CLSV_DB_SYNC:
+			JDRLog((REQUEST, "%s,REQ_CLSV_DB_SYNC\n", time));
 
 			if(pthread_create(&db_sync_t, NULL, db_sync, packet.buf)!=0){
 				printf("cannot create file_check thread\n");
-				JDRLog((RESPONSE, "%s,DB_SYNC,FAIL,cannot create db_sync thread \n", time));
+				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_SYNC,FAIL,cannot create db_sync thread \n", time));
 				break;
 			}else{
 				printf("check_file thread created\n");
@@ -80,12 +68,18 @@ void type_categorizer(int fd, Packet packet){
 				}
 			}
 			if (t_ret == NULL){
-				send_message(fd, DB_SYNC, "fail");
+				send_message(fd, RES_CLSV_DB_SYNC, "fail");
 			}else{
-				send_message(fd, DB_SYNC, "success");
+				send_message(fd, RES_CLSV_DB_SYNC, "success");
 			}
 			
 			break;
+		case REQ_CLSV_EVT_EXIT:
+			ec_log((DEB_DEBUG, ">>>[EVT] Receive Exit Request\n", NULL));
+			broadcast_message("Server received exit event", REQ_SVCL_EVT_WARNING);
+			gpcb->running_flag = 0;
+			break;
+
 		default:
 			printf("unknown Type\n");
 			break;
@@ -211,6 +205,7 @@ int make_connection()
 	struct epoll_event ep_events[MAX_EPOLL_EVENT];
 	int addrlen = sizeof(address);
 	char buffer[BUF_SIZE] = {0};
+	gpcb->running_flag = 1;
 	
 	//make socket
 	sfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -253,6 +248,9 @@ int make_connection()
 	}
 	
 	while(1){
+		if(gpcb->running_flag == 0){
+			exit(0);
+		}
 		epcnt = epoll_wait(epfd, ep_events, MAX_EPOLL_EVENT, -1);
 		if (epcnt == -1){
 			perror("epoll wait error");

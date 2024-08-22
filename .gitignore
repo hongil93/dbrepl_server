@@ -6,3 +6,7 @@ repl
 tags
 Makefile
 bk_db.c
+
+/.scannerwork
+/sonar
+*.properties

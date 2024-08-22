@@ -18,10 +18,12 @@ int send_server_status(int fd){
 		db02_status = "ON";
 	}
 
-    if (gpcb->repl_status){
+    if (gpcb->repl_status == 1 ){
         replstatus = "OK";
-    } else {
-        replstatus = "ERROR";
+    } else if (gpcb->repl_status == -1) {
+        replstatus = "Bin-log position dismatched";
+    } else{
+        replstatus = "Slave IO, SQL Error";
     }
 
     snprintf(server_status, BUF_SIZE, \
@@ -33,8 +35,8 @@ int send_server_status(int fd){
     "===========================\n\n"\
     , db01_status, db02_status, client_cnt, replstatus);
 
-    send_message(fd, EVT_STATUS, server_status);
-    JDRLog((RESPONSE, "%s,EVT_STATUS,SUCCESS,DB01:%s,DB02:%s,Clients:%d,Replication:%s\n", time_now(), db01_status, db02_status, client_cnt, replstatus));
+    send_message(fd, RES_CLSV_EVT_STATUS, server_status);
+    JDRLog((RESPONSE, "%s,REQ_CLSV_EVT_STATUS,SUCCESS,DB01:%s,DB02:%s,Clients:%d,Replication:%s\n", time_now(), db01_status, db02_status, client_cnt, replstatus));
 
     return 0;
 }
@@ -45,8 +47,8 @@ int send_repl_status(int fd){
 
     if(gpcb->db01.status == 0 && gpcb->db02.status == 0){
         sprintf(res, "ALL DB DOWN\n");
-        send_message(fd, REP_CHECK, res);
-        JDRLog((RESPONSE, "%s,REP_CHECK,FAIL,%s\n", time_now(), "ALL_DB_DOWN"));
+        send_message(fd, RES_CLSV_REP_CHECK, res);
+        JDRLog((RESPONSE, "%s,REQ_CLSV_REP_CHECK,FAIL,%s\n", time_now(), "ALL_DB_DOWN"));
         return 0;
     }
 
@@ -90,40 +92,11 @@ int send_repl_status(int fd){
 
     strncat(res, error_log, sizeof(error_log));
 
-    send_message(fd, REP_CHECK, res);
-    JDRLog((RESPONSE, "%s,REP_CHECK,SUCCESS,%s\n", time_now(), ""));
+    send_message(fd, RES_CLSV_REP_CHECK, res);
+    JDRLog((RESPONSE, "%s,REQ_CLSV_REP_CHECK,SUCCESS,%s\n", time_now(), ""));
 
     return 0;
 }
-
-// int repl_status(char* raw){
-//     if(raw == NULL){
-//         return 0;
-//     }
-//     char *repl_status[2][12];
-//     char *token = strtok(raw, ",");
-//     for(int db = 0; db < 2; db++){
-//         for(int i = 0; i < 12; i++){
-//             if(token != NULL){
-//                 repl_status[db][i] = token;
-//                 token = strtok(NULL, ","); // next token
-//             }
-//         }
-//     }
-
-//     // gpcb->db01.repl.Slave_IO_Running = repl_status[0][2];
-//     // gpcb->db01.repl.Slave_SQL_Running = repl_status[0][3];
-//     // gpcb->db02.repl.Slave_IO_Running = repl_status[1][2];
-//     // gpcb->db02.repl.Slave_SQL_Running = repl_status[1][3];
-
-//     if (strcmp(repl_status[0][2], "Yes") == 0 && strcmp(repl_status[0][3], "Yes") == 0 
-//     && strcmp(repl_status[1][2], "Yes") == 0 && strcmp(repl_status[1][3], "Yes")){
-//         return 1;
-//     } else {
-//         return 0;
-//     }
-// }
-
 
 int send_recent_stat(int fd){
     char res[BUF_SIZE];
@@ -147,8 +120,8 @@ int send_recent_stat(int fd){
     "5min response: %d\n"\
     , all_request_cnt, all_response_cnt, five_min_req, five_min_res
     );
-    send_message(fd, STAT_RECENT, res);
-    JDRLog((RESPONSE, "%s,STAT_RECENT,SUCCESS,5minrequest:%d,5minresponse:%d,\n", time_now(), five_min_req, five_min_res));
+    send_message(fd, RES_CLSV_STAT_RECENT, res);
+    JDRLog((RESPONSE, "%s,REQ_CLSV_STAT_RECENT,SUCCESS,5minrequest:%d,5minresponse:%d,\n", time_now(), five_min_req, five_min_res));
     return 0;
 
 }

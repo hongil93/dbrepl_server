@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
 	read_log_cfg();
 	make_thread(check_db_status_t);
 	make_connection();
+	printf("exit server\n");
 
 	if(pthread_join(check_db_status_t, NULL)!=0){
 		printf("join_error\n");

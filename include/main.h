@@ -38,6 +38,7 @@ typedef struct _process_control_block{
 	DB_INFO db01;
 	DB_INFO db02;
 	int repl_status;
+	int running_flag;
 }PCB;
 
 enum jdr_type{
@@ -71,11 +72,9 @@ int read_log_cfg();
 void* check_db(void*);
 char* get_select_all();
 int set_main_db(int, int, MYSQL*);
-void connect_main_db(int, MYSQL*);
-int get_db_data(int);
+int connect_main_db(int, MYSQL*);
 MYSQL* connect_db(MYSQL*, int);
 char* compare_table(int);
-void* check_file(void*);
 char* time_now();
 int get_repcheck_status();
 void get_replication_on(int fd);
