@@ -1,0 +1,6 @@
+projectKey=ojt_project
+serverUrl=http://192.168.4.156:9000
+serverVersion=9.7.1.62043
+dashboardUrl=http://192.168.4.156:9000/dashboard?id=ojt_project
+ceTaskId=AZF4T9IcPMwga66M9khB
+ceTaskUrl=http://192.168.4.156:9000/api/ce/task?id=AZF4T9IcPMwga66M9khB

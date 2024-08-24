@@ -1,0 +1,784 @@
+Thu Aug 22 13:03:20 2024: build-wrapper, version 6.38 (linux-x86)
+Thu Aug 22 13:03:20 2024: System name: Linux Nodename: khchoi1 Release: 3.10.0-1160.el7.x86_64 Version: #1 SMP Tue Aug 18 14:50:17 EDT 2020 Machine: x86_64
+Thu Aug 22 13:03:20 2024: socket path: /tmp/build-wrapper-socket.AsJEz2
+Thu Aug 22 13:03:20 2024: dynamic library found: /home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-i686.so
+Thu Aug 22 13:03:20 2024: dynamic library found: /home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-x86_64.so
+Thu Aug 22 13:03:20 2024: dynamic library found: /home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-haswell.so
+Thu Aug 22 13:03:20 2024: cwd: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: command executed as: <build-wrapper-linux-x86-64 --out-dir ./sonar>
+Thu Aug 22 13:03:20 2024: out-dir absolute path: </home/khchoi/dbrepl_server/./sonar>
+Thu Aug 22 13:03:20 2024: command line received: <make clean all>
+Thu Aug 22 13:03:20 2024: env 0: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:20 2024: env 1: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:20 2024: env 2: <SHELL=/bin/bash>
+Thu Aug 22 13:03:20 2024: env 3: <TERM=ansi>
+Thu Aug 22 13:03:20 2024: env 4: <HISTSIZE=1000>
+Thu Aug 22 13:03:20 2024: env 5: <USER=khchoi>
+Thu Aug 22 13:03:20 2024: env 6: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:20 2024: env 7: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:20 2024: env 8: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:20 2024: env 9: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:20 2024: env 10: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: env 11: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:20 2024: env 12: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:20 2024: env 13: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:20 2024: env 14: <SHLVL=1>
+Thu Aug 22 13:03:20 2024: env 15: <HOME=/home/khchoi>
+Thu Aug 22 13:03:20 2024: env 16: <LOGNAME=khchoi>
+Thu Aug 22 13:03:20 2024: env 17: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:20 2024: env 18: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:20 2024: env 19: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:20 2024: env 20: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:20 2024: env 21: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:20 2024: env 22: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:20 2024: executing: <make clean all>
+Thu Aug 22 13:03:20 2024: initializing json file
+Thu Aug 22 13:03:20 2024: process created with pid: 14701
+Thu Aug 22 13:03:20 2024: parent pid: 14700
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:20 2024: argv[0]: <build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:20 2024: argv[1]: <-c>
+Thu Aug 22 13:03:20 2024: argv[2]: <>
+Thu Aug 22 13:03:20 2024: argv[3]: <make>
+Thu Aug 22 13:03:20 2024: argv[4]: <clean>
+Thu Aug 22 13:03:20 2024: argv[5]: <all>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14701
+Thu Aug 22 13:03:20 2024: process created with pid: 14702
+Thu Aug 22 13:03:20 2024: parent pid: 14701
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/make>
+Thu Aug 22 13:03:20 2024: argv[0]: <make>
+Thu Aug 22 13:03:20 2024: argv[1]: <clean>
+Thu Aug 22 13:03:20 2024: argv[2]: <all>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14702
+Thu Aug 22 13:03:20 2024: process created with pid: 14703
+Thu Aug 22 13:03:20 2024: parent pid: 14702
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/rm>
+Thu Aug 22 13:03:20 2024: argv[0]: <rm>
+Thu Aug 22 13:03:20 2024: argv[1]: <-f>
+Thu Aug 22 13:03:20 2024: argv[2]: <main.o>
+Thu Aug 22 13:03:20 2024: argv[3]: <db.o>
+Thu Aug 22 13:03:20 2024: argv[4]: <init.o>
+Thu Aug 22 13:03:20 2024: argv[5]: <send.o>
+Thu Aug 22 13:03:20 2024: argv[6]: <recv.o>
+Thu Aug 22 13:03:20 2024: argv[7]: <util.o>
+Thu Aug 22 13:03:20 2024: argv[8]: <repl>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14703
+Thu Aug 22 13:03:20 2024: process created with pid: 14704
+Thu Aug 22 13:03:20 2024: parent pid: 14702
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/rm>
+Thu Aug 22 13:03:20 2024: argv[0]: <rm>
+Thu Aug 22 13:03:20 2024: argv[1]: <-f>
+Thu Aug 22 13:03:20 2024: argv[2]: <tags>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14704
+Thu Aug 22 13:03:20 2024: process created with pid: 14705
+Thu Aug 22 13:03:20 2024: parent pid: 14702
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:20 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:20 2024: argv[1]: <-std=gnu99>
+Thu Aug 22 13:03:20 2024: argv[2]: <-c>
+Thu Aug 22 13:03:20 2024: argv[3]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[4]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[5]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[6]: <main.c>
+Thu Aug 22 13:03:20 2024: argv[7]: <-o>
+Thu Aug 22 13:03:20 2024: argv[8]: <main.o>
+Thu Aug 22 13:03:20 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:20 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:20 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:20 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:20 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:20 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:20 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:20 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:20 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:20 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:20 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:20 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:20 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:20 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:20 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:20 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:20 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:20 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:20 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:20 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:20 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:20 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:20 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:20 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:20 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:20 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:20 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:20 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:20 2024: process created with pid: 14706
+Thu Aug 22 13:03:20 2024: parent pid: 14705
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/cc1>
+Thu Aug 22 13:03:20 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1>
+Thu Aug 22 13:03:20 2024: argv[1]: <-quiet>
+Thu Aug 22 13:03:20 2024: argv[2]: <-I>
+Thu Aug 22 13:03:20 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[4]: <-I>
+Thu Aug 22 13:03:20 2024: argv[5]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[6]: <-I>
+Thu Aug 22 13:03:20 2024: argv[7]: </usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[8]: <main.c>
+Thu Aug 22 13:03:20 2024: argv[9]: <-quiet>
+Thu Aug 22 13:03:20 2024: argv[10]: <-dumpbase>
+Thu Aug 22 13:03:20 2024: argv[11]: <main.c>
+Thu Aug 22 13:03:20 2024: argv[12]: <-mtune=generic>
+Thu Aug 22 13:03:20 2024: argv[13]: <-march=x86-64>
+Thu Aug 22 13:03:20 2024: argv[14]: <-auxbase-strip>
+Thu Aug 22 13:03:20 2024: argv[15]: <main.o>
+Thu Aug 22 13:03:20 2024: argv[16]: <-std=gnu99>
+Thu Aug 22 13:03:20 2024: argv[17]: <-o>
+Thu Aug 22 13:03:20 2024: argv[18]: </tmp/ccNAnbU7.s>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14706
+Thu Aug 22 13:03:20 2024: process created with pid: 14707
+Thu Aug 22 13:03:20 2024: parent pid: 14705
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/as>
+Thu Aug 22 13:03:20 2024: argv[0]: <as>
+Thu Aug 22 13:03:20 2024: argv[1]: <-I>
+Thu Aug 22 13:03:20 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[3]: <-I>
+Thu Aug 22 13:03:20 2024: argv[4]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[5]: <-I>
+Thu Aug 22 13:03:20 2024: argv[6]: </usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[7]: <--64>
+Thu Aug 22 13:03:20 2024: argv[8]: <-o>
+Thu Aug 22 13:03:20 2024: argv[9]: <main.o>
+Thu Aug 22 13:03:20 2024: argv[10]: </tmp/ccNAnbU7.s>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14707
+Thu Aug 22 13:03:20 2024: process created with pid: 14708
+Thu Aug 22 13:03:20 2024: parent pid: 14702
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:20 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:20 2024: argv[1]: <-std=gnu99>
+Thu Aug 22 13:03:20 2024: argv[2]: <-c>
+Thu Aug 22 13:03:20 2024: argv[3]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[4]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[5]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[6]: <db.c>
+Thu Aug 22 13:03:20 2024: argv[7]: <-o>
+Thu Aug 22 13:03:20 2024: argv[8]: <db.o>
+Thu Aug 22 13:03:20 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:20 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:20 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:20 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:20 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:20 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:20 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:20 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:20 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:20 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:20 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:20 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:20 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:20 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:20 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:20 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:20 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:20 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:20 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:20 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:20 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:20 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:20 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:20 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:20 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:20 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:20 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:20 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:20 2024: process created with pid: 14709
+Thu Aug 22 13:03:20 2024: parent pid: 14708
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/cc1>
+Thu Aug 22 13:03:20 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1>
+Thu Aug 22 13:03:20 2024: argv[1]: <-quiet>
+Thu Aug 22 13:03:20 2024: argv[2]: <-I>
+Thu Aug 22 13:03:20 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[4]: <-I>
+Thu Aug 22 13:03:20 2024: argv[5]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[6]: <-I>
+Thu Aug 22 13:03:20 2024: argv[7]: </usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[8]: <db.c>
+Thu Aug 22 13:03:20 2024: argv[9]: <-quiet>
+Thu Aug 22 13:03:20 2024: argv[10]: <-dumpbase>
+Thu Aug 22 13:03:20 2024: argv[11]: <db.c>
+Thu Aug 22 13:03:20 2024: argv[12]: <-mtune=generic>
+Thu Aug 22 13:03:20 2024: argv[13]: <-march=x86-64>
+Thu Aug 22 13:03:20 2024: argv[14]: <-auxbase-strip>
+Thu Aug 22 13:03:20 2024: argv[15]: <db.o>
+Thu Aug 22 13:03:20 2024: argv[16]: <-std=gnu99>
+Thu Aug 22 13:03:20 2024: argv[17]: <-o>
+Thu Aug 22 13:03:20 2024: argv[18]: </tmp/cci4EShq.s>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14709
+Thu Aug 22 13:03:20 2024: process created with pid: 14710
+Thu Aug 22 13:03:20 2024: parent pid: 14708
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/as>
+Thu Aug 22 13:03:20 2024: argv[0]: <as>
+Thu Aug 22 13:03:20 2024: argv[1]: <-I>
+Thu Aug 22 13:03:20 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[3]: <-I>
+Thu Aug 22 13:03:20 2024: argv[4]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[5]: <-I>
+Thu Aug 22 13:03:20 2024: argv[6]: </usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[7]: <--64>
+Thu Aug 22 13:03:20 2024: argv[8]: <-o>
+Thu Aug 22 13:03:20 2024: argv[9]: <db.o>
+Thu Aug 22 13:03:20 2024: argv[10]: </tmp/cci4EShq.s>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14710
+Thu Aug 22 13:03:20 2024: process created with pid: 14711
+Thu Aug 22 13:03:20 2024: parent pid: 14702
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:20 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:20 2024: argv[1]: <-std=gnu99>
+Thu Aug 22 13:03:20 2024: argv[2]: <-c>
+Thu Aug 22 13:03:20 2024: argv[3]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[4]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[5]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[6]: <init.c>
+Thu Aug 22 13:03:20 2024: argv[7]: <-o>
+Thu Aug 22 13:03:20 2024: argv[8]: <init.o>
+Thu Aug 22 13:03:20 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:20 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:20 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:20 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:20 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:20 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:20 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:20 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:20 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:20 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:20 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:20 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:20 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:20 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:20 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:20 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:20 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:20 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:20 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:20 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:20 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:20 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:20 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:20 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:20 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:20 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:20 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:20 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:20 2024: process created with pid: 14712
+Thu Aug 22 13:03:20 2024: parent pid: 14711
+Thu Aug 22 13:03:20 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:20 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/cc1>
+Thu Aug 22 13:03:20 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1>
+Thu Aug 22 13:03:20 2024: argv[1]: <-quiet>
+Thu Aug 22 13:03:20 2024: argv[2]: <-I>
+Thu Aug 22 13:03:20 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:20 2024: argv[4]: <-I>
+Thu Aug 22 13:03:20 2024: argv[5]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:20 2024: argv[6]: <-I>
+Thu Aug 22 13:03:20 2024: argv[7]: </usr/include/mysql>
+Thu Aug 22 13:03:20 2024: argv[8]: <init.c>
+Thu Aug 22 13:03:20 2024: argv[9]: <-quiet>
+Thu Aug 22 13:03:20 2024: argv[10]: <-dumpbase>
+Thu Aug 22 13:03:20 2024: argv[11]: <init.c>
+Thu Aug 22 13:03:20 2024: argv[12]: <-mtune=generic>
+Thu Aug 22 13:03:20 2024: argv[13]: <-march=x86-64>
+Thu Aug 22 13:03:20 2024: argv[14]: <-auxbase-strip>
+Thu Aug 22 13:03:20 2024: argv[15]: <init.o>
+Thu Aug 22 13:03:20 2024: argv[16]: <-std=gnu99>
+Thu Aug 22 13:03:20 2024: argv[17]: <-o>
+Thu Aug 22 13:03:20 2024: argv[18]: </tmp/ccjtHNFL.s>
+Thu Aug 22 13:03:20 2024: skipping process with pid: 14712
+Thu Aug 22 13:03:21 2024: process created with pid: 14713
+Thu Aug 22 13:03:21 2024: parent pid: 14711
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/as>
+Thu Aug 22 13:03:21 2024: argv[0]: <as>
+Thu Aug 22 13:03:21 2024: argv[1]: <-I>
+Thu Aug 22 13:03:21 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I>
+Thu Aug 22 13:03:21 2024: argv[4]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I>
+Thu Aug 22 13:03:21 2024: argv[6]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[7]: <--64>
+Thu Aug 22 13:03:21 2024: argv[8]: <-o>
+Thu Aug 22 13:03:21 2024: argv[9]: <init.o>
+Thu Aug 22 13:03:21 2024: argv[10]: </tmp/ccjtHNFL.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14713
+Thu Aug 22 13:03:21 2024: process created with pid: 14714
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:21 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:21 2024: argv[1]: <-std=gnu99>
+Thu Aug 22 13:03:21 2024: argv[2]: <-c>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[4]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[6]: <send.c>
+Thu Aug 22 13:03:21 2024: argv[7]: <-o>
+Thu Aug 22 13:03:21 2024: argv[8]: <send.o>
+Thu Aug 22 13:03:21 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:21 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:21 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:21 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:21 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:21 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:21 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:21 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:21 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:21 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:21 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:21 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:21 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:21 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:21 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:21 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:21 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:21 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:21 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:21 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:21 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:21 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:21 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:21 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:21 2024: process created with pid: 14715
+Thu Aug 22 13:03:21 2024: parent pid: 14714
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/cc1>
+Thu Aug 22 13:03:21 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1>
+Thu Aug 22 13:03:21 2024: argv[1]: <-quiet>
+Thu Aug 22 13:03:21 2024: argv[2]: <-I>
+Thu Aug 22 13:03:21 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[4]: <-I>
+Thu Aug 22 13:03:21 2024: argv[5]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[6]: <-I>
+Thu Aug 22 13:03:21 2024: argv[7]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[8]: <send.c>
+Thu Aug 22 13:03:21 2024: argv[9]: <-quiet>
+Thu Aug 22 13:03:21 2024: argv[10]: <-dumpbase>
+Thu Aug 22 13:03:21 2024: argv[11]: <send.c>
+Thu Aug 22 13:03:21 2024: argv[12]: <-mtune=generic>
+Thu Aug 22 13:03:21 2024: argv[13]: <-march=x86-64>
+Thu Aug 22 13:03:21 2024: argv[14]: <-auxbase-strip>
+Thu Aug 22 13:03:21 2024: argv[15]: <send.o>
+Thu Aug 22 13:03:21 2024: argv[16]: <-std=gnu99>
+Thu Aug 22 13:03:21 2024: argv[17]: <-o>
+Thu Aug 22 13:03:21 2024: argv[18]: </tmp/ccmYgZnO.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14715
+Thu Aug 22 13:03:21 2024: process created with pid: 14716
+Thu Aug 22 13:03:21 2024: parent pid: 14714
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/as>
+Thu Aug 22 13:03:21 2024: argv[0]: <as>
+Thu Aug 22 13:03:21 2024: argv[1]: <-I>
+Thu Aug 22 13:03:21 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I>
+Thu Aug 22 13:03:21 2024: argv[4]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I>
+Thu Aug 22 13:03:21 2024: argv[6]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[7]: <--64>
+Thu Aug 22 13:03:21 2024: argv[8]: <-o>
+Thu Aug 22 13:03:21 2024: argv[9]: <send.o>
+Thu Aug 22 13:03:21 2024: argv[10]: </tmp/ccmYgZnO.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14716
+Thu Aug 22 13:03:21 2024: process created with pid: 14717
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:21 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:21 2024: argv[1]: <-std=gnu99>
+Thu Aug 22 13:03:21 2024: argv[2]: <-c>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[4]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[6]: <recv.c>
+Thu Aug 22 13:03:21 2024: argv[7]: <-o>
+Thu Aug 22 13:03:21 2024: argv[8]: <recv.o>
+Thu Aug 22 13:03:21 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:21 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:21 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:21 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:21 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:21 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:21 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:21 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:21 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:21 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:21 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:21 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:21 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:21 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:21 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:21 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:21 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:21 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:21 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:21 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:21 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:21 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:21 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:21 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:21 2024: process created with pid: 14718
+Thu Aug 22 13:03:21 2024: parent pid: 14717
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/cc1>
+Thu Aug 22 13:03:21 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1>
+Thu Aug 22 13:03:21 2024: argv[1]: <-quiet>
+Thu Aug 22 13:03:21 2024: argv[2]: <-I>
+Thu Aug 22 13:03:21 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[4]: <-I>
+Thu Aug 22 13:03:21 2024: argv[5]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[6]: <-I>
+Thu Aug 22 13:03:21 2024: argv[7]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[8]: <recv.c>
+Thu Aug 22 13:03:21 2024: argv[9]: <-quiet>
+Thu Aug 22 13:03:21 2024: argv[10]: <-dumpbase>
+Thu Aug 22 13:03:21 2024: argv[11]: <recv.c>
+Thu Aug 22 13:03:21 2024: argv[12]: <-mtune=generic>
+Thu Aug 22 13:03:21 2024: argv[13]: <-march=x86-64>
+Thu Aug 22 13:03:21 2024: argv[14]: <-auxbase-strip>
+Thu Aug 22 13:03:21 2024: argv[15]: <recv.o>
+Thu Aug 22 13:03:21 2024: argv[16]: <-std=gnu99>
+Thu Aug 22 13:03:21 2024: argv[17]: <-o>
+Thu Aug 22 13:03:21 2024: argv[18]: </tmp/ccj4ViK3.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14718
+Thu Aug 22 13:03:21 2024: process created with pid: 14719
+Thu Aug 22 13:03:21 2024: parent pid: 14717
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/as>
+Thu Aug 22 13:03:21 2024: argv[0]: <as>
+Thu Aug 22 13:03:21 2024: argv[1]: <-I>
+Thu Aug 22 13:03:21 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I>
+Thu Aug 22 13:03:21 2024: argv[4]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I>
+Thu Aug 22 13:03:21 2024: argv[6]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[7]: <--64>
+Thu Aug 22 13:03:21 2024: argv[8]: <-o>
+Thu Aug 22 13:03:21 2024: argv[9]: <recv.o>
+Thu Aug 22 13:03:21 2024: argv[10]: </tmp/ccj4ViK3.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14719
+Thu Aug 22 13:03:21 2024: process created with pid: 14720
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:21 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:21 2024: argv[1]: <-std=gnu99>
+Thu Aug 22 13:03:21 2024: argv[2]: <-c>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[4]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[6]: <util.c>
+Thu Aug 22 13:03:21 2024: argv[7]: <-o>
+Thu Aug 22 13:03:21 2024: argv[8]: <util.o>
+Thu Aug 22 13:03:21 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:21 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:21 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:21 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:21 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:21 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:21 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:21 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:21 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:21 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:21 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:21 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:21 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:21 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:21 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:21 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:21 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:21 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:21 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:21 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:21 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:21 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:21 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:21 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:21 2024: process created with pid: 14721
+Thu Aug 22 13:03:21 2024: parent pid: 14720
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/cc1>
+Thu Aug 22 13:03:21 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/cc1>
+Thu Aug 22 13:03:21 2024: argv[1]: <-quiet>
+Thu Aug 22 13:03:21 2024: argv[2]: <-I>
+Thu Aug 22 13:03:21 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[4]: <-I>
+Thu Aug 22 13:03:21 2024: argv[5]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[6]: <-I>
+Thu Aug 22 13:03:21 2024: argv[7]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[8]: <util.c>
+Thu Aug 22 13:03:21 2024: argv[9]: <-quiet>
+Thu Aug 22 13:03:21 2024: argv[10]: <-dumpbase>
+Thu Aug 22 13:03:21 2024: argv[11]: <util.c>
+Thu Aug 22 13:03:21 2024: argv[12]: <-mtune=generic>
+Thu Aug 22 13:03:21 2024: argv[13]: <-march=x86-64>
+Thu Aug 22 13:03:21 2024: argv[14]: <-auxbase-strip>
+Thu Aug 22 13:03:21 2024: argv[15]: <util.o>
+Thu Aug 22 13:03:21 2024: argv[16]: <-std=gnu99>
+Thu Aug 22 13:03:21 2024: argv[17]: <-o>
+Thu Aug 22 13:03:21 2024: argv[18]: </tmp/ccBWWpdi.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14721
+Thu Aug 22 13:03:21 2024: process created with pid: 14722
+Thu Aug 22 13:03:21 2024: parent pid: 14720
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/as>
+Thu Aug 22 13:03:21 2024: argv[0]: <as>
+Thu Aug 22 13:03:21 2024: argv[1]: <-I>
+Thu Aug 22 13:03:21 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[3]: <-I>
+Thu Aug 22 13:03:21 2024: argv[4]: </home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[5]: <-I>
+Thu Aug 22 13:03:21 2024: argv[6]: </usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[7]: <--64>
+Thu Aug 22 13:03:21 2024: argv[8]: <-o>
+Thu Aug 22 13:03:21 2024: argv[9]: <util.o>
+Thu Aug 22 13:03:21 2024: argv[10]: </tmp/ccBWWpdi.s>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14722
+Thu Aug 22 13:03:21 2024: process created with pid: 14723
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/gcc>
+Thu Aug 22 13:03:21 2024: argv[0]: <gcc>
+Thu Aug 22 13:03:21 2024: argv[1]: <-o>
+Thu Aug 22 13:03:21 2024: argv[2]: <repl>
+Thu Aug 22 13:03:21 2024: argv[3]: <main.o>
+Thu Aug 22 13:03:21 2024: argv[4]: <db.o>
+Thu Aug 22 13:03:21 2024: argv[5]: <init.o>
+Thu Aug 22 13:03:21 2024: argv[6]: <send.o>
+Thu Aug 22 13:03:21 2024: argv[7]: <recv.o>
+Thu Aug 22 13:03:21 2024: argv[8]: <util.o>
+Thu Aug 22 13:03:21 2024: argv[9]: <-L/usr/lib64/>
+Thu Aug 22 13:03:21 2024: argv[10]: <-lmariadb>
+Thu Aug 22 13:03:21 2024: argv[11]: <-L/home/khchoi/library/libeluonutil-R2.0.0/lib>
+Thu Aug 22 13:03:21 2024: argv[12]: <-leluonutil>
+Thu Aug 22 13:03:21 2024: argv[13]: <-I/home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[14]: <-I/home/khchoi/dbrepl_server/include>
+Thu Aug 22 13:03:21 2024: argv[15]: <-I/usr/include/mysql>
+Thu Aug 22 13:03:21 2024: argv[16]: <-pthread>
+Thu Aug 22 13:03:21 2024: envp[0]: <SQ_WRAPPER_SOCKET=/tmp/build-wrapper-socket.AsJEz2>
+Thu Aug 22 13:03:21 2024: envp[1]: <SQ_WRAPPER_LIBRARY=/home/khchoi/sonar/build-wrapper-linux-x86/libinterceptor-${PLATFORM}.so>
+Thu Aug 22 13:03:21 2024: envp[2]: <SHELL=/bin/bash>
+Thu Aug 22 13:03:21 2024: envp[3]: <_=/home/khchoi/sonar/build-wrapper-linux-x86/build-wrapper-linux-x86-64>
+Thu Aug 22 13:03:21 2024: envp[4]: <HISTCONTROL=ignoredups>
+Thu Aug 22 13:03:21 2024: envp[5]: <LESSOPEN=||/usr/bin/lesspipe.sh %s>
+Thu Aug 22 13:03:21 2024: envp[6]: <PATH=/home/khchoi/altibase-server-7.1.0/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/khchoi/.local/bin:/home/khchoi/bin:/home/khchoi/sonar/sonar-scanner-6.1.0.4477-linux-x64/bin:/home/khchoi/sonar/openjdk/jdk-22.0.2/bin:/home/khchoi/sonar/build-wrapper-linux-x86>
+Thu Aug 22 13:03:21 2024: envp[7]: <XDG_RUNTIME_DIR=/run/user/1000>
+Thu Aug 22 13:03:21 2024: envp[8]: <LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:>
+Thu Aug 22 13:03:21 2024: envp[9]: <PWD=/home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: envp[10]: <HOME=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[11]: <LD_LIBRARY_PATH=/home/khchoi/altibase-server-7.1.0/lib:/home/khchoi/library/libeluonutil-R2.0.0/lib:>
+Thu Aug 22 13:03:21 2024: envp[12]: <LOGNAME=khchoi>
+Thu Aug 22 13:03:21 2024: envp[13]: <HOSTNAME=khchoi1>
+Thu Aug 22 13:03:21 2024: envp[14]: <SHLVL=1>
+Thu Aug 22 13:03:21 2024: envp[15]: <JAVA_HOME=/home/khchoi/sonar/openjdk/jdk-22.0.2/bin>
+Thu Aug 22 13:03:21 2024: envp[16]: <XDG_SESSION_ID=21>
+Thu Aug 22 13:03:21 2024: envp[17]: <USER=khchoi>
+Thu Aug 22 13:03:21 2024: envp[18]: <CLASSPATH=/home/khchoi/altibase-server-7.1.0/lib/Altibase.jar::/home/khchoi/sonar/openjdk/jdk-22.0.2/jre/lib/ext:/home/khchoi/sonar/openjdk/jdk-22.0.2/lib/tools.jar>
+Thu Aug 22 13:03:21 2024: envp[19]: <OLDPWD=/home/khchoi>
+Thu Aug 22 13:03:21 2024: envp[20]: <MAKEFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[21]: <MFLAGS=>
+Thu Aug 22 13:03:21 2024: envp[22]: <MAIL=/var/spool/mail/khchoi>
+Thu Aug 22 13:03:21 2024: envp[23]: <HISTSIZE=1000>
+Thu Aug 22 13:03:21 2024: envp[24]: <ALTIBASE_HOME=/home/khchoi/altibase-server-7.1.0>
+Thu Aug 22 13:03:21 2024: envp[25]: <LANG=en_US.UTF-8>
+Thu Aug 22 13:03:21 2024: envp[26]: <TERM=ansi>
+Thu Aug 22 13:03:21 2024: envp[27]: <MAKELEVEL=1>
+Thu Aug 22 13:03:21 2024: envp[28]: <LD_PRELOAD=>
+Thu Aug 22 13:03:21 2024: process created with pid: 14724
+Thu Aug 22 13:03:21 2024: parent pid: 14723
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/libexec/gcc/x86_64-redhat-linux/4.8.2/collect2>
+Thu Aug 22 13:03:21 2024: argv[0]: </usr/libexec/gcc/x86_64-redhat-linux/4.8.5/collect2>
+Thu Aug 22 13:03:21 2024: argv[1]: <--build-id>
+Thu Aug 22 13:03:21 2024: argv[2]: <--no-add-needed>
+Thu Aug 22 13:03:21 2024: argv[3]: <--eh-frame-hdr>
+Thu Aug 22 13:03:21 2024: argv[4]: <--hash-style=gnu>
+Thu Aug 22 13:03:21 2024: argv[5]: <-m>
+Thu Aug 22 13:03:21 2024: argv[6]: <elf_x86_64>
+Thu Aug 22 13:03:21 2024: argv[7]: <-dynamic-linker>
+Thu Aug 22 13:03:21 2024: argv[8]: </lib64/ld-linux-x86-64.so.2>
+Thu Aug 22 13:03:21 2024: argv[9]: <-o>
+Thu Aug 22 13:03:21 2024: argv[10]: <repl>
+Thu Aug 22 13:03:21 2024: argv[11]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o>
+Thu Aug 22 13:03:21 2024: argv[12]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o>
+Thu Aug 22 13:03:21 2024: argv[13]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o>
+Thu Aug 22 13:03:21 2024: argv[14]: <-L/usr/lib64/>
+Thu Aug 22 13:03:21 2024: argv[15]: <-L/home/khchoi/library/libeluonutil-R2.0.0/lib>
+Thu Aug 22 13:03:21 2024: argv[16]: <-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5>
+Thu Aug 22 13:03:21 2024: argv[17]: <-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64>
+Thu Aug 22 13:03:21 2024: argv[18]: <-L/lib/../lib64>
+Thu Aug 22 13:03:21 2024: argv[19]: <-L/usr/lib/../lib64>
+Thu Aug 22 13:03:21 2024: argv[20]: <-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../..>
+Thu Aug 22 13:03:21 2024: argv[21]: <main.o>
+Thu Aug 22 13:03:21 2024: argv[22]: <db.o>
+Thu Aug 22 13:03:21 2024: argv[23]: <init.o>
+Thu Aug 22 13:03:21 2024: argv[24]: <send.o>
+Thu Aug 22 13:03:21 2024: argv[25]: <recv.o>
+Thu Aug 22 13:03:21 2024: argv[26]: <util.o>
+Thu Aug 22 13:03:21 2024: argv[27]: <-lmariadb>
+Thu Aug 22 13:03:21 2024: argv[28]: <-leluonutil>
+Thu Aug 22 13:03:21 2024: argv[29]: <-lgcc>
+Thu Aug 22 13:03:21 2024: argv[30]: <--as-needed>
+Thu Aug 22 13:03:21 2024: argv[31]: <-lgcc_s>
+Thu Aug 22 13:03:21 2024: argv[32]: <--no-as-needed>
+Thu Aug 22 13:03:21 2024: argv[33]: <-lpthread>
+Thu Aug 22 13:03:21 2024: argv[34]: <-lc>
+Thu Aug 22 13:03:21 2024: argv[35]: <-lgcc>
+Thu Aug 22 13:03:21 2024: argv[36]: <--as-needed>
+Thu Aug 22 13:03:21 2024: argv[37]: <-lgcc_s>
+Thu Aug 22 13:03:21 2024: argv[38]: <--no-as-needed>
+Thu Aug 22 13:03:21 2024: argv[39]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o>
+Thu Aug 22 13:03:21 2024: argv[40]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14724
+Thu Aug 22 13:03:21 2024: process created with pid: 14725
+Thu Aug 22 13:03:21 2024: parent pid: 14724
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/ld.bfd>
+Thu Aug 22 13:03:21 2024: argv[0]: </bin/ld>
+Thu Aug 22 13:03:21 2024: argv[1]: <--build-id>
+Thu Aug 22 13:03:21 2024: argv[2]: <--no-add-needed>
+Thu Aug 22 13:03:21 2024: argv[3]: <--eh-frame-hdr>
+Thu Aug 22 13:03:21 2024: argv[4]: <--hash-style=gnu>
+Thu Aug 22 13:03:21 2024: argv[5]: <-m>
+Thu Aug 22 13:03:21 2024: argv[6]: <elf_x86_64>
+Thu Aug 22 13:03:21 2024: argv[7]: <-dynamic-linker>
+Thu Aug 22 13:03:21 2024: argv[8]: </lib64/ld-linux-x86-64.so.2>
+Thu Aug 22 13:03:21 2024: argv[9]: <-o>
+Thu Aug 22 13:03:21 2024: argv[10]: <repl>
+Thu Aug 22 13:03:21 2024: argv[11]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o>
+Thu Aug 22 13:03:21 2024: argv[12]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o>
+Thu Aug 22 13:03:21 2024: argv[13]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o>
+Thu Aug 22 13:03:21 2024: argv[14]: <-L/usr/lib64/>
+Thu Aug 22 13:03:21 2024: argv[15]: <-L/home/khchoi/library/libeluonutil-R2.0.0/lib>
+Thu Aug 22 13:03:21 2024: argv[16]: <-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5>
+Thu Aug 22 13:03:21 2024: argv[17]: <-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64>
+Thu Aug 22 13:03:21 2024: argv[18]: <-L/lib/../lib64>
+Thu Aug 22 13:03:21 2024: argv[19]: <-L/usr/lib/../lib64>
+Thu Aug 22 13:03:21 2024: argv[20]: <-L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../..>
+Thu Aug 22 13:03:21 2024: argv[21]: <main.o>
+Thu Aug 22 13:03:21 2024: argv[22]: <db.o>
+Thu Aug 22 13:03:21 2024: argv[23]: <init.o>
+Thu Aug 22 13:03:21 2024: argv[24]: <send.o>
+Thu Aug 22 13:03:21 2024: argv[25]: <recv.o>
+Thu Aug 22 13:03:21 2024: argv[26]: <util.o>
+Thu Aug 22 13:03:21 2024: argv[27]: <-lmariadb>
+Thu Aug 22 13:03:21 2024: argv[28]: <-leluonutil>
+Thu Aug 22 13:03:21 2024: argv[29]: <-lgcc>
+Thu Aug 22 13:03:21 2024: argv[30]: <--as-needed>
+Thu Aug 22 13:03:21 2024: argv[31]: <-lgcc_s>
+Thu Aug 22 13:03:21 2024: argv[32]: <--no-as-needed>
+Thu Aug 22 13:03:21 2024: argv[33]: <-lpthread>
+Thu Aug 22 13:03:21 2024: argv[34]: <-lc>
+Thu Aug 22 13:03:21 2024: argv[35]: <-lgcc>
+Thu Aug 22 13:03:21 2024: argv[36]: <--as-needed>
+Thu Aug 22 13:03:21 2024: argv[37]: <-lgcc_s>
+Thu Aug 22 13:03:21 2024: argv[38]: <--no-as-needed>
+Thu Aug 22 13:03:21 2024: argv[39]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o>
+Thu Aug 22 13:03:21 2024: argv[40]: </usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14725
+Thu Aug 22 13:03:21 2024: process created with pid: 14726
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/rm>
+Thu Aug 22 13:03:21 2024: argv[0]: <rm>
+Thu Aug 22 13:03:21 2024: argv[1]: <-f>
+Thu Aug 22 13:03:21 2024: argv[2]: <tags>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14726
+Thu Aug 22 13:03:21 2024: process created with pid: 14727
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/bash>
+Thu Aug 22 13:03:21 2024: argv[0]: </bin/sh>
+Thu Aug 22 13:03:21 2024: argv[1]: <-c>
+Thu Aug 22 13:03:21 2024: argv[2]: <ctags -R /home/khchoi/library/libeluonutil-R2.0.0/* ./include/>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14727
+Thu Aug 22 13:03:21 2024: process created with pid: 14727
+Thu Aug 22 13:03:21 2024: parent pid: 14702
+Thu Aug 22 13:03:21 2024: working directory: </home/khchoi/dbrepl_server>
+Thu Aug 22 13:03:21 2024: executable: </usr/bin/ctags>
+Thu Aug 22 13:03:21 2024: argv[0]: <ctags>
+Thu Aug 22 13:03:21 2024: argv[1]: <-R>
+Thu Aug 22 13:03:21 2024: argv[2]: </home/khchoi/library/libeluonutil-R2.0.0/ChangeLog>
+Thu Aug 22 13:03:21 2024: argv[3]: </home/khchoi/library/libeluonutil-R2.0.0/config.h>
+Thu Aug 22 13:03:21 2024: argv[4]: </home/khchoi/library/libeluonutil-R2.0.0/config.h.in>
+Thu Aug 22 13:03:21 2024: argv[5]: </home/khchoi/library/libeluonutil-R2.0.0/config.status>
+Thu Aug 22 13:03:21 2024: argv[6]: </home/khchoi/library/libeluonutil-R2.0.0/configure>
+Thu Aug 22 13:03:21 2024: argv[7]: </home/khchoi/library/libeluonutil-R2.0.0/configure.ac>
+Thu Aug 22 13:03:21 2024: argv[8]: </home/khchoi/library/libeluonutil-R2.0.0/configure.scan>
+Thu Aug 22 13:03:21 2024: argv[9]: </home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.c>
+Thu Aug 22 13:03:21 2024: argv[10]: </home/khchoi/library/libeluonutil-R2.0.0/debug_20140109.h>
+Thu Aug 22 13:03:21 2024: argv[11]: </home/khchoi/library/libeluonutil-R2.0.0/debug_20140310.h>
+Thu Aug 22 13:03:21 2024: argv[12]: </home/khchoi/library/libeluonutil-R2.0.0/debug_20140311.c>
+Thu Aug 22 13:03:21 2024: argv[13]: </home/khchoi/library/libeluonutil-R2.0.0/debug.c>
+Thu Aug 22 13:03:21 2024: argv[14]: </home/khchoi/library/libeluonutil-R2.0.0/debug.c.bk>
+Thu Aug 22 13:03:21 2024: argv[15]: </home/khchoi/library/libeluonutil-R2.0.0/debug.h>
+Thu Aug 22 13:03:21 2024: argv[16]: </home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.c>
+Thu Aug 22 13:03:21 2024: argv[17]: </home/khchoi/library/libeluonutil-R2.0.0/debug_malloc.h>
+Thu Aug 22 13:03:21 2024: argv[18]: </home/khchoi/library/libeluonutil-R2.0.0/debug.o>
+Thu Aug 22 13:03:21 2024: argv[19]: </home/khchoi/library/libeluonutil-R2.0.0/elncommon.h>
+Thu Aug 22 13:03:21 2024: argv[20]: </home/khchoi/library/libeluonutil-R2.0.0/elnshm.c>
+Thu Aug 22 13:03:21 2024: argv[21]: </home/khchoi/library/libeluonutil-R2.0.0/elnshm.h>
+Thu Aug 22 13:03:21 2024: argv[22]: </home/khchoi/library/libeluonutil-R2.0.0/elnshm.o>
+Thu Aug 22 13:03:21 2024: argv[23]: </home/khchoi/library/libeluonutil-R2.0.0/elnutil.c>
+Thu Aug 22 13:03:21 2024: argv[24]: </home/khchoi/library/libeluonutil-R2.0.0/elnutil.h>
+Thu Aug 22 13:03:21 2024: argv[25]: </home/khchoi/library/libeluonutil-R2.0.0/elnutil.o>
+Thu Aug 22 13:03:21 2024: argv[26]: </home/khchoi/library/libeluonutil-R2.0.0/include>
+Thu Aug 22 13:03:21 2024: argv[27]: </home/khchoi/library/libeluonutil-R2.0.0/inifile.c>
+Thu Aug 22 13:03:21 2024: argv[28]: </home/khchoi/library/libeluonutil-R2.0.0/inifile.h>
+Thu Aug 22 13:03:21 2024: argv[29]: </home/khchoi/library/libeluonutil-R2.0.0/inifile.o>
+Thu Aug 22 13:03:21 2024: argv[30]: </home/khchoi/library/libeluonutil-R2.0.0/itq.c>
+Thu Aug 22 13:03:21 2024: argv[31]: </home/khchoi/library/libeluonutil-R2.0.0/itq.h>
+Thu Aug 22 13:03:21 2024: argv[32]: </home/khchoi/library/libeluonutil-R2.0.0/itq.o>
+Thu Aug 22 13:03:21 2024: argv[33]: </home/khchoi/library/libeluonutil-R2.0.0/jdr.conf>
+Thu Aug 22 13:03:21 2024: argv[34]: </home/khchoi/library/libeluonutil-R2.0.0/jdrlog.c>
+Thu Aug 22 13:03:21 2024: argv[35]: </home/khchoi/library/libeluonutil-R2.0.0/jdrlog.h>
+Thu Aug 22 13:03:21 2024: argv[36]: </home/khchoi/library/libeluonutil-R2.0.0/jdrlog.o>
+Thu Aug 22 13:03:21 2024: argv[37]: </home/khchoi/library/libeluonutil-R2.0.0/lib>
+Thu Aug 22 13:03:21 2024: argv[38]: </home/khchoi/library/libeluonutil-R2.0.0/libeluonutil.so>
+Thu Aug 22 13:03:21 2024: argv[39]: </home/khchoi/library/libeluonutil-R2.0.0/libeluonutil.so.2.0.0>
+Thu Aug 22 13:03:21 2024: argv[40]: </home/khchoi/library/libeluonutil-R2.0.0/Makefile>
+Thu Aug 22 13:03:21 2024: argv[41]: </home/khchoi/library/libeluonutil-R2.0.0/Makefile.in>
+Thu Aug 22 13:03:21 2024: argv[42]: </home/khchoi/library/libeluonutil-R2.0.0/README>
+Thu Aug 22 13:03:21 2024: argv[43]: </home/khchoi/library/libeluonutil-R2.0.0/README.hslim>
+Thu Aug 22 13:03:21 2024: argv[44]: </home/khchoi/library/libeluonutil-R2.0.0/simple_list.h>
+Thu Aug 22 13:03:21 2024: argv[45]: </home/khchoi/library/libeluonutil-R2.0.0/simple_timer.c>
+Thu Aug 22 13:03:21 2024: argv[46]: </home/khchoi/library/libeluonutil-R2.0.0/simple_timer.h>
+Thu Aug 22 13:03:21 2024: argv[47]: </home/khchoi/library/libeluonutil-R2.0.0/simple_timer.o>
+Thu Aug 22 13:03:21 2024: argv[48]: </home/khchoi/library/libeluonutil-R2.0.0/smsc.debug.c>
+Thu Aug 22 13:03:21 2024: argv[49]: </home/khchoi/library/libeluonutil-R2.0.0/tags>
+Thu Aug 22 13:03:21 2024: argv[50]: <./include/>
+Thu Aug 22 13:03:21 2024: skipping process with pid: 14727
+Thu Aug 22 13:03:21 2024: finalizing json file
+Thu Aug 22 13:03:21 2024: returned with code: 0

@@ -56,7 +56,6 @@ void* check_db(void* args)
 
         sleep(5);
     }
-
 }
 
 int repl_status(){
@@ -186,6 +185,7 @@ void connect_main_db(int activated_db, MYSQL* conn)
 MYSQL* connect_db(MYSQL* conn, int db_idx){
     DB_INFO *db;
     MYSQL* ret;
+
     if (db_idx == 1) {
         db = &(gpcb->db01);
     }
@@ -216,6 +216,7 @@ void* check_file(void* args){
 			break;
 		}
 	}
+    return NULL;
 }	
 
 int get_db_data(int db_idx){
@@ -1048,7 +1049,7 @@ char *get_show_tb()
     int num_fields = mysql_num_fields(res);
     char *result_buffer = (char *)malloc(BUF_SIZE);
     result_buffer[0] = '\0';
-    int buffer_size = 1024;
+    int buffer_size = 2048;
     while ((row = mysql_fetch_row(res)))
     {
         for (int i = 0; i < num_fields; i++)
@@ -1056,10 +1057,10 @@ char *get_show_tb()
             int field_length = row[i] ? strlen(row[i]) : 4;
             int required_length = strlen(result_buffer) + field_length + 2;
 
-            if (required_length > BUF_SIZE)
+            if (required_length > buffer_size)
             {
                 buffer_size *= 2;
-                result_buffer = (char *)realloc(result_buffer, BUF_SIZE);
+                result_buffer = (char *)realloc(result_buffer, buffer_size);
                 if (result_buffer == NULL)
                 {
                     fprintf(stderr, "Memory reallocation failed\n");
@@ -1110,6 +1111,7 @@ char *get_show_tb_list(char *buf)
     mysql_query(conn, query);
 
     res = mysql_store_result(conn);
+    
     /* exeption input query (NO TABLE) */
     if (res == NULL) {
         printf("No results returned or error: %s\n", mysql_error(conn));
@@ -1117,10 +1119,10 @@ char *get_show_tb_list(char *buf)
         return NULL;
     }
 
-    int buffer_size = 1024;
+    int buffer_size = 2048;
     int num_fields = mysql_num_fields(res);
     MYSQL_FIELD *fields = mysql_fetch_fields(res);
-    char *result_buffer = (char *)malloc(BUF_SIZE);
+    char *result_buffer = (char *)malloc(buffer_size);
     result_buffer[0] = '\0';
 
     // column name
@@ -1128,7 +1130,7 @@ char *get_show_tb_list(char *buf)
         strcat(result_buffer, fields[i].name);
         strcat(result_buffer, "\t");
     }
-    strcat(result_buffer, "\n+---------------------------+\n");
+    strcat(result_buffer, "\n");
 
     // colum data
     while ((row = mysql_fetch_row(res)))
@@ -1139,10 +1141,10 @@ char *get_show_tb_list(char *buf)
             int field_length = row[i] ? strlen(row[i]) : 4;
             int required_length = strlen(result_buffer) + field_length + 2;
             
-            if (required_length > BUF_SIZE)
+            if (required_length > buffer_size)
             {
                 buffer_size *= 2;
-                result_buffer = (char *)realloc(result_buffer, BUF_SIZE);
+                result_buffer = (char *)realloc(result_buffer, buffer_size);
                 if (result_buffer == NULL){
                     fprintf(stderr, "Memory reallocation failed\n");
                     mysql_free_result(res);
@@ -1213,6 +1215,7 @@ char *get_show_tb_del(char *buf){
     return result_buffer;
 }
 
+/* Insert table data */
 char *get_show_tb_int(char *buf){
     MYSQL_ROW row;
     MYSQL *conn;
@@ -1237,9 +1240,24 @@ char *get_show_tb_int(char *buf){
     char query[BUF_SIZE];
 
     char *table_name;
-    char *condition_value1_str;
-    int condition_value1_int;
-    char *condition_value2;
+    char *SYS_ID_STR;
+    int SYS_ID;
+    char *SYS_NAME;
+    char *IN_OUT_STR;
+    int IN_OUT;
+    char *NE_TYPE_STR;
+    int NE_TYPE;
+    char *IP_VERSION_STR;
+    int IP_VERSION;
+    char *SYS_ADDR;
+    char *SYS_PORT_STR;
+    int SYS_PORT;
+    char *OP_CODE_STR;
+    int OP_CODE;
+    char *OP_NAME;
+    char *DESCRIPTION;
+    char *F_CHECK_STR;
+    int F_CHECK;
 
     char *result_buffer = (char *)malloc(BUF_SIZE);
     if (result_buffer == NULL) {
@@ -1249,12 +1267,30 @@ char *get_show_tb_int(char *buf){
     result_buffer[0] = '\0';
 
     table_name = strtok(buf, " ");
-    condition_value1_str = strtok(NULL, " ");
-    condition_value2 = strtok(NULL, " ");
+    SYS_ID_STR = strtok(NULL, " ");
+    SYS_NAME = strtok(NULL, " ");
+    IN_OUT_STR = strtok(NULL, " ");
+    NE_TYPE_STR = strtok(NULL, " ");
+    IP_VERSION_STR = strtok(NULL, " ");
+    SYS_ADDR = strtok(NULL, " ");
+    SYS_PORT_STR = strtok(NULL, " ");
+    OP_CODE_STR = strtok(NULL, " ");
+    OP_NAME = strtok(NULL, " ");
+    DESCRIPTION = strtok(NULL, " ");
+    F_CHECK_STR = strtok(NULL, " ");
+    
 
-    condition_value1_int = atoi(condition_value1_str);
+    SYS_ID = atoi(SYS_ID_STR);
+    IN_OUT = atoi(IN_OUT_STR);
+    NE_TYPE = atoi(NE_TYPE_STR);
+    IP_VERSION = atoi(IP_VERSION_STR);
+    SYS_PORT = atoi(SYS_PORT_STR);
+    OP_CODE = atoi(OP_CODE_STR);
+    F_CHECK = atoi(F_CHECK_STR);
 
-    snprintf(query, BUF_SIZE, "INSERT INTO %s (user_idx, user_name) VALUES (%d, '%s')", table_name, condition_value1_int, condition_value2);
+    snprintf(query, BUF_SIZE, "INSERT INTO %s (SYS_ID, SYS_NAME, IN_OUT, NE_TYPE,\
+     IP_VERSION, SYS_ADDR, SYS_PORT, OP_CODE, OP_NAME, DESCRIPTION, F_CHECK) VALUES (%d, '%s', %d, %d, %d, '%s', %d, %d, '%s', '%s', %d)",\
+     table_name, SYS_ID, SYS_NAME, IN_OUT, NE_TYPE, IP_VERSION, SYS_ADDR, SYS_PORT, OP_CODE, OP_NAME, DESCRIPTION, F_CHECK);
     if (mysql_query(conn, query)) {
         printf("INSERT query failed: %s\n", mysql_error(conn));
         mysql_close(conn);
