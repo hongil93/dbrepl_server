@@ -78,7 +78,12 @@ int all_request(const char* dir_path){
                         printf("Error reading file: %s\n", full_path);
                         break;
                     }
-					line[strcspn(line, "\n")] = '\0';
+
+                    size_t len = strcspn(line, "\n");
+                    
+					if (len < sizeof(line)) {  // 개행 문자가 있으면
+                        line[len] = '\0';  // 개행 문자를 널 문자로 대체
+                    }
 					req_count++;
 				}
 			}
@@ -100,6 +105,7 @@ int five_min_request(const char* dir_path){
     struct stat statbuf;
 	char full_path[MAX_FILE_NAME];
     char lastest_file[MAX_FILE_NAME];
+    char lastest_file_temp[MAX_FILE_NAME];
     int req_count = 0;
     time_t lastest_mtime = 0;
 
@@ -129,10 +135,11 @@ int five_min_request(const char* dir_path){
         perror("stat");
         return -1;
     }
+    memcpy(lastest_file_temp, lastest_file, MAX_FILE_NAME);
 
-    pfile = fopen(lastest_file, "r");
+    pfile = fopen(lastest_file_temp, "r");
     if(pfile == NULL){
-        printf("can not open file: %s \n", lastest_file);
+        printf("can not open file: %s \n", lastest_file_temp);
         closedir(dir);
         return -1;
     }
@@ -140,10 +147,15 @@ int five_min_request(const char* dir_path){
     if (statbuf.st_size > 0) {
         while (fgets(line, sizeof(line), pfile)) {
             if (ferror(pfile)) {
-                printf("Error reading file: %s\n", lastest_file);
+                printf("Error reading file: %s\n", lastest_file_temp);
                 break;
             }
-            line[strcspn(line, "\n")] = '\0';
+            
+            size_t len = strcspn(line, "\n");
+            
+            if (len < sizeof(line)) {  // 개행 문자가 있으면
+                line[len] = '\0';  // 개행 문자를 널 문자로 대체
+            }
             req_count++;
         }
     }
@@ -152,9 +164,4 @@ int five_min_request(const char* dir_path){
     pfile= NULL;
 	closedir(dir);
 	return req_count;
-}
-
-int calculate_tps(){
-	
-
 }

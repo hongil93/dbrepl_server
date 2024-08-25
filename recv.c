@@ -28,6 +28,7 @@ void type_categorizer(int fd, Packet packet){
 			JDRLog((REQUEST, "%s,REQ_CLSV_DB_COMPARE\n", time));
             send_buf = compare_table(atoi(packet.buf));
 			if (send_buf != NULL){
+				// printf("compare len: %d\n", strlen(send_buf));
 				send_message(fd, RES_CLSV_DB_COMPARE, send_buf);
 				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_COMPARE,SUCCESS,DB0%sDATA\n", time, packet.buf));
 				free(send_buf);
@@ -35,7 +36,6 @@ void type_categorizer(int fd, Packet packet){
 			}else{
 				send_message(fd, REQ_SVCL_EVT_WARNING, "ALL DB IS DOWN");
 				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
-				free(send_buf);
 				break;
 			}
 
@@ -126,7 +126,7 @@ void recv_message(int clfd) {
     while (total_received < sizeof(Header)) {
         recv_len = recv(clfd, ((char*)&msg.header) + total_received, sizeof(Header) - total_received, 0);
         if (recv_len < 0) {
-            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+            if (errno == EAGAIN) {
                 continue; 
             } else {
                 perror("recv error");
@@ -151,7 +151,7 @@ void recv_message(int clfd) {
     while (total_received < total_size) {
         recv_len = recv(clfd, msg.buf + total_received, total_size - total_received, 0);
         if (recv_len < 0) {
-            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+            if (errno == EAGAIN) {
                 continue;
             } else {
                 perror("recv error");
@@ -183,12 +183,6 @@ int set_non_blocking(int sfd) {
     }
 
 	fcntl(sfd, F_SETFL, flags | O_NONBLOCK);
-
-    // flags |= O_NONBLOCK;
-    // if (fcntl(sfd, F_SETFL, flags) == -1) {
-    //     perror("fcntl");
-    //     return -1;
-    // }
 
     return 0;
 }
@@ -289,8 +283,6 @@ int make_connection()
 			}
 		}
 	}
-
-	return 0;
 }
 
 void add_client(int clfd) {

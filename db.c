@@ -82,7 +82,7 @@ int repl_status(){
 
 char* get_select_all()
 {
-	MYSQL* conn;
+	MYSQL* conn = NULL;
     MYSQL_RES* res;
     MYSQL_ROW row;
     int i;
@@ -127,14 +127,16 @@ char* get_select_all()
             if (required_length > buffer_size)
             {
                 buffer_size *= 2;
-                result_buffer = (char*)realloc(result_buffer, buffer_size);
-                if (result_buffer == NULL)
+                char* temp_buffer = (char*)realloc(result_buffer, buffer_size);
+                if (temp_buffer == NULL)
                 {
                     fprintf(stderr, "Memory reallocation failed\n");
+                    free(result_buffer);
                     mysql_free_result(res);
                     mysql_close(conn);
                     return NULL;
                 }
+                result_buffer = temp_buffer;
             }
 
             strcat(result_buffer, row[i] ? row[i] : "NULL");
@@ -142,6 +144,7 @@ char* get_select_all()
         }
         strcat(result_buffer, "\n");
     }
+   
     ec_log((DEB_DEBUG, ">>>[DB] SQL Request :: select * from T_EXT_SYSTEM\n", NULL));
 
     mysql_free_result(res);
@@ -192,13 +195,11 @@ int connect_main_db(int activated_db, MYSQL* conn)
 }
 
 MYSQL* connect_db(MYSQL* conn, int db_idx){
-    DB_INFO *db;
-    MYSQL* ret;
+    DB_INFO *db = NULL;
+    MYSQL* ret = NULL;
     if (db_idx == 1) {
         db = &(gpcb->db01);
-    }
-
-    if (db_idx == 2){
+    }else{
         db = &(gpcb->db02);
     }
 
@@ -212,7 +213,6 @@ MYSQL* connect_db(MYSQL* conn, int db_idx){
 		0);
     
     return ret;
-
 }
 
 char* compare_table(int db_index)
@@ -228,6 +228,7 @@ char* compare_table(int db_index)
     char* result_buffer = (char*)malloc(BUF_SIZE);
     int buffer_size = BUF_SIZE;
     int diff_row;
+    int count = 0;
     int num_fields;
     int i;
 
@@ -240,6 +241,7 @@ char* compare_table(int db_index)
     {
         fprintf(stderr, "%s\n", mysql_error(conn1));
         mysql_close(conn1);
+        free(result_buffer);
         return NULL;
     }
 
@@ -247,6 +249,7 @@ char* compare_table(int db_index)
     {
         fprintf(stderr, "%s\n", mysql_error(conn2));
         mysql_close(conn2);
+        free(result_buffer);
         return NULL;
     }
 
@@ -264,13 +267,13 @@ char* compare_table(int db_index)
     res2 = mysql_store_result(conn2);
     if (mysql_num_fields(res1) != mysql_num_fields(res2)){
         printf("do not match column\n");
+        free(result_buffer);
         return NULL;
     }
-
     num_fields = mysql_num_fields(res1);
 
     memset(result_buffer, 0x00, BUF_SIZE);
-
+    // printf("exist diff row\n");
     while ((row1 = mysql_fetch_row(res1)) && (row2 = mysql_fetch_row(res2))) {
         diff_row = 0;
         for (i = 0; i < num_fields; i++) {
@@ -305,7 +308,18 @@ char* compare_table(int db_index)
                     if (required_length > buffer_size)
                     {
                         buffer_size *= 2;
-                        result_buffer = (char*)realloc(result_buffer, buffer_size);
+                        char* temp_buffer = (char*)realloc(result_buffer, buffer_size);
+                        if (temp_buffer == NULL)
+                        {
+                            fprintf(stderr, "Memory reallocation failed\n");
+                            free(result_buffer);
+                            mysql_free_result(res1);
+                            mysql_free_result(res2);
+                            mysql_close(conn1);
+                            mysql_close(conn2);
+                            return NULL;
+                        }
+                        result_buffer = temp_buffer;
                     }
                     strncat(result_buffer, row1[i] ? row1[i] : "NULL", BUF_SIZE - strlen(result_buffer) - 1);
                     strncat(result_buffer, "\t", BUF_SIZE - strlen(result_buffer) - 1);
@@ -314,11 +328,6 @@ char* compare_table(int db_index)
             }
         }else{
             if (diff_row == 1) {
-                // for (i = 0; i < num_fields; i++) {
-                //     strncat(result_buffer, row2[i] ? row2[i] : "NULL", BUF_SIZE - strlen(result_buffer) - 1);
-                //     strncat(result_buffer, "\t", BUF_SIZE - strlen(result_buffer) - 1);
-                // }
-                // strncat(result_buffer, "\n", BUF_SIZE - strlen(result_buffer) - 1);
                 for (i = 0; i < num_fields; i++) {
                     int field_length = row2[i] ? strlen(row2[i]) : 4; // "NULL"의 길이는 4
                     int required_length = strlen(result_buffer) + field_length + 2; // 공백과 '\0' 포함
@@ -327,7 +336,18 @@ char* compare_table(int db_index)
                     if (required_length > buffer_size)
                     {
                         buffer_size *= 2;
-                        result_buffer = (char*)realloc(result_buffer, buffer_size);
+                        char* temp_buffer = (char*)realloc(result_buffer, buffer_size);
+                        if (temp_buffer == NULL)
+                        {
+                            fprintf(stderr, "Memory reallocation failed\n");
+                            free(result_buffer);
+                            mysql_free_result(res1);
+                            mysql_free_result(res2);
+                            mysql_close(conn1);
+                            mysql_close(conn2);
+                            return NULL;
+                        }
+                        result_buffer = temp_buffer;
                     }
                     strncat(result_buffer, row2[i] ? row2[i] : "NULL", BUF_SIZE - strlen(result_buffer) - 1);
                     strncat(result_buffer, "\t", BUF_SIZE - strlen(result_buffer) - 1);
@@ -335,8 +355,17 @@ char* compare_table(int db_index)
                 strncat(result_buffer, "\n", BUF_SIZE - strlen(result_buffer) - 1);
             }
         }
+        count++;
     }
     // 남은 행을 처리하는 코드
+    // printf("count: %d\n", count);
+    // printf("result_buffer_len: %d\n", strlen(result_buffer));
+    if (strlen(result_buffer) == 0 ) {
+        printf("mysql_data_seek clear\n");
+        mysql_data_seek(res1, count); 
+        mysql_data_seek(res2, count); 
+    }
+    // printf("do not exist row\n");
     if (db_index == 1){
         while (row1 = mysql_fetch_row(res1)) {
             for (i = 0; i < num_fields; i++) {
@@ -354,6 +383,7 @@ char* compare_table(int db_index)
             strncat(result_buffer, "\n", BUF_SIZE - strlen(result_buffer) - 1);
         }
     }
+    
 
     ec_log((DEB_DEBUG, ">>>[DB] Request Check DB data\n", NULL));
 
@@ -361,6 +391,8 @@ char* compare_table(int db_index)
     mysql_free_result(res2);
     mysql_close(conn1);
     mysql_close(conn2);
+
+    printf("==last result_buffer== \n %s \n",result_buffer);
 
     return result_buffer;
 }
@@ -459,7 +491,7 @@ void* db_sync(void* args){
 
         file_name = "/home/kim/backup/db01/master_dump.sql";        //check dump file name
 
-        printf("old-path(Len:%02d)=[%s]\n", strlen(path), path);
+        //printf("old-path(Len:%02d)=[%s]\n", strlen(path), path);
 
         /*check dump file exist*/
         while(1){
@@ -467,8 +499,8 @@ void* db_sync(void* args){
   
             if (fgets(path, sizeof(path), fp) != NULL) {
                 path[37] = 0;
-                printf("new-path(Len:%02d)=[%s] [%d(0x%X)]\n", strlen(path), path, path[37], path[37]);
-                printf("cmp-file(Len:%02d)=[%s]\n", strlen(file_name), file_name);
+                //printf("new-path(Len:%02d)=[%s] [%d(0x%X)]\n", strlen(path), path, path[37], path[37]);
+                //printf("cmp-file(Len:%02d)=[%s]\n", strlen(file_name), file_name);
                 if(strcmp(path, file_name) == 0){
                     printf("master_dump.sql is exist!\n");
                     break;
@@ -554,7 +586,7 @@ void* db_sync(void* args){
 
         file_name = "/home/kim/backup/db02/slave_dump.sql";
 
-        printf("old-path(Len:%02d)=[%s]\n", strlen(path), path);
+        //printf("old-path(Len:%02d)=[%s]\n", strlen(path), path);
 
         /*check dump file exist*/
         while(1){
@@ -562,8 +594,8 @@ void* db_sync(void* args){
   
             if (fgets(path, sizeof(path), fp) != NULL) {
                 path[36] = 0;
-                printf("new-path(Len:%02d)=[%s] [%d(0x%X)]\n", strlen(path), path, path[36], path[36]);
-                printf("cmp-file(Len:%02d)=[%s]\n", strlen(file_name), file_name);
+                //printf("new-path(Len:%02d)=[%s] [%d(0x%X)]\n", strlen(path), path, path[36], path[36]);
+                //printf("cmp-file(Len:%02d)=[%s]\n", strlen(file_name), file_name);
                 if(strcmp(path, file_name) == 0){
                     printf("slave_dump.sql is exist!\n");
                     break;
