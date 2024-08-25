@@ -20,22 +20,22 @@ void type_categorizer(int fd, Packet packet){
 				free(send_buf);
 		    	break;
 			}else{
-				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				send_message(fd, RES_SVCL_EVT_WARNING, "ALL DB IS DOWN");
 				JDRLog((RESPONSE, "%s,SQL_SELECT,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
 
-		case SQL_SHOW_TB:
+		case REQ_CLSV_SQL_SHOWTB:
 			send_server_showtb(fd);
 			break;
 
-		case SQL_SHOW_TB_LIST:
+		case REQ_CLSV_SQL_SELECT:
 			send_server_showtb_list(fd, send_buf);
 			break;
-		case SQL_SHOW_TB_DEL:
+		case REQ_CLSV_SQL_DELETE:
 			send_server_del(fd, send_buf);
 			break;
-		case SQL_SHOW_TB_INT:
+		case REQ_CLSV_SQL_INSERT:
 			send_server_int(fd, send_buf);
 			break;
         case SQL_COMPARE:
@@ -59,18 +59,18 @@ void type_categorizer(int fd, Packet packet){
 				free(send_buf);
 		    	break;
 			}else{
-				send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+				send_message(fd, RES_SVCL_EVT_WARNING, "ALL DB IS DOWN");
 				JDRLog((RESPONSE, "%s,DB_COMPARE,FAIL,ALL DB IS DOWN\n", time));
 				break;
 			}
             break;
 
-		case EVT_STATUS:
+		case REQ_CLSV_EVT_STATUS:
 			JDRLog((REQUEST, "%s,EVT_STATUS\n", time));
 			send_server_status(fd);
 			break;
 
-		case REP_CHECK:
+		case REQ_CLSV_REP_CHECK:
 			JDRLog((REQUEST, "%s,REP_CHECK\n", time));
 			send_repl_status(fd);
 			break;
@@ -215,7 +215,7 @@ int make_connection()
 	//bind, listen socket
 	address.sin_family = AF_INET;
 	address.sin_addr.s_addr = INADDR_ANY;
-	address.sin_port = htons(8888);
+	address.sin_port = htons(1111);
 
 	if (bind(sfd, (struct sockaddr*)&address, sizeof(address)) < 0) {
 		perror("bind error");

@@ -915,7 +915,7 @@ void get_replication_on(int fd)
     int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn_ptr);
     if (active_db == 0){
 		printf("all_db_is_down\n");
-        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+        send_message(fd, RES_SVCL_EVT_WARNING, "ALL DB IS DOWN");
         mysql_close(conn_ptr);
         return;
 	}
@@ -977,7 +977,7 @@ void get_replication_off(int fd)
     int active_db = set_main_db(gpcb->db01.status, gpcb->db02.status, conn_ptr);
     if (active_db == 0){
 		printf("all_db_is_down\n");
-        send_message(fd, EVT_WARNING, "ALL DB IS DOWN");
+        send_message(fd, RES_SVCL_EVT_WARNING, "ALL DB IS DOWN");
         mysql_close(conn_ptr);
         return;
 	}

@@ -35,7 +35,7 @@ int send_server_status(int fd){
     "===========================\n\n"\
     , db01_status, db02_status, client_cnt, replstatus);
 
-    send_message(fd, EVT_STATUS, server_status);
+    send_message(fd, RES_CLSV_EVT_STATUS, server_status);
     JDRLog((RESPONSE, "%s,EVT_STATUS,SUCCESS,DB01:%s,DB02:%s,Clients:%d,Replication:%s\n", time_now(), db01_status, db02_status, client_cnt, replstatus));
 
     return 0;
@@ -47,7 +47,7 @@ int send_repl_status(int fd){
 
     if(gpcb->db01.status == 0 && gpcb->db02.status == 0){
         sprintf(res, "ALL DB DOWN\n");
-        send_message(fd, REP_CHECK, res);
+        send_message(fd, RES_CLSV_REP_CHECK, res);
         JDRLog((RESPONSE, "%s,REP_CHECK,FAIL,%s\n", time_now(), "ALL_DB_DOWN"));
         return 0;
     }
@@ -91,7 +91,7 @@ int send_repl_status(int fd){
     );
     strncat(res, error_log, sizeof(error_log));
 
-    send_message(fd, REP_CHECK, res);
+    send_message(fd, RES_CLSV_REP_CHECK, res);
     JDRLog((RESPONSE, "%s,REP_CHECK,SUCCESS,%s\n", time_now(), ""));
     return 0;
 }
@@ -135,7 +135,7 @@ int send_server_showtb(int fd){
     "===========================\n"\
     , replstatus);
 
-    send_message(fd, SQL_SHOW_TB, showtb);
+    send_message(fd, RES_CLSV_SQL_SHOWTB, showtb);
     free(replstatus);
 }
 
@@ -150,7 +150,7 @@ int send_server_showtb_list(int fd, char *buf){
     "===========================\n"\
     , replstatus);
 
-    send_message(fd, SQL_SHOW_TB_LIST, showtblist);
+    send_message(fd, RES_CLSV_SQL_SELECT, showtblist);
     free(replstatus);
 }
 
@@ -163,7 +163,7 @@ int send_server_del(int fd, char *buf){
     "<------------- DELETE ------------->\n"\
     , replstatus);
 
-    send_message(fd, SQL_SHOW_TB_DEL, showtblist);
+    send_message(fd, RES_CLSV_SQL_DELETE, showtblist);
     free(replstatus);
 }
 
@@ -176,6 +176,6 @@ int send_server_int(int fd, char *buf){
     "<------------- INSERT ------------->\n"\
     , replstatus);
 
-    send_message(fd, SQL_SHOW_TB_INT, showtblist);
+    send_message(fd, RES_CLSV_SQL_INSERT, showtblist);
     free(replstatus);
 }
