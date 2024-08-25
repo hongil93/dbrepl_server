@@ -69,8 +69,10 @@ void type_categorizer(int fd, Packet packet){
 			}
 			if (t_ret == NULL){
 				send_message(fd, RES_CLSV_DB_SYNC, "fail");
+				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_SYNC,FAIL,cannot sync db\n", time));
 			}else{
 				send_message(fd, RES_CLSV_DB_SYNC, "success");
+				JDRLog((RESPONSE, "%s,REQ_CLSV_DB_SYNC,SUCCESS\n", time));
 			}
 			
 			break;
@@ -168,8 +170,7 @@ void recv_message(int clfd) {
 
 	msg.buf[total_size] = '\0';
 
-    printf("Received Message. Type: %d, Length: %d, Msg: %s\n", 
-           msg.header.type, msg.header.length, msg.buf);
+    //printf("Received Message. Type: %d, Length: %d, Msg: %s\n", msg.header.type, msg.header.length, msg.buf);
 	ec_log((DEB_DEBUG, ">>>[TCP] Received Message Type: %d, Length: %d, Msg: %s", msg.header.type, msg.header.length, msg.buf));
 	
 	type_categorizer(clfd, msg);
