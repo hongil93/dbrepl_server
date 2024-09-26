@@ -1,4 +1,4 @@
-#define BUF_SIZE 2048
+#define BUF_SIZE 8192
 #define MAX_EPOLL_EVENT 64
 #define MAX_CLIENTS 64
 

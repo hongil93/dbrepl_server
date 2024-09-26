@@ -4,7 +4,7 @@
 #include "main.h"
 #include "recv.h"
 
-#define ec_log(x) DwDebugLog x;
+#define ec_log(x) DwDebugLog x
 
 
 void* check_db(void* args)
@@ -274,7 +274,17 @@ char* compare_table(int db_index)
 
     memset(result_buffer, 0x00, BUF_SIZE);
     // printf("exist diff row\n");
+#if 0
     while ((row1 = mysql_fetch_row(res1)) && (row2 = mysql_fetch_row(res2))) {
+#else
+    while( 1 ) {
+        row1 = mysql_fetch_row(res1);
+        row2 = mysql_fetch_row(res2);
+        if( ( row1 == NULL ) || ( row2 == NULL ) )
+        {
+            break;
+        }
+#endif
         diff_row = 0;
         for (i = 0; i < num_fields; i++) {
             // 각 열을 비교하여 다른 경우 diff_row를 1로 설정

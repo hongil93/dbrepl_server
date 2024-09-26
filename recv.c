@@ -10,6 +10,7 @@ void type_categorizer(int fd, Packet packet){
 	char* send_buf;
 	char* time = time_now();
 	int* t_ret;
+	
 	switch(packet.header.type){
 		case REQ_CLSV_SQL_SELECT:
 			JDRLog((REQUEST, "%s,REQ_CLSV_SQL_SELECT\n", time));
@@ -246,7 +247,10 @@ int make_connection()
 		if(gpcb->running_flag == 0){
 			exit(0);
 		}
-		epcnt = epoll_wait(epfd, ep_events, MAX_EPOLL_EVENT, -1);
+		while((epcnt = epoll_wait(epfd, ep_events, MAX_EPOLL_EVENT, -1)) == -1 && errno == EINTR){
+			printf("interruped by signal, retry epoll_wait");
+			continue;
+		}
 		if (epcnt == -1){
 			perror("epoll wait error");
 			close(sfd);
